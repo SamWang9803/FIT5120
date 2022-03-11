@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="FIT5120Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="FIT5120ModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="binInfoSet" EntityType="FIT5120Model.binInfo" />
+    <EntitySet Name="unacceptablesSet" EntityType="FIT5120Model.unacceptables" />
+    <AssociationSet Name="binInfounacceptables" Association="FIT5120Model.binInfounacceptables">
+      <End Role="binInfo" EntitySet="binInfoSet" />
+      <End Role="unacceptables" EntitySet="unacceptablesSet" />
+    </AssociationSet>
+    <EntitySet Name="acceptablesSet" EntityType="FIT5120Model.acceptables" />
+    <AssociationSet Name="binInfoacceptables" Association="FIT5120Model.binInfoacceptables">
+      <End Role="binInfo" EntitySet="binInfoSet" />
+      <End Role="acceptables" EntitySet="acceptablesSet" />
+    </AssociationSet>
+    <EntitySet Name="wasteCollectionSet" EntityType="FIT5120Model.wasteCollection" />
+  </EntityContainer>
+  <EntityType Name="binInfo">
+    <Key>
+      <PropertyRef Name="bin_type" />
+    </Key>
+    <Property Name="bin_type" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Name="bin_color" Type="String" Nullable="false" />
+    <Property Name="avg_monthly_collected" Type="Double" Nullable="false" />
+    <NavigationProperty Name="unacceptables" Relationship="FIT5120Model.binInfounacceptables" FromRole="binInfo" ToRole="unacceptables" />
+    <NavigationProperty Name="acceptables" Relationship="FIT5120Model.binInfoacceptables" FromRole="binInfo" ToRole="acceptables" />
+  </EntityType>
+  <EntityType Name="unacceptables">
+    <Key>
+      <PropertyRef Name="unacceptable_items" />
+    </Key>
+    <NavigationProperty Name="binInfo" Relationship="FIT5120Model.binInfounacceptables" FromRole="unacceptables" ToRole="binInfo" />
+    <Property Name="binInfo_bin_type" Type="String" Nullable="false" />
+    <Property Name="unacceptable_items" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
+  </EntityType>
+  <Association Name="binInfounacceptables">
+    <End Type="FIT5120Model.binInfo" Role="binInfo" Multiplicity="1" />
+    <End Type="FIT5120Model.unacceptables" Role="unacceptables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="binInfo">
+        <PropertyRef Name="bin_type" />
+      </Principal>
+      <Dependent Role="unacceptables">
+        <PropertyRef Name="binInfo_bin_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="acceptables">
+    <Key>
+      <PropertyRef Name="acceptable_items" />
+    </Key>
+    <NavigationProperty Name="binInfo" Relationship="FIT5120Model.binInfoacceptables" FromRole="acceptables" ToRole="binInfo" />
+    <Property Name="binInfo_bin_type" Type="String" Nullable="false" />
+    <Property Name="acceptable_items" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
+  </EntityType>
+  <Association Name="binInfoacceptables">
+    <End Type="FIT5120Model.binInfo" Role="binInfo" Multiplicity="1" />
+    <End Type="FIT5120Model.acceptables" Role="acceptables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="binInfo">
+        <PropertyRef Name="bin_type" />
+      </Principal>
+      <Dependent Role="acceptables">
+        <PropertyRef Name="binInfo_bin_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="wasteCollection">
+    <Key>
+      <PropertyRef Name="postcode" />
+      <PropertyRef Name="bin_type" />
+    </Key>
+    <Property Name="bin_type" Type="String" Nullable="false" />
+    <Property Name="postcode" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Name="collection_time" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>
