@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FIT5120Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FIT5120ModelStoreContainer">
+    <EntitySet Name="binInfoSet" EntityType="FIT5120Model.Store.binInfoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="unacceptablesSet" EntityType="FIT5120Model.Store.unacceptablesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="acceptablesSet" EntityType="FIT5120Model.Store.acceptablesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="wasteCollectionSet" EntityType="FIT5120Model.Store.wasteCollectionSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="binInfounacceptables" Association="FIT5120Model.Store.binInfounacceptables">
+      <End Role="binInfo" EntitySet="binInfoSet" />
+      <End Role="unacceptables" EntitySet="unacceptablesSet" />
+    </AssociationSet>
+    <AssociationSet Name="binInfoacceptables" Association="FIT5120Model.Store.binInfoacceptables">
+      <End Role="binInfo" EntitySet="binInfoSet" />
+      <End Role="acceptables" EntitySet="acceptablesSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="binInfoSet">
+    <Key>
+      <PropertyRef Name="bin_type" />
+    </Key>
+    <Property Name="bin_type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="bin_color" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="avg_monthly_collected" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="unacceptablesSet">
+    <Key>
+      <PropertyRef Name="unacceptable_items" />
+    </Key>
+    <Property Name="binInfo_bin_type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="unacceptable_items" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="acceptablesSet">
+    <Key>
+      <PropertyRef Name="acceptable_items" />
+    </Key>
+    <Property Name="binInfo_bin_type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="acceptable_items" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wasteCollectionSet">
+    <Key>
+      <PropertyRef Name="postcode" />
+      <PropertyRef Name="bin_type" />
+    </Key>
+    <Property Name="bin_type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="postcode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="collection_time" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="binInfounacceptables">
+    <End Role="binInfo" Type="FIT5120Model.Store.binInfoSet" Multiplicity="1" />
+    <End Role="unacceptables" Type="FIT5120Model.Store.unacceptablesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="binInfo">
+        <PropertyRef Name="bin_type" />
+      </Principal>
+      <Dependent Role="unacceptables">
+        <PropertyRef Name="binInfo_bin_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="binInfoacceptables">
+    <End Role="binInfo" Type="FIT5120Model.Store.binInfoSet" Multiplicity="1" />
+    <End Role="acceptables" Type="FIT5120Model.Store.acceptablesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="binInfo">
+        <PropertyRef Name="bin_type" />
+      </Principal>
+      <Dependent Role="acceptables">
+        <PropertyRef Name="binInfo_bin_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

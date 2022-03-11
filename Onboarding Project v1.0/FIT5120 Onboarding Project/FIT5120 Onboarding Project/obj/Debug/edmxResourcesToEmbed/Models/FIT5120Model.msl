@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FIT5120ModelStoreContainer" CdmEntityContainer="FIT5120ModelContainer">
+    <EntitySetMapping Name="binInfoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(FIT5120Model.binInfo)">
+        <MappingFragment StoreEntitySet="binInfoSet">
+          <ScalarProperty Name="bin_type" ColumnName="bin_type" />
+          <ScalarProperty Name="bin_color" ColumnName="bin_color" />
+          <ScalarProperty Name="avg_monthly_collected" ColumnName="avg_monthly_collected" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unacceptablesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(FIT5120Model.unacceptables)">
+        <MappingFragment StoreEntitySet="unacceptablesSet">
+          <ScalarProperty Name="unacceptable_items" ColumnName="unacceptable_items" />
+          <ScalarProperty Name="binInfo_bin_type" ColumnName="binInfo_bin_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="acceptablesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(FIT5120Model.acceptables)">
+        <MappingFragment StoreEntitySet="acceptablesSet">
+          <ScalarProperty Name="acceptable_items" ColumnName="acceptable_items" />
+          <ScalarProperty Name="binInfo_bin_type" ColumnName="binInfo_bin_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wasteCollectionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(FIT5120Model.wasteCollection)">
+        <MappingFragment StoreEntitySet="wasteCollectionSet">
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="bin_type" ColumnName="bin_type" />
+          <ScalarProperty Name="collection_time" ColumnName="collection_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
