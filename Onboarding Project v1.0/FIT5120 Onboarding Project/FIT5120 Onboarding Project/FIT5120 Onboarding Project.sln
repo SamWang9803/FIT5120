@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIT5120 Onboarding Project", "FIT5120 Onboarding Project.csproj", "{784566FC-0E4B-41C0-9599-50B11EE6F301}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIT5120 Onboarding Project.Tests", "..\FIT5120 Onboarding Project.Tests\FIT5120 Onboarding Project.Tests.csproj", "{B22B9CEB-B649-4D01-BCA1-6E05D09679ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{784566FC-0E4B-41C0-9599-50B11EE6F301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{784566FC-0E4B-41C0-9599-50B11EE6F301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{784566FC-0E4B-41C0-9599-50B11EE6F301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{784566FC-0E4B-41C0-9599-50B11EE6F301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B22B9CEB-B649-4D01-BCA1-6E05D09679ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B22B9CEB-B649-4D01-BCA1-6E05D09679ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B22B9CEB-B649-4D01-BCA1-6E05D09679ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B22B9CEB-B649-4D01-BCA1-6E05D09679ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA03138B-D2DF-47E9-AEE9-C1E8C7DC3DAA}
+	EndGlobalSection
+EndGlobal
