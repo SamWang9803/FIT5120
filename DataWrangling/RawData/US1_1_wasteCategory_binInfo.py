@@ -71,16 +71,56 @@ recyclableUnacceptable = pd.DataFrame({'unacceptable_items': rec_notok})\
 
 recyclableUnacceptable['bin_type'] = 'recyclable'
 
-acceptables = pd.concat([recyclableAcceptable, rubbishAcceptable])\
+#--------------------------------------------------------------------------------
+#                             Waste Type: Organics
+#--------------------------------------------------------------------------------
+
+df = pd.read_json('GarbageCollectionDate/WodongaCouncil-garbage-collection-zones.json')
+
+grn_ok = df['features'].apply(lambda x: x['properties']['grn_ok'].split(',')).explode()
+# get the 'grn_ok' feature of each row
+# split the strink chunk with item names using ','
+# explode the list in each row in 'features'
+
+grn_ok = grn_ok.drop_duplicates().apply(lambda x: x.split(';')).explode()
+# drop all the duplicated items
+# split the string further by ';' to retrieve individual items
+# retrieve each element in the list by explode()
+
+greenAcceptable = pd.DataFrame({'acceptable_items': grn_ok})\
+.reset_index(drop = True)
+
+greenAcceptable['bin_type'] = 'organics'
+
+grn_notok = df['features'].apply(lambda x: x['properties']['grn_notok'].split(',')).explode()
+# get the 'grn_notok' feature of each row
+# split the strink chunk with item names using ','
+# explode the list in each row in 'features'
+
+grn_notok = grn_notok.drop_duplicates().apply(lambda x: x.split(';')).explode()
+# drop all the duplicated items
+# split the string further by ';' to retrieve individual items
+# retrieve each element in the list by explode()
+
+greenUnacceptable = pd.DataFrame({'unacceptable_items': grn_notok})\
+.reset_index(drop = True)
+
+greenUnacceptable['bin_type'] = 'organics'
+
+acceptables = pd.concat([recyclableAcceptable, rubbishAcceptable, greenAcceptable])\
 .sort_values(['bin_type', 'acceptable_items']).reset_index(drop = True)
 # append all the dataframes with acceptable items, sort values based on bin_type and acceptable_items
 
-unacceptables = pd.concat([recyclableUnacceptable, rubbishUnacceptable])\
+unacceptables = pd.concat([recyclableUnacceptable, rubbishUnacceptable, greenUnacceptable])\
 .sort_values(['bin_type', 'unacceptable_items']).reset_index(drop = True)
 # append all the dataframes with unacceptable items, sort values based on bin_type and acceptable_items
+
+acceptables['acceptable_items'] = acceptables.acceptable_items.str.replace('\n', '')
+unacceptables['unacceptable_items'] = unacceptables.unacceptable_items.str.replace('\n', '')
+# remove \n from the string components
 
 exportFolder = '../wrangledData/'
 
 acceptables.to_csv(exportFolder + 'us1_1_acceptables.csv', index = False)
 
-unacceptables[['bin_type', 'unacceptable_items']].to_csv(exportFolder + 'us1_1_unacceptables.csv', index = False)
+unacceptables.to_csv(exportFolder + 'us1_1_unacceptables.csv', index = False)
