@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\2022S1\FIT5120\FIT5120 Onboarding Project v2.0\FIT5120-OnboardingProject\obj\Release\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="D:\2022S1\FIT5120\FIT5120 Onboarding Project v2.0\FIT5120-OnboardingProject\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\2022S1\FIT5120\FIT5120 Onboarding Project v2.0\FIT5120-OnboardingProject\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>
