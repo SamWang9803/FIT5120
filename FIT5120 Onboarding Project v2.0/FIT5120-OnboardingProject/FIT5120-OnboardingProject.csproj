@@ -149,6 +149,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Resources\general.png" />
+    <Content Include="Resources\image1.jpg" />
+    <Content Include="Resources\organic.png" />
+    <Content Include="Resources\recycle.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\FIT5120-OnboardingProject20220313171933 - Web Deploy.pubxml" />
