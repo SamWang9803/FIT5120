@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="FIT5120MyModel-Web.config Connection String" description="FIT5120MyModel Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename=|DataDirectory|\FIT5120MyModel.mdf;Integrated Security=SSPI;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\2022S1\\FIT5120\\FIT5120\ Onboarding\ Project\ v2\.0\\FIT5120-OnboardingProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FIT5120MyModel']/@connectionString" />
+  </parameter>
+</parameters>

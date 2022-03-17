@@ -1,0 +1,44 @@
+﻿@model FIT5120_OnboardingProject.Models.AcceptableItem
+
+@{
+    ViewBag.Title = "CheckWaste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Acceptables items check</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <h4>You can select an item from the dropdown list below, we will tell you which bin you should put the item into.</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <p>Please select an item: </p>
+            <div class="col-md-10">
+                @Html.AntiForgeryToken()
+                @Html.DropDownList("acceptable_items", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AcceptableItemID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Check" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<p>@ViewBag.resultString</p>
+
+<style>
+    body {
+        background: url('../../Resources/BlueSky.jpeg') no-repeat;
+        background-size: 100% 100%;
+    }
+
+    img {
+        display: block;
+    }
+</style>

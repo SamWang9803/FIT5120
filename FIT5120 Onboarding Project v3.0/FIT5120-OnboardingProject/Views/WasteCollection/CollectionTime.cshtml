@@ -1,0 +1,62 @@
+﻿@model IEnumerable<FIT5120_OnboardingProject.Models.WasteCollection>
+
+@{
+    ViewBag.Title = "CheckWaste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Find Collection Time</h2>
+<h4>Type in your postcode and findout which type of waste is collected at what time in your neighborhood.</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.postcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bin_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.collection_time)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.postcode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bin_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.collection_time)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
+}
+
+<style>
+    body {
+        background: url('../../Resources/BlueSky.jpeg') no-repeat;
+        background-size: 100% 100%;
+    }
+
+    img {
+        display: block;
+    }
+</style>

@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<body>
+    <div class="jumbotron">
+        <h1 style="color:darkgreen">Welcome to Recycle Guide!</h1>
+        <h2>Recycle in Australia</h2>
+        <img src="~/Resources/HomePage-Image.jpeg" width="1000" height="600" alt="HeadingImage">
+        <p class="lead">
+            Between 2017 and 2018, 9.4% of the plastic wastes were recovered in Australia.
+            According to a report published by European Environmental Bureau (EEB), Australia has has a total recycling rate of 41%,
+            ranked as 21st in the entire world. The country with the highest recycling rate, Germany, successfully recycled 66.1% of their total wastes,
+            which is more than 1.5 times than that of Australia.
+        </p>
+        <p><a href="https://www.awe.gov.au/environment/protection/waste" class="btn btn-primary btn-lg">Learn More &raquo;</a></p>
+    </div>
+
+    <div class="row-1">
+        <h2>Waste Bin Type in Australia</h2>
+        <p style="font-size:larger">
+            Waste bins are essential in keeping the trash around Australia well-managed.
+            It is an essential tool in waste management methods.
+        </p>
+        <h3>What Do We Have</h3>
+        <div class="col-md-4">
+            <img src="~/Resources/general.png" width="250" height="300" alt="HeadingImage">
+            <h4>General Waste Bin</h4>
+            <p>
+                Color: Red
+            </p>
+            <p>
+                Toward: Landfill
+            </p>
+        </div>
+        <div class="col-md-4">
+            <img src="~/Resources/recycle.png" width="250" height="300" alt="HeadingImage">
+            <h4>Mixed Recyclables Bin</h4>
+            <p>
+                Color: Yellow
+            </p>
+            <p>
+                Toward: Recovery Facility
+            </p>
+        </div>
+        <div class="col-md-4">
+            <img src="~/Resources/organic.png" width="250" height="300" alt="HeadingImage">
+            <h4>Organic Waste Bin</h4>
+            <p>
+                Color: Green
+            </p>
+            <p>
+                Toward: Farming Indusry
+            </p>
+        </div>
+    </div>
+    <div class="row-2">
+        <h3>Recycle Process</h3>
+        <p>Recycling, recovery and reprocessing of waste materials for use in new products.</p>
+        <h6>@Html.ActionLink("How Does The Process Work?", "About", "Home")</h6>
+            <div class="row-3">
+                <h3 align="right" , style="color:gray">About Us</h3>
+                <h5 align="right">@Html.ActionLink("Get Team Info", "Contact", "Home")</h5>
+            </div>
+    </div>
+
+    <style>
+           body {
+                    background: url('../../Resources/BlueSky.jpeg') no-repeat;
+                    background-size: 100% 100%;
+                }
+           img {
+                    display: block;
+               }
+    </style>
+
+ </body >
