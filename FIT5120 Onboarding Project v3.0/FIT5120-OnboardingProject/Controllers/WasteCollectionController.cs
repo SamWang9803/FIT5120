@@ -13,6 +13,7 @@ namespace FIT5120_OnboardingProject.Controllers
 
         public ActionResult CollectionTime()
         {
+            //send data in waste collection table to the view
             var wasteCollection = db.wasteCollectionSet;
             return View(wasteCollection.ToList());
         }
@@ -21,10 +22,6 @@ namespace FIT5120_OnboardingProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CollectionTime(FormCollection form)
         { 
-            string str1 = form["Postcode"].ToString();
-            string str2 = form["BinType"].ToString();
-
-            ViewBag.resultString = str1 + str2;
 
             var wasteCollection = db.wasteCollectionSet;
             return View(wasteCollection.ToList());

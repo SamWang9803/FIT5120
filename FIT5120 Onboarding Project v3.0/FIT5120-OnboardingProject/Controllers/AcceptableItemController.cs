@@ -13,6 +13,7 @@ namespace FIT5120_OnboardingProject.Controllers
 
         public ActionResult CheckWaste()
         {
+            //send data in acceptable table to the dropdown list
             ViewBag.acceptable_items = new SelectList(db.acceptablesSet, "AcceptableItemID", "AcceptableItemID");
             return View();
         }
@@ -21,8 +22,10 @@ namespace FIT5120_OnboardingProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CheckWaste(AcceptableItem acceptables, FormCollection form)
         {
+            //get selected item name
             string itemName = form["acceptable_items"].ToString();
             string binType = "NULL";
+            //get related bin type according the selected item name
             foreach (AcceptableItem item in db.acceptablesSet)
             {
                 if (itemName.Equals(item.AcceptableItemID))
@@ -31,7 +34,9 @@ namespace FIT5120_OnboardingProject.Controllers
                 }
             }
 
+            //send data in acceptable table to the dropdown list
             ViewBag.acceptable_items = new SelectList(db.acceptablesSet, "AcceptableItemID", "AcceptableItemID");
+            //show result text to user
             ViewBag.resultString = "You should put ["+ itemName + "] into [" + binType + "] bin.";
             return View();
         }
