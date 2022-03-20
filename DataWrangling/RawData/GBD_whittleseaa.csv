@@ -1,0 +1,52 @@
+postcode,binInfo_bin_type,collection_time
+3060,landfill,Every Tuesday
+3061,landfill,Every Monday
+3064,landfill,Every Monday
+3073,landfill,Every Tuesday
+3074,landfill,Every Monday
+3075,landfill,Every Monday
+3076,landfill,Every Monday
+3082,landfill,Every Friday
+3083,landfill,Every Wednesday
+3088,landfill,Every Wednesday
+3090,landfill,Every Friday
+3091,landfill,Every Friday
+3099,landfill,Every Wednesday
+3658,landfill,Every Wednesday
+3750,landfill,Every Monday
+3752,landfill,Every Friday
+3754,landfill,Every Friday
+3756,landfill,Every Tuesday
+3757,landfill,Every Tuesday
+3061,recyclable,Every Second Monday
+3064,recyclable,Every Second Monday
+3074,recyclable,Every Second Monday
+3075,recyclable,Every Second Monday
+3082,recyclable,Every Second Friday
+3083,recyclable,Every Second Wednesday
+3088,recyclable,Every Second Wednesday
+3090,recyclable,Every Second Friday
+3091,recyclable,Every Second Friday
+3099,recyclable,Every Second Wednesday
+3658,recyclable,Every Second Wednesday
+3750,recyclable,Every Second Monday
+3752,recyclable,Every Second Friday
+3754,recyclable,Every Second Friday
+3756,recyclable,Every Second Tuesday
+3757,recyclable,Every Second Tuesday
+3061,organics,Every Second Monday
+3064,organics,Every Second Monday
+3074,organics,Every Second Monday
+3075,organics,Every Second Monday
+3082,organics,Every Second Friday
+3083,organics,Every Second Wednesday
+3088,organics,Every Second Wednesday
+3090,organics,Every Second Friday
+3091,organics,Every Second Friday
+3099,organics,Every Second Wednesday
+3658,organics,Every Second Wednesday
+3750,organics,Every Second Monday
+3752,organics,Every Second Friday
+3754,organics,Every Second Friday
+3756,organics,Every Second Tuesday
+3757,organics,Every Second Tuesday

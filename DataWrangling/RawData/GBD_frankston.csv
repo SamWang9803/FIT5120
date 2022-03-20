@@ -1,0 +1,31 @@
+postcode,binInfo_bin_type,collection_time
+3175,landfill,Every Monday
+3197,landfill,Every Monday
+3198,landfill,Every Friday
+3199,landfill,Every Friday
+3200,landfill,Every Friday
+3201,landfill,Every Friday
+3910,landfill,Every Friday
+3911,landfill,Every Wednesday
+3975,landfill,Every Monday
+3977,landfill,Every Friday
+3175,recyclable,Every Second Monday
+3197,recyclable,Every Second Monday
+3198,recyclable,Every Second Friday
+3199,recyclable,Every Second Friday
+3200,recyclable,Every Second Friday
+3201,recyclable,Every Second Friday
+3910,recyclable,Every Second Friday
+3911,recyclable,Every Second Wednesday
+3975,recyclable,Every Second Monday
+3977,recyclable,Every Second Friday
+3175,organics,Every Second Monday
+3197,organics,Every Second Monday
+3198,organics,Every Second Friday
+3199,organics,Every Second Friday
+3200,organics,Every Second Friday
+3201,organics,Every Second Friday
+3910,organics,Every Second Friday
+3911,organics,Every Second Wednesday
+3975,organics,Every Second Monday
+3977,organics,Every Second Friday

@@ -1,0 +1,9 @@
+postcode,binInfo_bin_type,collection_time
+3081,landfill,Every Monday
+3380,landfill,Every Thursday
+3381,landfill,Every Friday
+3387,landfill,Every Friday
+3081,recyclable,Every Second Monday
+3380,recyclable,Every Second Thursday
+3381,recyclable,Every Second Friday
+3387,recyclable,Every Second Friday

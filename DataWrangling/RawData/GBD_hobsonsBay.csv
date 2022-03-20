@@ -1,0 +1,19 @@
+postcode,binInfo_bin_type,collection_time
+3013,landfill,Every Wednesday
+3015,landfill,Every Thursday
+3016,landfill,Every Thursday
+3018,landfill,Every Friday
+3028,landfill,Every Monday
+3030,landfill,Every Monday
+3013,recyclable,Every Second Wednesday
+3015,recyclable,Every Second Thursday
+3016,recyclable,Every Second Thursday
+3018,recyclable,Every Second Friday
+3028,recyclable,Every Second Monday
+3030,recyclable,Every Second Monday
+3013,organics,Every Second Wednesday
+3015,organics,Every Second Thursday
+3016,organics,Every Second Thursday
+3018,organics,Every Second Friday
+3028,organics,Every Second Monday
+3030,organics,Every Second Monday

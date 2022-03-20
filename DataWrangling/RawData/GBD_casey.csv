@@ -1,0 +1,25 @@
+postcode,binInfo_bin_type,collection_time
+3364,landfill,Every Second Wednesday
+3371,landfill,Every Second Thursday
+3462,landfill,Every Second Wednesday
+3463,landfill,Every Second Wednesday
+3464,landfill,Every Second Wednesday
+3465,landfill,Every Second Tuesday
+3465,landfill,Every Second Wednesday
+3472,landfill,Every Second Monday
+3364,recyclable,Every Second Wednesday
+3371,recyclable,Every Second Thursday
+3462,recyclable,Every Second Wednesday
+3463,recyclable,Every Second Wednesday
+3464,recyclable,Every Second Wednesday
+3465,recyclable,Every Second Tuesday
+3465,recyclable,Every Second Wednesday
+3472,recyclable,Every Second Monday
+3364,organics,First and Third Friday of Month
+3371,organics,First and Third Friday of Month
+3462,organics,First and Third Friday of Month
+3463,organics,First and Third Friday of Month
+3464,organics,First and Third Friday of Month
+3465,organics,First and Third Friday of Month
+3465,organics,First and Third Friday of Month
+3472,organics,First and Third Friday of Month

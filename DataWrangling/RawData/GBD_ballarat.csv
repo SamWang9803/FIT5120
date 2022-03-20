@@ -1,0 +1,13 @@
+postcode,binInfo_bin_type,collection_time
+3350,landfill,Every Friday
+3352,landfill,Every Monday
+3354,landfill,Every Thursday
+3355,landfill,Every Monday
+3356,landfill,Every Friday
+3357,landfill,Every Wednesday
+3350,recyclable,Every Second Friday
+3352,recyclable,Every Second Monday
+3354,recyclable,Every Second Thursday
+3355,recyclable,Every Second Monday
+3356,recyclable,Every Second Friday
+3357,recyclable,Every Second Wednesday

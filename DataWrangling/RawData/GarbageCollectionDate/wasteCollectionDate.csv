@@ -1,0 +1,486 @@
+postcode,binInfo_bin_type,collection_time
+3000,landfill,Every Thursday
+3000,recyclable,Every Thursday
+3001,landfill,Every Thursday
+3001,recyclable,Every Thursday
+3002,landfill,Every Friday
+3002,recyclable,Every Friday
+3003,landfill,Every Thursday
+3003,recyclable,Every Thursday
+3004,landfill,Every Thursday
+3004,recyclable,Every Thursday
+3006,landfill,Every Tuesday or Monday
+3006,recyclable,Every Tuesday or Monday
+3008,landfill,Every Thursday
+3008,recyclable,Every Thursday
+3013,landfill,Every Wednesday
+3013,organics,Every Second Wednesday
+3013,recyclable,Every Second Wednesday
+3015,landfill,Every Thursday
+3015,organics,Every Second Thursday
+3015,recyclable,Every Second Thursday
+3016,landfill,Every Thursday
+3016,organics,Every Second Thursday
+3016,recyclable,Every Second Thursday
+3018,landfill,Every Friday
+3018,organics,Every Second Friday
+3018,recyclable,Every Second Friday
+3028,landfill,Every Monday
+3028,organics,Every Second Monday
+3028,recyclable,Every Second Monday
+3030,landfill,Every Monday
+3030,organics,Every Second Monday
+3030,recyclable,Every Second Monday
+3031,landfill,Every Monday
+3031,recyclable,Every Monday
+3032,landfill,Every Monday
+3032,recyclable,Every Monday
+3051,landfill,Every Monday
+3051,recyclable,Every Monday
+3052,landfill,Every Monday
+3052,recyclable,Every Monday
+3053,landfill,Every Friday
+3053,recyclable,Every Friday
+3054,landfill,Every Friday
+3054,recyclable,Every Friday
+3060,landfill,Every Tuesday
+3061,landfill,Every Monday
+3061,organics,Every Second Monday
+3061,recyclable,Every Second Monday
+3064,landfill,Every Monday or Thursday
+3064,organics,Every Second Monday
+3064,recyclable,Every Second Monday or Thursday
+3065,landfill,Every Friday
+3065,recyclable,Every Friday
+3073,landfill,Every Tuesday
+3074,landfill,Every Monday
+3074,organics,Every Second Monday
+3074,recyclable,Every Second Monday
+3075,landfill,Every Monday
+3075,organics,Every Second Monday
+3075,recyclable,Every Second Monday
+3076,landfill,Every Monday
+3081,landfill,Every Monday
+3081,recyclable,Every Second Monday
+3082,landfill,Every Friday
+3082,organics,Every Second Friday
+3082,recyclable,Every Second Friday
+3083,landfill,Every Wednesday
+3083,organics,Every Second Wednesday
+3083,recyclable,Every Second Wednesday
+3088,landfill,Every Wednesday
+3088,organics,Every Second Wednesday
+3088,recyclable,Every Second Wednesday
+3090,landfill,Every Friday
+3090,organics,Every Second Friday
+3090,recyclable,Every Second Friday
+3091,landfill,Every Friday
+3091,organics,Every Second Friday
+3091,recyclable,Every Second Friday
+3099,landfill,Every Wednesday
+3099,organics,Every Second Wednesday
+3099,recyclable,Every Second Wednesday
+3116,landfill,Every Thursday
+3136,landfill,Every Thursday
+3137,landfill,Every Monday
+3138,landfill,Every Wednesday
+3139,landfill,Every Friday
+3143,landfill,Every Tuesday
+3143,recyclable,Every Tuesday
+3153,landfill,Every Monday
+3154,landfill,Every Monday
+3156,landfill,Every Monday
+3158,landfill,Every Monday
+3159,landfill,Every Friday
+3160,landfill,Every Friday
+3161,landfill,Every Tuesday
+3161,recyclable,Every Tuesday
+3169,landfill,Every Thursday
+3171,landfill,Every Second Thursday
+3172,landfill,Every Thursday
+3173,landfill,Every Friday
+3174,landfill,Every Friday
+3175,landfill,Every Monday or Tuesday
+3175,organics,Every Second Monday
+3175,recyclable,Every Second Monday
+3181,landfill,Every Thursday
+3181,recyclable,Every Thursday
+3182,landfill,Every Thursday
+3182,recyclable,Every Thursday
+3183,landfill,Every Tuesday
+3183,recyclable,Every Tuesday
+3184,landfill,Every Wednesday
+3184,recyclable,Every Wednesday
+3185,landfill,Every Wednesday
+3185,recyclable,Every Wednesday
+3186,landfill,Every Wednesday
+3186,recyclable,Every Wednesday
+3195,landfill,Every Monday
+3197,landfill,Every Monday
+3197,organics,Every Second Monday
+3197,recyclable,Every Second Monday
+3198,landfill,Every Friday
+3198,organics,Every Second Friday
+3198,recyclable,Every Second Friday
+3199,landfill,Every Friday
+3199,organics,Every Second Friday
+3199,recyclable,Every Second Friday
+3200,landfill,Every Friday
+3200,organics,Every Second Friday
+3200,recyclable,Every Second Friday
+3201,landfill,Every Friday
+3201,organics,Every Second Friday
+3201,recyclable,Every Second Friday
+3205,landfill,Every Tuesday or Friday
+3205,recyclable,Every Tuesday or Friday
+3207,landfill,Every Tuesday or Friday
+3207,recyclable,Every Tuesday or Friday
+3213,landfill,Every Second Thursday
+3213,organics,Every Second Thursday
+3213,recyclable,Every Second Thursday
+3214,landfill,Every Second Friday
+3214,organics,Every Second Friday
+3214,recyclable,Every Second Friday
+3215,landfill,Every Second Friday
+3215,organics,Every Second Friday
+3215,recyclable,Every Second Friday
+3216,landfill,Every Second Tuesday or Wednesday
+3216,organics,Every Second Tuesday or Wednesday
+3216,recyclable,Every Second Tuesday or Wednesday
+3217,landfill,Every Second Tuesday or Wednesday
+3217,organics,Every Second Tuesday or Wednesday
+3217,recyclable,Every Second Tuesday or Wednesday
+3218,landfill,Every Second Thursday or Wednesday
+3218,organics,Every Second Thursday or Wednesday
+3218,recyclable,Every Second Thursday or Wednesday
+3221,landfill,Every Second Thursday or Wednesday
+3221,organics,Every Second Thursday or Wednesday
+3221,recyclable,Every Second Thursday or Wednesday
+3222,landfill,Every Second Monday or Tuesday
+3222,organics,Every Second Monday or Tuesday
+3222,recyclable,Every Second Monday or Tuesday
+3225,landfill,Every Second Monday
+3225,organics,Every Second Monday
+3225,recyclable,Every Second Monday
+3227,landfill,Every Second Tuesday
+3227,organics,Every Second Tuesday
+3227,recyclable,Every Second Tuesday
+3231,landfill,Every Friday
+3231,organics,Every Second Friday
+3231,recyclable,Every Second Friday
+3232,landfill,Every Friday
+3232,organics,Every Second Friday
+3232,recyclable,Every Second Friday
+3240,landfill,Every Second Wednesday
+3240,organics,Every Second Wednesday
+3240,recyclable,Every Second Wednesday
+3350,landfill,Every Friday
+3350,recyclable,Every Second Friday
+3352,landfill,Every Monday
+3352,recyclable,Every Second Monday
+3354,landfill,Every Thursday
+3354,recyclable,Every Second Thursday
+3355,landfill,Every Monday
+3355,recyclable,Every Second Monday
+3356,landfill,Every Friday
+3356,recyclable,Every Second Friday
+3357,landfill,Every Wednesday
+3357,recyclable,Every Second Wednesday
+3364,landfill,Every Second Wednesday
+3364,organics,First and Third Friday of Month
+3364,recyclable,Every Second Wednesday
+3371,landfill,Every Second Thursday
+3371,organics,First and Third Friday of Month
+3371,recyclable,Every Second Thursday
+3380,landfill,Every Thursday
+3380,recyclable,Every Second Thursday
+3381,landfill,Every Friday
+3381,recyclable,Every Second Friday
+3387,landfill,Every Friday
+3387,recyclable,Every Second Friday
+3430,landfill,Every Thursday
+3430,recyclable,Every Second Thursday
+3444,landfill,Every Thursday or Wednesday
+3444,recyclable,Every Second Thursday or Wednesday
+3448,landfill,Every Wednesday
+3448,recyclable,Every Second Wednesday
+3453,landfill,Every Friday or Wednesday
+3453,recyclable,Every Second Friday or Wednesday
+3462,landfill,Every Second Wednesday
+3462,organics,First and Third Friday of Month
+3462,recyclable,Every Second Wednesday
+3463,landfill,Every Second Wednesday or Friday
+3463,organics,First and Third Friday of Month
+3463,recyclable,Every Second Wednesday or Friday
+3464,landfill,Every Second Wednesday
+3464,organics,First and Third Friday of Month
+3464,recyclable,Every Second Wednesday
+3465,landfill,Every Second Tuesday or Wednesday
+3465,organics,First and Third Friday of Month
+3465,recyclable,Every Second Tuesday or Wednesday
+3472,landfill,Every Second Monday
+3472,organics,First and Third Friday of Month
+3472,recyclable,Every Second Monday
+3515,landfill,Every Friday or Monday
+3515,recyclable,Every Second Wednesday or Friday or Monday
+3516,landfill,Every Monday
+3516,recyclable,Every Thursday or Monday
+3517,recyclable,Every Monday
+3518,recyclable,Every Monday
+3520,recyclable,Every Monday
+3521,landfill,Every Monday
+3521,recyclable,Every Second Monday
+3522,landfill,Every Monday or Tuesday
+3522,recyclable,Every Second Monday or Tuesday
+3523,landfill,Every Second Thursday or Thursday or Tuesday or Wednesday
+3523,organics,Every Thursday
+3523,recyclable,Every Second Thursday or Tuesday or Wednesday
+3525,recyclable,Every Friday
+3527,recyclable,Every Friday
+3537,recyclable,Every Friday
+3550,landfill,Every Friday or Monday or Thursday or Tuesday or Wednesday
+3550,organics,Every Second Friday or Monday or Thursday or Tuesday or Wednesday
+3550,recyclable,Every Second Friday or Monday or Thursday or Tuesday or Wednesday
+3551,landfill,Every Friday or Monday or Thursday or Tuesday or Wednesday
+3551,organics,Every Second Friday or Monday or Thursday or Tuesday or Wednesday
+3551,recyclable,Every Wednesday or Friday or Monday or Thursday or Tuesday or Wednesday
+3552,landfill,Every Thursday
+3552,organics,Every Second Thursday
+3552,recyclable,Every Second Thursday
+3555,landfill,Every Friday or Monday or Tuesday or Wednesday
+3555,organics,Every Second Friday or Monday or Tuesday or Wednesday
+3555,recyclable,Every Second Friday or Monday or Tuesday or Wednesday
+3556,landfill,Every Monday or Thursday or Tuesday or Wednesday
+3556,organics,Every Second Thursday or Tuesday or Wednesday
+3556,recyclable,Every Second Monday or Thursday or Tuesday or Wednesday
+3557,landfill,Every Tuesday or Wednesday
+3557,recyclable,Every Second Tuesday or Wednesday
+3558,landfill,Every Wednesday
+3558,organics,Every Second Wednesday
+3558,recyclable,Every Second Wednesday
+3559,landfill,Every Second Thursday or Wednesday
+3559,organics,Every Thursday
+3559,recyclable,Every Second Thursday or Wednesday
+3561,landfill,Every Wednesday
+3561,recyclable,Every Second Wednesday
+3570,landfill,Every Monday or Wednesday
+3570,recyclable,Every Thursday or Monday or Wednesday
+3571,landfill,Every Wednesday
+3571,recyclable,Every Second Wednesday
+3572,landfill,Every Wednesday
+3572,recyclable,Every Second Wednesday
+3576,recyclable,Every Second Friday
+3607,landfill,Every Second Thursday
+3607,organics,Every Thursday
+3607,recyclable,Every Second Thursday
+3608,landfill,Every Second Thursday
+3608,organics,Every Thursday
+3608,recyclable,Every Second Thursday
+3610,landfill,Every Second Thursday
+3610,organics,Every Thursday
+3610,recyclable,Every Second Thursday
+3612,landfill,Every Second Thursday
+3612,organics,Every Thursday
+3612,recyclable,Every Second Thursday
+3629,landfill,Every Friday
+3629,organics,Every Second Friday
+3629,recyclable,Every Second Friday
+3630,landfill,Every Second Tuesday or Tuesday
+3630,organics,Every Tuesday or Tuesday
+3630,recyclable,Every Second Tuesday
+3631,landfill,Every Second Thursday or Friday
+3631,organics,Every Thursday or Friday
+3631,recyclable,Every Second Thursday or Friday
+3634,landfill,Every Friday
+3634,organics,Every Second Friday
+3634,recyclable,Every Second Friday
+3635,landfill,Every Friday
+3635,organics,Every Second Friday
+3635,recyclable,Every Second Friday
+3636,landfill,Every Friday
+3636,organics,Every Second Friday
+3636,recyclable,Every Second Friday
+3646,landfill,Every Second Tuesday or Friday
+3646,organics,Every Tuesday or Friday
+3646,recyclable,Every Second Tuesday or Friday
+3658,landfill,Every Wednesday or Monday or Thursday or Tuesday
+3658,organics,Every Second Wednesday
+3658,recyclable,Every Second Wednesday or Monday or Thursday or Tuesday
+3659,landfill,Every Monday
+3659,recyclable,Every Second Monday
+3660,landfill,Every Monday or Thursday
+3660,organics,Every Thursday
+3660,recyclable,Every Second Monday or Thursday
+3662,landfill,Every Monday or Thursday or Tuesday
+3662,organics,Every Thursday
+3662,recyclable,Every Second Monday or Thursday or Tuesday
+3663,landfill,Every Second Thursday
+3663,organics,Every Thursday
+3663,recyclable,Every Second Thursday
+3664,landfill,Every Second Thursday
+3664,organics,Every Thursday
+3664,recyclable,Every Second Thursday
+3665,landfill,Every Second Thursday
+3665,organics,Every Thursday
+3665,recyclable,Every Second Thursday
+3666,landfill,Every Second Monday or Tuesday
+3666,organics,Every Monday or Tuesday
+3666,recyclable,Every Second Monday or Tuesday
+3669,landfill,Every Second Tuesday or Tuesday
+3669,organics,Every Tuesday or Tuesday
+3669,recyclable,Every Second Tuesday
+3670,landfill,Every Second Tuesday
+3670,organics,Every Tuesday
+3670,recyclable,Every Second Tuesday
+3673,landfill,Every Second Tuesday or Tuesday or Monday
+3673,organics,Every Tuesday or Tuesday
+3673,recyclable,Every Second Tuesday or Monday
+3675,landfill,Every Second Monday
+3675,recyclable,Every Second Monday
+3676,landfill,Every Second Friday
+3676,recyclable,Every Second Friday
+3677,landfill,Every Second Friday
+3677,recyclable,Every Second Friday
+3678,landfill,Every Second Friday
+3678,recyclable,Every Second Friday
+3682,landfill,Every Second Monday
+3682,recyclable,Every Second Monday
+3683,landfill,Every Second Wednesday
+3683,recyclable,Every Second Wednesday
+3685,landfill,Every Second Monday
+3685,recyclable,Every Second Monday
+3688,landfill,Every Second Friday
+3688,organics,Every Friday
+3688,recyclable,Every Second Friday
+3689,landfill,Every Second Friday
+3689,organics,Every Friday
+3689,recyclable,Every Second Friday
+3690,landfill,Every Second Friday
+3690,organics,Every Friday
+3690,recyclable,Every Second Friday
+3691,landfill,Every Second Monday
+3691,organics,Every Monday
+3691,recyclable,Every Second Monday
+3695,landfill,Every Second Wednesday
+3695,organics,Every Wednesday
+3695,recyclable,Every Second Wednesday
+3713,landfill,Every Wednesday
+3715,landfill,Every Second Tuesday
+3715,organics,Every Tuesday
+3715,recyclable,Every Second Tuesday
+3719,landfill,Every Second Thursday
+3719,organics,Every Thursday
+3719,recyclable,Every Second Thursday
+3720,landfill,Every Second Tuesday
+3720,organics,Every Tuesday
+3720,recyclable,Every Second Tuesday
+3723,landfill,Every Wednesday or Tuesday
+3723,recyclable,Every Second Tuesday
+3725,landfill,Every Second Tuesday or Tuesday
+3725,organics,Every Tuesday or Tuesday
+3725,recyclable,Every Second Tuesday
+3727,landfill,Every Tuesday
+3727,organics,Every Second Tuesday
+3727,recyclable,Every Second Tuesday
+3728,landfill,Every Second Monday
+3728,recyclable,Every Second Monday
+3730,landfill,Every Second Monday
+3730,recyclable,Every Second Monday
+3732,landfill,Every Second Tuesday
+3732,recyclable,Every Second Tuesday
+3735,landfill,Every Second Tuesday
+3735,recyclable,Every Second Tuesday
+3737,landfill,Every Second Tuesday
+3737,recyclable,Every Second Tuesday
+3746,landfill,Every Second Wednesday
+3746,recyclable,Every Second Wednesday
+3747,landfill,Every Second Tuesday
+3747,recyclable,Every Second Tuesday
+3750,landfill,Every Monday
+3750,organics,Every Second Monday
+3750,recyclable,Every Second Monday
+3752,landfill,Every Friday
+3752,organics,Every Second Friday
+3752,recyclable,Every Second Friday
+3753,landfill,Every Thursday
+3753,recyclable,Every Second Thursday
+3754,landfill,Every Friday
+3754,organics,Every Second Friday
+3754,recyclable,Every Second Friday
+3756,landfill,Every Tuesday or Friday or Thursday
+3756,organics,Every Second Tuesday
+3756,recyclable,Every Second Tuesday or Friday or Thursday
+3757,landfill,Every Tuesday
+3757,organics,Every Second Tuesday
+3757,recyclable,Every Second Tuesday
+3758,landfill,Every Friday or Thursday or Tuesday
+3758,recyclable,Every Second Friday or Thursday or Tuesday
+3762,landfill,Every Thursday
+3762,recyclable,Every Second Thursday
+3763,landfill,Every Monday
+3764,landfill,Every Monday or Thursday or Wednesday
+3764,recyclable,Every Second Monday or Thursday or Wednesday
+3765,landfill,Every Monday
+3767,landfill,Every Monday
+3770,landfill,Every Friday
+3775,landfill,Every Monday
+3777,landfill,Every Friday
+3779,landfill,Every Wednesday
+3781,landfill,Every Friday
+3782,landfill,Every Friday
+3783,landfill,Every Friday
+3785,landfill,Every Monday
+3786,landfill,Every Friday
+3787,landfill,Every Monday
+3788,landfill,Every Monday
+3789,landfill,Every Friday
+3791,landfill,Every Friday
+3792,landfill,Every Friday
+3793,landfill,Every Monday
+3795,landfill,Every Thursday
+3797,landfill,Every Thursday
+3799,landfill,Every Friday
+3833,landfill,Every Wednesday
+3895,landfill,Every Tuesday
+3895,recyclable,Every Second Tuesday
+3910,landfill,Every Friday
+3910,organics,Every Second Friday
+3910,recyclable,Every Second Friday
+3911,landfill,Every Wednesday
+3911,organics,Every Second Wednesday
+3911,recyclable,Every Second Wednesday
+3975,landfill,Every Monday
+3975,organics,Every Second Monday
+3975,recyclable,Every Second Monday
+3977,landfill,Every Friday
+3977,organics,Every Second Friday
+3977,recyclable,Every Second Friday
+8001,landfill,Every Thursday
+8001,recyclable,Every Thursday
+8002,landfill,Every Friday
+8002,recyclable,Every Friday
+8012,landfill,Every Thursday
+8012,recyclable,Every Thursday
+8045,landfill,Every Thursday
+8045,recyclable,Every Thursday
+8051,landfill,Every Thursday
+8051,recyclable,Every Thursday
+8066,landfill,Every Thursday
+8066,recyclable,Every Thursday
+8069,landfill,Every Thursday
+8069,recyclable,Every Thursday
+8070,landfill,Every Thursday
+8070,recyclable,Every Thursday
+8071,landfill,Every Thursday
+8071,recyclable,Every Thursday
+8102,landfill,Every Thursday
+8102,recyclable,Every Thursday
+8107,landfill,Every Thursday
+8107,recyclable,Every Thursday
+8111,landfill,Every Thursday
+8111,recyclable,Every Thursday
+8120,landfill,Every Thursday
+8120,recyclable,Every Thursday
+8205,landfill,Every Thursday
+8205,recyclable,Every Thursday
+8785,landfill,Every Tuesday
