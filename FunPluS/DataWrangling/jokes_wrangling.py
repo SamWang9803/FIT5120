@@ -115,17 +115,18 @@ df = df.loc[~df.joke_id.isin(inappropriate_id1)].reset_index(drop = True)
 
 # --------------------Format joke_text strings-----------------------
 
-df['joke_id'] = df.index
-# renew joke_id using the index of the dataframe
-df['joke_text'] = df.joke_text.str.replace('"', "'").strip()
+df['joke_text'] = df.joke_text.str.strip().str.replace("'", "''")
 # replace '"' with "'" for clean text file
 # this step must be taken in order to put all the data into the database
 
-sentenceStops = '\. |\! |\? '
-for i in sentenceStops.split('|'):
-    df['joke_text'] = df.joke_text.str.replace(i, i.lstrip('\\')+'\n')
+#----
+# for Iteration 2
+#----
+# sentenceStops = '\. |\! |\? '
+# for i in sentenceStops.split('|'):
+#     df['joke_text'] = df.joke_text.str.replace(i, i.lstrip('\\')+'\n')
 # create new lines based on punctuations when a joke has multiple sentences
 
 # -------------------- Export dataframe -----------------------
-df.loc[:, ['joke_id', 'joke_text']].to_csv('joke.csv', index = False)
-# only keep the useful columns and remove the index column 
+df.loc[:, ['joke_text']].to_csv('joke.csv', index = False)
+# only keep the useful columns and remove the index column
