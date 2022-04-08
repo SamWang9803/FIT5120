@@ -1,0 +1,19 @@
+﻿.Home_content {
+    height: 500px;
+    width: 100%;
+}
+.Introduction {
+    position:relative;
+    background-color: transparent;
+    left: 100px;
+    height: 200px;
+    width: 400px;
+    float:left;
+}
+.Fun_joke {
+    position: relative;
+    left: 200px;
+    width: 300px;
+    height: 500px;
+    float: left;
+}

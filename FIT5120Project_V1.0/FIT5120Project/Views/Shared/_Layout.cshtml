@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" type="text/css" href="~/Content/navi_bar.css" />
+</head>
+<body>
+    <div class="container body-content">
+        <div class="navi_bar">
+            @Html.Partial("_HeaderPartial")
+        </div>
+        <br />
+        <div id="main">
+            @RenderBody()
+        </div>
+        <br />
+        <footer>
+            <p style="float:right">&copy; @DateTime.Now.Year - TP23-Fun+</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

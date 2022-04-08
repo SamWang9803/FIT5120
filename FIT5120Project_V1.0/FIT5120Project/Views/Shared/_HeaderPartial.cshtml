@@ -1,0 +1,67 @@
+﻿@using Microsoft.AspNet.Identity
+
+<div class="navi_header">
+    <div class="navi_bar">
+        <a href="@Url.Action("Index","Home")"><img class="logo" src="~/images/navi_logo.png"></a>
+        <div class="navi_bar_content">
+            <div class="navi_button">
+
+                <div class="navi_botton_About">
+                    <a href="@Url.Action("About","Home")"><img class="shell" src="~/images/navi_shell.png"></a>
+                    <a href="@Url.Action("About","Home")"><h4 class="button_cap">About   </h4></a>
+                </div>
+
+                @if (Request.IsAuthenticated)
+                {
+                    <div class="navi_botton_Paint">
+                        <a href="@Url.Action("Contact","Home")"><img class="shell" src="~/images/navi_shell.png"></a>
+                        <a href="@Url.Action("Contact","Home")"><h4 class="button_cap">Paint   </h4></a>
+                    </div>
+
+                    <div class="navi_botton_Joke">
+                        <a href="@Url.Action("Index","Jokes")"><img class="shell" src="~/images/navi_shell.png"></a>
+                        <a href="@Url.Action("Index","Jokes")"><h4 class="button_cap">Jokes   </h4></a>
+                    </div>
+
+                    <div class="navi_botton_Message">
+                        <a href="@Url.Action("Index","Messages")"><img class="shell" src="~/images/navi_shell.png"></a>
+                        <a href="@Url.Action("Index","Messages")"><h4 class="button_cap">Messages   </h4></a>
+                    </div>
+
+                    <div class="navi_botton_Voc">
+                        <a href="@Url.Action("Index","Vocabularies")"><img class="shell" src="~/images/navi_shell.png"></a>
+                        <a href="@Url.Action("Index","Vocabularies")"><h4 class="button_cap">My Vocabulary   </h4></a>
+                    </div>
+                }
+                else
+                {
+                }
+
+                <div class="user_part">
+
+                    <div class="user_manage">
+                        @if (Request.IsAuthenticated)
+                        {
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                    </li>
+                                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                                </ul> }
+                        }
+                        else
+                        {
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                            </ul>}
+
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

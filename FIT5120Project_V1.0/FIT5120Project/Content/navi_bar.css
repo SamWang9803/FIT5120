@@ -1,0 +1,69 @@
+﻿.navi_bar{
+    width: 100%;
+    height: 260px;
+}
+.logo {
+    width: 255px;
+    height: 252px;
+    left: 40px;
+    right: 208px;
+    top: 33px;
+    float: left;
+}
+.navi_botton_About {
+    position: relative;
+    float: left;
+    height: 60px;
+    width: auto;
+    left: auto;
+    top: 190px;
+    margin:10px;
+}
+.navi_botton_Paint {
+    position: relative;
+    float: left;
+    height: 60px;
+    width: auto;
+    left: auto;
+    top: 190px;
+    margin: 10px;
+}
+.navi_botton_Joke {
+    position: relative;
+    float: left;
+    height: 60px;
+    width: auto;
+    left: auto;
+    top: 190px;
+    margin: 10px;
+}
+.navi_botton_Message {
+    position: relative;
+    float: left;
+    height: 60px;
+    width: auto;
+    left: auto;
+    top: 190px;
+    margin: 10px;
+}
+.navi_botton_Voc {
+    position: relative;
+    float: left;
+    height: 70px;
+    width: auto;
+    left: auto;
+    top: 190px;
+    margin: 10px;
+}
+.shell {
+    position: relative;
+    width: 58px;
+    height: 58px;
+}
+.button_cap {
+    position: relative;
+    left: 5px;
+    width:auto;
+    float: right;
+    color: black;
+}
