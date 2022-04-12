@@ -1,0 +1,582 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli">
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="betaEl.css">
+    <style>
+      html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: Muli, sans-serif;
+  color: #403D3D;
+}
+
+div.sticky {
+  color:grey;
+  font-style: lighter;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  text-align:center;
+  background:rgba(255, 255, 255, 0.8);
+}
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('../../images/E7E014F1-DB11-4D4A-8F50-360F955AC23C_1_101_o.jpeg')
+        }
+
+        #firstJoke {
+            background-image: url('../../images/ab428178-aefb-4467-adfe-15082b037ebc.png')
+        }
+
+        #randomWord {
+            background-image: url('../../images/login_back.jpg')
+        }
+
+        #msg {
+            background-image: url('../../images/background_2.png')
+        }
+
+div[name='jokeBox']{
+  background: rgba(244, 238, 182, 0.8);
+border-radius: 32px;
+width:800px;
+height:500px;
+margin:auto;
+}
+
+.text-container{
+  background: #FFFFFF;
+  border-radius: 32px;
+  width: 650px;
+  height: 200px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:auto;
+  padding-right:auto;
+}
+
+#colorWhale{
+  width:300px;
+}
+
+#downArrow{
+  text-align:center; 
+  color:#E5E5E5;  
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  animation-name:goDown;
+  animation-duration: 2s;
+}
+
+@keyframes goDown{
+  from{color:#E5E5E5;}
+  to{color:#red; }
+}
+
+h2{
+  text-align: center;
+  padding-top:5%;
+}
+
+#instruction{
+  padding-top:20%;
+  text-align:center;
+  margin-left: 20;
+  margin-right: 20;
+  font-weight:bold;
+  line-height: 1.5;
+  
+}
+
+button{
+  border:0;
+  color:white;
+    display:inline-block;
+  font-size:20px;
+  font-weight:bold;
+  width: 300px;
+  background: rgba(20, 245, 218, 0.3);
+border-radius: 10px;
+margin:auto;
+height:60px;
+}
+
+.buttons{
+  margin-top:3%;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.buttons> :first-child{
+  margin-right: 3%;
+}
+
+.jokeText {
+  font-size:20px;
+  text-align:center;
+padding:50px 35px 50px 35px;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.tooltip::before {
+   background-color: white;
+   border: 0.5px lighter grey;
+   font-family: Muli, sans-serif;
+   border-radius: 10px;
+   content: attr(data-title);
+   display: none;
+   font-weight:lighter;
+   width: 350px;
+   height:50px;
+   font-size: 15px;
+   color:grey;
+   padding: 5px;
+   position: absolute;
+   bottom: 40px;
+   left: 27%;
+   z-index: 1;
+   text-align:justify;
+}
+.tooltip:hover::before {
+   display: block;
+}
+
+.tooltip_low::before {
+   background-color: white;
+   border: 0.5px lighter grey;
+   font-family: Muli, sans-serif;
+   border-radius: 10px;
+   content: attr(data-title);
+   display: none;
+   font-weight:lighter;
+   width: 250px;
+   height:75px;
+   font-size: 15px;
+   color:grey;
+   padding: 5px;
+   position: absolute;
+   top: 20px;
+   left: 10px;
+   z-index: 1;
+   text-align:justify;
+}
+.tooltip_low:hover::before {
+   display: block;
+}
+
+ul{
+  font-family: Muli, sans-serif;
+  font-size: 15px;
+  color: #403D3D;
+   text-align: center;
+  display: inline-block;
+  }
+
+li{
+  display:inline-block; 
+  padding:5px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.scroll-container {
+  width: 350px;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+#downArrow:hover{
+  color: #00FFAC;
+}
+    </style>
+  </head>
+  <body>
+      <section id='top'>
+          <div class='reveal' name='jokeBox'
+               style='background-color:rgba(244, 244, 244, 0.4);'>
+              <h2 id='instruction' style='padding-top:9%;'>
+                  Hey there! I'm ColourWhale.
+                  <img src="../../images/99e43738-866d-4387-9141-6a9ef2a677f4.png" id='colorWhale' />
+              </h2>
+              <h2>
+                  I'm here to walk you through Fun+
+                  <i class="fa-regular fa-face-grin-beam"></i>
+              </h2>
+              <a href='#intro_2'><h3 id='downArrow'> Click me <i class="fa-solid fa-arrow-down-long"></i></h3></a>
+          </div>
+      </section>
+      <a href='#top' style='text-decoration: none'>
+          <div class="sticky">
+              Back to top <i class="fa-solid fa-circle-arrow-up"></i>
+          </div>
+      </a>
+      <section id='intro_2'>
+          <div class='reveal' name='jokeBox'
+               style='background-color:rgba(244, 244, 244, 0.4);'>
+              <h2 id='instruction'>
+                  With Fun+, we are going to earn tokens by writing <span style='color:purple;'>positive messages</span> to some friends.
+                  <i class="fa-regular fa-face-smile-wink"></i>
+                  <a href='#intro_2_5'><h3 id='downArrow'> Click me <i class="fa-solid fa-arrow-down-long"></i></h3></a>
+                  <br>
+                  <br>
+              </h2>
+          </div>
+      </section>
+      <section id='intro_2_5'>
+          <div class='reveal' name='jokeBox'
+               style='background-color:rgba(244, 244, 244, 0.4);'>
+              <h2 id='instruction'>
+                  To write the message, you should only use the words that you earned by reading...
+              </h2>
+              <a href='#intro_3'><h3 id='downArrow'> Click me <i class="fa-solid fa-arrow-down-long"></i></h3></a>
+          </div>
+      </section>
+      <section id='intro_3'>
+          <div class='reveal' name='jokeBox'
+               style='background-color:rgba(244, 244, 244, 0.4);'>
+              <h1 id='instruction' style='font-size:40px;'>
+                  Funny Jokes! <i class="fa-regular fa-face-laugh-wink"></i>
+              </h1>
+              <a href='#intro_4'><h3 id='downArrow'> Click me <i class="fa-solid fa-arrow-down-long"></i></h3></a>
+          </div>
+      </section>
+      <section id='intro_4'>
+          <div class='reveal' name='jokeBox'
+               style='background-color:rgba(244, 244, 244, 0.4);'>
+              <h2 id='instruction'>
+                  The more <span style='color:purple;'>positive messages</span> you write,<br>
+                  the more tokens you will get! <i class="fa-solid fa-coins"></i>
+              </h2>
+              <a href='#intro_5'><h3 id='downArrow'> Click me <i class="fa-solid fa-arrow-down-long"></i></h3></a>
+          </div>
+      </section>
+
+      <section id='intro_5'>
+          <div class='reveal' name='jokeBox'
+               style='background-color:rgba(244, 244, 244, 0.4);'>
+              <h1 id='instruction'>
+                  Then shall we start?
+                  <br>
+                  <br>
+                  <img src="../../images/99e43738-866d-4387-9141-6a9ef2a677f4.png" id='colorWhale' />
+              </h1>
+              <a href='#firstJoke'><h3 id='downArrow'> Let's go! </h3></a>
+          </div>
+      </section>
+
+      <section class='container' id='firstJoke'>
+          <div class='reveal' name='jokeBox'>
+              <h2 id='jokeId'></h2>
+              <div class='text-container'>
+                  <p class='jokeText' id='joke'></p>
+              </div>
+              <div class='buttons'>
+                  <a href=#randomWord>
+                      <button id='like' onClick='getNewWord()' class='tooltip'
+                              data-title="If you like the joke, click this button and earn a word!">
+                          I like this joke <i class="fa fa-face-laugh-squint"></i>!
+                      </button>
+                  </a>
+                  <button id='meh' onclick="nextJoke()" class='tooltip'
+                          data-title="If you don't like the joke, it's OK. Let's look at the next one!">
+                      Mehh, not that funny <i class="fa fa-face-meh"></i>
+                  </button>
+              </div>
+          </div>
+      </section>
+
+      <section class='container' id='firstJoke'>
+          <div class='reveal' name='jokeBox'>
+              <h2 id='jokeId'></h2>
+              <div class='text-container'>
+                  <p class='jokeText' id='joke'></p>
+              </div>
+              <div class='buttons'>
+                  <a href=#randomWord>
+                      <button id='like' onClick='getNewWord()' class='tooltip'
+                              data-title="If you like the joke, click this button and earn a word!">
+                          I like this joke <i class="fa fa-face-laugh-squint"></i>!
+                      </button>
+                  </a>
+                  <button id='meh' onclick="nextJoke()" class='tooltip'
+                          data-title="If you don't like the joke, it's OK. Let's look at the next one!">
+                      Mehh, not that funny <i class="fa fa-face-meh"></i>
+                  </button>
+              </div>
+          </div>
+      </section>
+
+      <section class='container' id='randomWord'>
+          <div class='reveal' name='jokeBox'>
+              <h2 id='randomWordObtained'>New word for your message!</h2>
+              <div class='text-container'>
+                  <p class='jokeText' id='gotWord'></p>
+              </div>
+              <div class='buttons'>
+                  <a href=#msg>
+                      <button id='writeMsg' class='tooltip' onclick='makeUL()'
+                              data-title="With the words you earn,
+        you can write a message to some friends and earn tokens.">
+                          Write a message now
+                      </button>
+                  </a>
+                  <a href=#firstJoke>
+                      <button id='moreJokes' class='tooltip'
+                              data-title="You can also look through more jokes, of course!">
+                          Read more funny jokes
+                      </button>
+                  </a>
+              </div>
+          </div>
+      </section>
+
+      <section class='container' id='msg'>
+          <div class='reveal' name='jokeBox' style='height:650px'>
+              <div>
+                  <h2>My Words</h2>
+                  <div class='text-container' style='height:40px;'
+                       id='myWordsList'>
+                      <ul></ul>
+                  </div>
+                  <h2 id='message' class='tooltip_low' style='margin-top:0'
+                      data-title="Now you earned some words, you can write a message to some friends">
+                      Write a message
+                  </h2>
+                  <p style='color:grey; text-align:center' class='tooltip_low'
+                     data-title="At Fun+, we have some special rules when writing a message">
+                      Remember, you can only use up to 5 words of your choice!
+                  </p>
+                  <div class='text-container'>
+
+                      <input style='width:650px; margin-left:auto; color: #403D3D;
+        margin-right:auto;border: 0px solid;
+        padding-left:auto;padding-right:auto;
+        height: 200px;border-radius: 32px;
+        font-size:20px;text-align:center'
+                             type='text' id='messageText' />
+                  </div>
+                  <div style='display:flex; padding-left:10%; padding-top:3%'>
+                      <div class="writerEmotion">
+                          <input type="radio" id="happy" name="emotion" value="happy"
+                                 class='tooltip_low'
+                                 data-title="Before you send a message, you must think of how YOU would feel when YOU received the message you wrote.">
+                          <label for="happy">
+                              I think my message can make the reader happy
+                              <i class="fa-regular fa-face-grin-beam"></i>
+                          </label>
+                          <br>
+                          <input type="radio" id="neutral" name="emotion" value="neutral">
+                          <label for="neutral">
+                              I think my message will offend the reader
+                              <i class="fa-regular fa-face-angry"></i>
+                          </label>
+                          <br>
+                          <input type="radio" id="off" name="emotion" value="offensive">
+                          <label for="off">
+                              I'm not sure how the reader feels with my message
+                              <i class="fa-regular fa-face-meh-blank"></i>
+                          </label>
+                          <br>
+                      </div>
+                      <div class='buttonRow'>
+                          <button id='checkMsg' style='margin-left:10;width:100px;height:50;'
+                                  onclick="filterWords() ">
+                              Check
+                          </button>
+                          <a href=#msgSent>
+                              <button id='sendMsg' style='width:100px;height:50;' onclick="filterWords()">
+                                  Send
+                              </button>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+      </section>
+
+      <section class='container' id='msgSent'>
+          <div class='reveal' name='jokeBox'>
+              <h2 id='jokeId'>Your Message is sent!</h2>
+              <div class='text-container' style='display: flex;justify-content: center;
+        text-align:center; align-items: center;'>
+                  <p id='jokeText' style='font-style:italic; letter-spacing:1.1px'
+                     class='tooltip_low'
+                     data-title="The message you wrote is now sent to some friends.
+        Once they read it, you'll be able to earn the tokens!">
+                      <span style='font-style:italic; font-size:18px'>
+                          Thank you for writing a positive message!
+                      </span><br><br>
+                      <span style='font-weight:bold' ;>
+                          If the reader <span style='color:green; font-weight:bold;'>likes it</span>,
+                          you will <span style='color:green' ;>get 5 tokens.</span><br>
+
+                          If the reader <span style='color:orange' ;>finds it neutral</span>,
+                          you will <span style='color:orange' ;>get 3 tokens.</span><br>
+
+                          If the reader <span style='color:red' ;>finds it offensive</span>,
+                          you will <span style='color:red' ;>lose 5 tokens.</span>
+                      </span>
+                  </p>
+              </div>
+              <a href='#finalPage'>
+                  <h3 id='downArrow'>
+                      Click me <i class="fa-solid fa-arrow-down-long"></i>
+                  </h3>
+              </a>
+              <div class='buttons'>
+                  <a href=#msg>
+                      <button id='writeMoreMsg'>
+                          Write another message
+                      </button>
+                  </a>
+                  <a href=#firstJoke>
+                      <button id='moreJokes'>
+                          Read more funny jokes
+                      </button>
+                  </a>
+              </div>
+          </div>
+      </section>
+
+      <section id='finalPage'>
+          <div class='reveal' name='jokeBox'
+               style='background-color:rgba(244, 244, 244, 0.4);'>
+              <h2 id='instruction' style='padding-top:9%;'>
+                  You've finished the tutorial champion! <i class="fa-solid fa-medal"></i>
+              </h2>
+              <h2>
+                  Now it's time to start your own journey at Fun+!
+                  <br>
+                  <br>
+                  <img src="../../images/99e43738-866d-4387-9141-6a9ef2a677f4.png" id='colorWhale' />
+              </h2>
+              <button onclick="location.href='http://funplusproject.azurewebsites.net/';"
+                      style='  position: absolute;bottom: 5;left: 30%;'>
+                  Back to Home
+              </button>
+          </div>
+      </section>
+      <script>
+          var jks =
+          {
+              0: "What did the bartender say to the jumper cables? <br><br>You better not try to start anything.",
+              1: "Don't you hate jokes about German sausage? <br><br>They're the wurst!",
+              2: "Two artists had an art contest... <br><br>It ended in a draw",
+              3: "Why did the chicken cross the playground? <br><br>To get to the other slide.",
+              4: "What gun do you use to hunt a moose? <br><br>A moosecut!",
+              5: "If life gives you melons, you might have dyslexia.",
+              6: "Broken pencils...<br><br>...are pointless."
+          };
+
+          const random = Math.floor(Math.random() * 6) + 1;
+          var joke = jks[random - 1];
+          document.getElementById('joke').innerHTML = joke;
+          document.getElementById('jokeId').innerHTML = 'Joke #' + random.toString();
+
+          function nextJoke() {
+              var random = Math.floor(Math.random() * 6) + 1;
+              document.getElementById('jokeId').textContent = 'Joke #' + random.toString();
+              var joke = jks[random - 1];
+              document.getElementById('joke').innerHTML = jks[random - 1];
+
+              return joke
+          };
+
+
+          function reveal() {
+              var reveals = document.querySelectorAll(".reveal");
+
+              for (var i = 0; i < reveals.length; i++) {
+                  var windowHeight = window.innerHeight;
+                  var elementTop = reveals[i].getBoundingClientRect().top;
+                  var elementVisible = 150;
+
+                  if (elementTop < windowHeight - elementVisible) {
+                      reveals[i].classList.add("active");
+                  } else {
+                      reveals[i].classList.remove("active");
+                  }
+              }
+          };
+          window.addEventListener("scroll", reveal);
+
+          var wordArray = Array();
+
+          function getNewWord() {
+
+              var joke1 = document.getElementById('joke').innerHTML.toLowerCase();
+              var _words = joke1.match(/\b(?!(?:br)\b)[a-z']+/g);
+
+              var random2 = Math.floor(Math.random() * _words.length);
+
+              var newWord = _words[random2];
+              document.getElementById('gotWord').innerHTML =
+                  'You obtained a new word!<br><h3>' + newWord + '</h3>';
+
+              wordArray.push(newWord);
+          };
+
+          function makeUL() {
+              // Create the list element:
+              var list = document.createElement('ul');
+
+              for (var i = 0; i < wordArray.length; i++) {
+                  // Create the list item:
+                  var item = document.createElement('li');
+
+                  // Set its contents:
+                  item.appendChild(document.createTextNode(wordArray[i]));
+
+                  // Add it to the list:
+                  list.appendChild(item);
+              }
+
+              // Finally, return the constructed list:
+              document.getElementById('myWordsList').appendChild(list);
+
+              // Add the contents of options[0] to #foo:
+              console.log(wordArray)
+          };
+
+          function filterWords() {
+              var badwords = ['f+u+c+k+', 'idiot', 'asshole', 'a+ss+', 'bi+o+tch', 'mama', 'fucker',
+                  's+l+u+t', 'whore', 'fucking', 'cock', 'suck', 'penis', 'scum', 'cunt', 'hell', 'what the', 'twat', 'mofo', 's+h+i+t+', 's+t+u+p+i+d+', '^fc?k$'];
+              var badwordsRegex = new RegExp(badwords.join('|'), 'gi');
+
+              var text = document.getElementById('messageText').value;
+              var replacedText = text.replace(badwordsRegex, '\u2661');
+              document.getElementById('messageText').value = replacedText;
+
+              var badWordsCaught = text.match(badwordsRegex).length;
+
+              if (badWordsCaught > 0) {
+                  alert("Will you be happy reading your message?");
+              } else {
+                  alert('No bad words detected!');
+              };
+          };
+      </script>
+  </body>
+</html>

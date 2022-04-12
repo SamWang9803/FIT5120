@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/funplusdatabaseserver/databases/FIT5120Project_db",
+      "type": "mssql.azure",
+      "connectionId": "FIT5120MyModel",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

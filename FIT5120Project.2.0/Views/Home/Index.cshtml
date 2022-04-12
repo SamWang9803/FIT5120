@@ -1,0 +1,53 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../Content/home_page.css" />
+    <script>
+    </script>
+</head>
+<body>
+        	    
+    <div class="homepageBlocks">
+
+            <div class="whatIsFunPlus" οnclick="window.location.href='@Url.Action("About","Home")'">
+                    <img class="funPlusImg" src="../images/a08b7284-b714-4936-82db-d3dbc543b18c.png" />
+                    <p>What is <span class='tm'>Fun+</span>?</p>
+                    <p class='content'>Let's explore Fun+ with our ColourWhale!</p>
+                    <a class="link" href="../GameBeta/betaLayoutScroll_1.html"><p class='content'>Learn More>></p></a>
+            </div>
+
+            @*
+            <div class="getInspired">
+                <img class="galleryImg" src="../images/792dc340-5208-4e98-9326-5aa0b7256fed.jpeg" />
+                <p>Get inspired in the Gallery</p>
+                <p class='content'>Let’s take a look at artwork from others - get inspired for your art project!</p>
+            </div>
+            *@
+
+            <div class="jokegame_info">
+                 <img class="jokeImg" src="../images/joke_img.png" />
+                 <p>Read funny jokes and earn tokens</p>
+                 <p class='content'>Collect the words to write a message by reading funny jokes!</p>
+                 <a class="link" href="@Url.Action("Index","Jokes")"><p class='content'>Learn More>></p></a>
+            </div>
+
+            <div class="messages">
+                <img class="messagesImg" src="../images/259b6a51-9622-491b-939c-94f4c12db5ab.png" />
+                <p>Write and read messages</p>
+                <p class='content'>Write messages with 'MyWords' or read the messages you received!</p>
+                <a class="link" href="@Url.Action("Index","Messages")"><p class='content'>Learn More>></p></a>
+            </div>
+            @*
+
+            <div class="checkProgress">
+                <img class="progressImg" src="../images/40818dda-f613-4050-9b57-5c7bcf93257b.jpeg"/>
+                <p>Check my progress</p>
+                <p class = 'content'>How many tokens and stickers do I have? Did I write happy messages to others? Let’s check it out!</p>
+            </div>
+
+            *@
+    </div>
+
+</body>

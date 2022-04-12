@@ -1,0 +1,92 @@
+﻿.navi_bar{
+    width: 100%;
+    height: 130px;
+}
+.logo {
+    width: 130px;
+    height: 130px;
+    left: auto;
+    right: 208px;
+    top: auto;
+    float: left;
+}
+
+/*navigation button*/
+
+.navi_botton {
+    position: relative;
+    float: left;
+    height: auto;
+    width: auto;
+    left: auto;
+    top: 70px;
+    margin: 20px;
+}
+.shell {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+.shell:hover {
+    content: url('../images/navi_shell_2.png')
+}
+.button_cap {
+    position: relative;
+    left: 5px;
+    width:auto;
+    float: right;
+    color: black;
+}
+.button_cap:hover {
+    color:aquamarine;
+}
+
+/*The user button part*/
+
+.user{
+    width:100%;
+    height:40px;
+}
+.user_button {
+    position: page;
+    float: right;
+    width: auto;
+    top: 5px;
+}
+.user_icon {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin:5px;
+}
+.user_menu_lab {
+    position: relative;
+    float: left;
+    top: 18px;
+}
+
+.user_drop {
+    position: relative;
+    float: right;
+    margin: 5px;
+    top: 18px;
+}
+
+.user_unLogin_button {
+    margin: 10px;
+}
+
+/*Navigation Bar Backgorund*/
+.navi_back {
+    position: absolute;
+    float: right;
+    right:0;
+    width: 500px;
+    height: 300px;
+    top: 20px;
+    background: url(../images/navi_back.png);
+    background-size: 100% 100%;
+    opacity: 0.1;
+    pointer-events: none;
+}
