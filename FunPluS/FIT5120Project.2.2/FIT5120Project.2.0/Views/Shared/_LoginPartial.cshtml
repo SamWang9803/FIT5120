@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNet.Identity
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/navi_bar.css" />
+</head>
+
+<div class="user_part">
+
+    <div class="user_button">
+        @if (Request.IsAuthenticated)
+        {
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <img class="user_icon" src="@Url.Content("~/images/navi_bar_source/user_icon.png")">
+                <label class="user_menu_lab" for="user_menu(this)">@User.Identity.GetUserName()</label>
+                <div class="user_drop">
+                    <select onchange="user_menu(this)">
+                        <option selected="selected">Option</option>
+                        <option value="@Url.Action("Index", "Manage")">Profile</option>
+                        <option value="javascript:document.getElementById('logoutForm').submit()">Log Off</option>
+                    </select>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="user_unLogin">
+                <a class="user_unLogin_button" href="@Url.Action("Register", "Account")" style="float:left"><h5>Register</h5></a>
+                <a class="user_unLogin_button" href="@Url.Action("Login", "Account")" style="float:right"><h5>Log In</h5></a>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,275 @@
+@{ ViewBag.Title = "Home Page"; }
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../Content/home_page.css" />
+    <script>
+    </script>
+</head>
+<head>
+    <style>
+        body {
+            background-image: url('../../images/home_page_source/home_page_back.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .wrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .linkIcon {
+            width: 350px;
+            border-radius: 50%;
+            border: 7px solid #ffb938;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 10px;
+            border-radius: 50% / 10%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 400px;
+        }
+
+        .linkIcon_title {
+            position: relative;
+            text-align: center;
+            color: white;
+            font-size: 35px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: 'Rum Raisin', sans-serif;
+            cursor: pointer;
+        }
+
+            .linkIcon_title:hover {
+                color: #ffb938;
+                transform: scale(1.1);
+            }
+
+        .linkIcon_desc {
+            font-family: 'Love Ya Like A Sister', cursive;
+            height: 150px;
+            width: 100px;
+            background: rgba(255,255,255, 0.7);
+            position: absolute;
+        }
+
+        button {
+            cursor: pointer;
+            text-align: center;
+            padding: 5px 20px;
+            font-family: 'Love Ya Like A Sister', cursive;
+            font-size: 25px;
+            border-radius: 20px;
+            width: 200px;
+            outline: none;
+            color: white;
+            border: none;
+        }
+
+        .link_desc {
+            position: absolute;
+            border-radius: 10%;
+            border: 7px solid #ffb938;
+            width: 250px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255,255,255,0.8);
+            transform: rotate(-15deg);
+            display: none;
+        }
+
+        .descIcon {
+            width: 230px;
+            border-radius: 10% 10% 0 0;
+        }
+
+        .descIcon_title {
+            text-align: center;
+            font-family: 'Love Ya Like A Sister', cursive;
+        }
+
+        .linkA {
+            position: absolute;
+            margin-left: 10%;
+            margin-bottom: 10%;
+            font-size: 20px;
+        }
+
+        button {
+            cursor: pointer;
+            text-align: center;
+            padding: 5px 20px;
+            font-family: 'Love Ya Like A Sister', cursive;
+            font-size: 25px;
+            border-radius: 20px;
+            width: 200px;
+            outline: none;
+            color: white;
+            border: none;
+        }
+
+        .link_desc {
+            position: absolute;
+            border-radius: 10%;
+            border: 7px solid #ffb938;
+            width: 250px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255,255,255,0.8);
+        }
+
+        .descIcon {
+            width: 250px;
+            border-radius: 10% 10% 0 0;
+        }
+
+        .descIcon_title {
+            text-align: center;
+            font-family: 'Love Ya Like A Sister', cursive;
+        }
+
+        .close {
+            background: none;
+            outline: none;
+            color: black;
+            position: absolute;
+            text-align: center;
+            top: 2px;
+            left: 130px;
+        }
+
+        .bannerHeading {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dolphines {
+            width: 800px;
+        }
+
+        #bannerCaption {
+            width: 300px;
+            height: 300px;
+        }
+
+        h1 {
+            font-family: 'Caveat Brush', cursive;
+            text-align: center;
+            font-size: 50px;
+            color: grey;
+            margin-left: 5%;
+        }
+
+        .linkButton:hover {
+            transform: scale(1.1);
+            background-color:: #6F03FB;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&family=Rum+Raisin&display=swap" rel="stylesheet">
+    <div class='bannerHeading'>
+        <img class='dolphines' src="@Url.Content("~/images/home_page_source/a08b7284-b714-4936-82db-d3dbc543b18c.png")">
+        <div id='bannerCaption'>
+            <h1>
+                Get connected with Fun and Positivity
+                <h1 style='font-size: 80px; color:black; margin-top:-12px;'>FUN<span style='color: #00FF87'>+</span></h1>
+            </h1>
+        </div>
+    </div>
+    <br>
+    <div class='wrap'>
+        <div id='funPlusGame' class='link' style='background-color: #8425FF;'>
+            <div id='funPlusGame_wrapper'>
+                <img class='linkIcon' src="@Url.Content("~/images/home_page_source/home_joke.jpg")" id='cfljIcon'>
+                <div class='linkIcon_title' style='margin: 1rem 0 1rem 1rem;' onclick="openWindow('link_desc_cflj', 'funPlusGame_wrapper')">ChattyFish Loves Jokes</div>
+            </div>
+
+            <div class='link_desc' id='link_desc_cflj' style='display:none'>
+                <div style='position: relative;'>
+                    <button class='close' onclick="closeWindow('link_desc_cflj', 'funPlusGame_wrapper')">x</button>
+                    <img class='descIcon' src="@Url.Content("~/images/home_page_source/WechatIMG1595.png")">
+                </div>
+                <p class='descIcon_title' style='padding-left: 10px; padding-right: 10px'>Help Chattyfish sending out some postcards!</p>
+                <a class="linkA"  href="@Url.Action("Joke_game","Jokes")"><p class='content'>Let's Go!>></p></a>
+            </div>
+            <!-- onclick direct to link to the game -->
+        </div>
+
+        <div class='wrap'>
+            <div id='msgs' class='link' style='background-color:#8425FF;'>
+                <div id='msgs_wrapper'>
+                    <img class='linkIcon' src="@Url.Content("~/images/home_page_source/home_message.png")" id='msgIcon'>
+                    <div class='linkIcon_title' style='margin: 1rem 0 1rem 1rem;' onclick="openWindow('link_desc_msg', 'msgs_wrapper')">My Messages</div>
+                </div>
+
+                <div class='link_desc' id='link_desc_msg' style='display:none'>
+                    <div style='position: relative;'>
+                        <button class='close' onclick="closeWindow('link_desc_msg', 'msgs_wrapper')">x</button>
+                        <img class='descIcon' src="@Url.Content("~/images/home_page_source/msgBg.png")">
+                    </div>
+                    <p class='descIcon_title' style='padding-left: 10px; padding-right: 10px'>We received some postcards!</p>
+                    <a class="linkA" href="@Url.Action("Index","Messages")"><p class='content'>I want to read it!>></p></a>
+                </div>
+                <!-- onclick direct to link to messaging -->
+            </div>
+
+            <div class='wrap'>
+                <div id='about' class='link' style='background-color: #8425FF;'>
+                    <div id='about_wrapper'>
+                        <img class='linkIcon' src="@Url.Content("~/images/home_page_source/codingForKids.svg")" id='msgIcon'>
+                        <div class='linkIcon_title' style='margin: 1rem 0 1rem 1rem;' onclick="openWindow('link_desc_about', 'about_wrapper')">Why Fun+?</div>
+                    </div>
+
+                    <div class='link_desc' id='link_desc_about' style='display:none'>
+                        <div style='position: relative;'>
+                            <button class='close' onclick="closeWindow('link_desc_about', 'about_wrapper')">x</button>
+                            <img class='descIcon' src="@Url.Content("~/images/home_page_source/Communication01.jpg")">
+                        </div>
+                        <p class='descIcon_title' style='padding-left: 10px; padding-right: 10px'>Why do we need Fun+? <br>Who are the ColourYouS?</p>
+                        <a class="linkA" href="@Url.Action("About","Home")"><p class='content'>Let's check it out!>></p></a>
+                    </div>
+                    <!-- onclick direct to link to about -->
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+    function openWindow(elemId, parentElemId) {
+
+        const wd = document.getElementById(elemId);
+        const parentwd = document.getElementById(parentElemId);
+
+        if (wd.style.display = 'none') {
+            wd.style.display = 'block';
+            parentwd.style.opacity = '0'
+        } else {
+            wd.style.display = 'none';
+            parentwd.style.opacity = '1';
+        }
+    };
+
+    function closeWindow(elemId, parentElemId) {
+        const parentwd = document.getElementById(parentElemId);
+        const wd = document.getElementById(elemId);
+        wd.style.display = 'none';
+        parentwd.style.opacity = '1';
+    };
+</script>

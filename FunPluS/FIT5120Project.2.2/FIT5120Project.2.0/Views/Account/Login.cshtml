@@ -1,0 +1,68 @@
+﻿@using FIT5120Project.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="~/Content/log_reg.css" />
+</head>
+
+<body>
+    <div class="login_part">
+ 
+            <h1 class="login_title">Log In</h1>
+            <section id="loginForm">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="login_box_email">
+
+                        <div class="login_cap">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                        </div>
+
+                        <div class="login_box">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="login_box_password">
+
+                        <div class="login_cap">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        </div>
+
+                        <div class="login_box">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+                </div>
+            </div>
+                                            <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Log in" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <p>
+                        @Html.ActionLink("Register as a new user", "Register")
+                    </p>
+                }
+            </section>
+    </div>
+</body>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

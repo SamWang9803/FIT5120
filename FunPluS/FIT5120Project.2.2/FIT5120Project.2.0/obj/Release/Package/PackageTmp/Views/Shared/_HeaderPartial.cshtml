@@ -1,0 +1,73 @@
+﻿@using Microsoft.AspNet.Identity
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="~/Scripts/user_menu.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/navi_bar.css" />
+</head>
+
+<Body>
+    <div class="navi_header">
+
+        <a title="Home Page" href="@Url.Action("Index","Home")"><img id="logo" src="@Url.Content("~/images/navi_bar_source/navi_logo.png")"></a>
+            
+        <div class="navi_bar_content">
+
+            <div class="navi_botton">
+                <a title="Home Page" href="@Url.Action("Index","Home")"><img id="home_icon" src="@Url.Content("~/images/navi_bar_source/navi_home_icon.png")"></a>
+            </div>
+
+            <div class="navi_botton">
+                <a title="Joke Game" href="@Url.Action("Joke_game","Jokes")"><img id="joke_icon" src="@Url.Content("~/images/navi_bar_source/navi_joke_icon.png")"></a>
+            </div>
+
+            <div class="navi_botton">
+                <a title="Message" href="@Url.Action("Index","Messages")"><img id="mess_icon" src="@Url.Content("~/images/navi_bar_source/navi_message_icon.png")"></a>
+            </div>
+
+            <div class="navi_botton">
+                <a title="Message" href="@Url.Action("Index","Jokes")"><img id="mess_icon" src="@Url.Content("~/images/navi_bar_source/navi_message_icon.png")"></a>
+            </div>
+
+            @*
+                                            <div class="navi_botton">
+                        <a href="https://funplusproject.azurewebsites.net/Home/Tutorial"><img class="shell" src="~/images/navi_shell.png"></a>
+                        <a href="https://funplusproject.azurewebsites.net/Home/Tutorial"><h5 class="button_cap">Tutorial</h5></a>
+                    </div>
+                    <div class="navi_botton">
+                        <a href="@Url.Action("Index","Home")"><img class="shell" src="../images/navi_bar_source/navi_home_icon.png"></a>
+                    </div>
+
+                    <div class="navi_botton">
+                        <a href="@Url.Action("Index","Jokes")"><img class="shell" src="~/images/navi_shell.png"></a>
+                        <a href="@Url.Action("Index","Jokes")"><h5 class="button_cap">Jokes</h5></a>
+                    </div>
+
+                    <div class="navi_botton">
+                        <a href="@Url.Action("Index","Messages")"><img class="shell" src="~/images/navi_shell.png"></a>
+                        <a href="@Url.Action("Index","Messages")"><h5 class="button_cap">Message</h5></a>
+                    </div>
+
+                    <div class="navi_botton">
+                        <a href="@Url.Action("Index","Vocabularies")"><img class="shell" src="~/images/navi_shell.png"></a>
+                        <a href="@Url.Action("Index","Vocabularies")"><h5 class="button_cap">Vocabulary</h5></a>
+                    </div>
+        <div class="navi_botton">
+            <a href="@Url.Action("Index","Messages")"><img class="shell" src="~/images/navi_shell.png"></a>
+            <a href="@Url.Action("Index","Messages")"><h5 class="button_cap">Messages</h5></a>
+        </div>
+
+                                <div class="navi_botton">
+            <a href="@Url.Action("Index","Vocabularies")"><img class="shell" src="~/images/navi_shell.png"></a>
+            <a href="@Url.Action("Index","Vocabularies")"><h5 class="button_cap">My Vocabulary</h5></a>
+        </div>
+
+
+                 <div class="navi_botton">
+                     <a href="@Url.Action("About","Home")"><img class="shell" src="~/images/navi_shell.png"></a>
+                     <a href="@Url.Action("About","Home")"><h5 class="button_cap">About</h5></a>
+                 </div>
+            </div>
+            *@
+        </div>
+    </div>
+</Body>
