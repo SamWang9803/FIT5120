@@ -1,0 +1,159 @@
+﻿@model IEnumerable<FIT5120Project.Models.Sticker>
+
+@{
+    ViewBag.Title = "StickerShop";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+
+<head>
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/token_shop/tokenPage_css.css">
+</head>
+<body>
+
+    <div id='shopProcessItems'>
+        <a title="Home Page" href="@Url.Action("Index","Home")"><img style="position: fixed; z-index: 5; left: 10px; height: 110px; width: 110px; " src="@Url.Content("~/images/joke_game_source/home_icon.png")" /></a>
+        <div id='shopping'>
+            <div id='cart'>
+                <button id='cartIcon' onclick='showCart()'><i class="fa-solid fa-basket-shopping"></i></button><br>
+                <p id='itemNum'>0</p>
+            </div>
+            <div id='cartItems'>
+                <button id='cartClose' onclick='closeWindow(this)'>close <i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+        <div id='token'>
+            <p id='tokenIcon'><img src="@Url.Content("~/images/WechatIMG2978.png")" width=45></p><p id='tokenNum'>@ViewBag.userTokenNum</p>
+        </div>
+    </div>
+
+    <div id='storeBody'>
+        <h1>Welcome to the sticker Store!</h1>
+        <div id='storeStructure'>
+            <div id='stickerCategory'>
+                <h1>Stickers Category</h1>
+                <div id='stickerCategoryList'>
+                    <input type="radio" id="stickerCategory_animal" value="animal" name='stickerCat'>
+                    <label for="stickerCategory_animal">animal</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_art" value="art" name='stickerCat'>
+                    <label for="stickerCategory_art">art</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_body" value="body" name='stickerCat'>
+                    <label for="stickerCategory_body">body</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_bug" value="bugs" name='stickerCat'>
+                    <label for="stickerCategory_bug">bug</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_nature" value="nature" name='stickerCat'>
+                    <label for="stickerCategory_nature">nature</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_faces" value="emoji" name='stickerCat'>
+                    <label for="stickerCategory_faces">faces</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_food" value="food" name='stickerCat'>
+                    <label for="stickerCategory_food">food</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_house" value="house" name='stickerCat'>
+                    <label for="stickerCategory_house">house</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_magic" value="magic" name='stickerCat'>
+                    <label for="stickerCategory_magic">magic</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_nature" value="nature" name='stickerCat'>
+                    <label for="stickerCategory_nature">nature</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_ocean" value="ocean" name='stickerCat'>
+                    <label for="stickerCategory_ocean">ocean</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_sports" value="sports" name='stickerCat'>
+                    <label for="stickerCategory_sports">sports</label>
+                    <br>
+                    <input type="radio" id="stickerCategory_transport" value="transport" name='stickerCat'>
+                    <label for="stickerCategory_transport">transport</label>
+                    <br>
+                    <button id='allStickers' onclick='createStickerButtons(false)'>all stickers</button>
+                </div>
+            </div>
+            <div id='stickerSection'>
+                <div id='stickerHolder'>
+
+                </div>
+                <br>
+                <button id='finishStickerBuying' class='purchaseButtons' onclick='openGetStickers()'>I'll get these stickers!</button>
+                <br>
+            </div>
+
+            <div id='shopConfirmPage'>
+                <h1>You have chosen these stickers</h1>
+                <h3 id='tokenCost_confirm'></h3>
+                <div id='inCartItems_confirm'></div>
+                <div>
+                    @using (Html.BeginForm("Purchase", "Stickers", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        //variables to pass
+                        <input id="icon_number" type="text" name="iconNum" value="" style="display:none" />
+                        <input id="user_token" type="text" name="tokenAmount" value="" style="display:none" />
+                        <input id="icon_path" type="text" name="iconPath" value="" style="display:none" />
+                        <button type="submit" id='getStickers' onclick='confirmPurchase()'>I'll get these stickers<br><i class="fa-solid fa-circle-check"></i></button>
+                    }
+                    <button id='returnToShop' onclick='closeConfirmPage()'>Return to the sticker shop<br><i class="fa-solid fa-store"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src='~/Scripts/tokenPage_js.js'></script>
+
+
+
+@*
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.stickerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stickerPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.category)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.stickerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stickerPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.stickerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.stickerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.stickerId })
+        </td>
+    </tr>
+}
+
+</table>
+*@

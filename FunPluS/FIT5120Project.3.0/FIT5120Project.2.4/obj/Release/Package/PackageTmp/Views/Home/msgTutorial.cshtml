@@ -1,0 +1,248 @@
+﻿
+@{
+    ViewBag.Title = "msgTutorial";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&family=Rum+Raisin&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/tutorial/msgTutorial_css.css">
+</head>
+<body>
+    <a title="Home Page" href="@Url.Action("Index","Home")"><img style="position: fixed; z-index: 5; left: 10px; height: 110px; width: 110px; " src="@Url.Content("~/images/joke_game_source/home_icon.png")" /></a>
+    <section id='received'>
+        <div class='modal' id='modal_top'></div>
+        <div>
+            <h1>My Messages</h1>
+            <br>
+            <div class='nav' style='overflow: hidden; margin-left: 20px'>
+                <a href='#received' style='background-color: #1C5858; color:white;' id='receivedDir'>Received</a>
+                <a href='#sent'>Sent</a>
+            </div>
+            <div class='msgBox'>
+                <div id='msgHolder' dir="ltr" style='position:relative'>
+                    <a href=#readingMsg><button class='msgItems_sent' name='unread' id='demoReceivedPC' style='position:relative'><p>Message #1</p><p style='text-align:right'><i class="fa-solid fa-envelope"></i></p></button></a>
+                    <div class='cursur' style='text-align: center; margin-top:-0.5rem;' id='checkMsg'><i class="fa-solid fa-hand-pointer"></i></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class='guide' id='guide_top'>
+            <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+            <div class='chatBubble'>
+                <p class='intro'>We just sent out the postcards, now check out the postcards we received and sent.</p>
+                <br>
+                <button class='next' onClick="nextBubble(this, 1)" id='receivedPostcard'><span style='font-size:18px'>next</span> <i class="fa-solid fa-circle-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id='sent'>
+        <div>
+            <h1>My Messages</h1>
+            <br>
+            <div class='nav' style='overflow: hidden; margin-left: 20px'>
+                <a href='#received'>Received</a>
+                <a href='#sent' style='background-color: #1C5858; color:white;'>Sent</a>
+            </div>
+            <div class='msgBox' style='position:relative; margin-top:-8px'>
+                <div id='msgHolder_sent' dir="ltr">
+                    <button class='msgItems_sent' name='unread' id='sentDemo' onclick='tokenWindow();'><p>Message #1</p><p id='demoEmotion' style='text-align:right'><i class="fa-solid fa-paper-plane"></i></p></button>
+                    <div class='cursur' style='text-align: center; margin-top:-0.5rem; position:relative' id='cursur_sentMsgClick'><i class="fa-solid fa-hand-pointer"></i></div>
+                </div>
+                <div class='msgBox' id='tokenNotice'>
+                    <div id='tokenNoticeText'>
+                        <h2>Someone said your postcard made them happy <i class="fa-solid fa-face-laugh-beam"></i></h2>
+                        <br>
+                        <div style='display: flex; align-items: center; justify-content:center; flex-direction: column'>
+                            <img src='~/images/tutorial/WechatIMG2978.png' class='token'>
+                            <br>
+                            <h3>You received 5 tokens!</h3>
+                            <br>
+                            <button id='tokenAccept' onclick='openSentMessage();'><i class="fa-solid fa-circle-check"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='guide' id='guide_sent'>
+            <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+            <div class='chatBubble'>
+                <p class='intro'>Look! Someone just gave a comment to the postcard we sent out!</p>
+                <br>
+            </div>
+        </div>
+    </section>
+
+    <section id='msgSent'>
+        <div>
+            <h1>My Messages</h1>
+            <br>
+            <div class='msgBox' style='height: 680px; width: 1000px; display: flex; flex-direction: row; justify-content:center; align-items:center; position: relative' id='sentCommented'>
+                <div style='display: column; justify-content: center; align-items: center; position: relative'>
+                    <div class='postcardD' id='postcardD_sent' style="background-image: url('../../images/tutorial/postcardBG_2.png')">
+                        <div class='textBox' id='postcardContent_reading'>
+                            I love gorillas & their big nostrills  <i class="fa-solid fa-face-grin-squint"></i>
+                        </div>
+                    </div>
+                    <br>
+                    <div class='buttonBox' style='display: row; justify-content: center; align-items: center; position:relative'>
+                        <br>
+                        <a href='#received'>
+                            <button class='readMsg' style='margin-top:-25px'>Back to my messages <i class="fa-solid fa-envelope-open-text"></i></button>
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <div style='margin-left: 20px;display:flex; flex-direction: column; justify-content:center; align-items:center; position:relative;'>
+                    <h2>This is how the reader felt</h2>
+                    <br>
+                    <button id='demoReaderEmotion' class='emotion'>
+                        <div>
+                            <img src="~/images/tutorial/Face Avatar 1.1.png" />
+                            <p>It makes me happy</p>
+                        </div>
+                    </button>
+                    <button class='emotion'>
+                        <div>
+                            <img src="~/images/tutorial/Face Avatar 4.2.png" />
+                            <p>It's neutral</p>
+                        </div>
+                    </button>
+                    <button class='emotion'>
+                        <div>
+                            <img src="~/images/tutorial/Face Avatar 6.4.png" />
+                            <p>It's offensive</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class='guide' id='guide_top'>
+            <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+            <div class='chatBubble'>
+                <p class='intro'>As such, to get more tokens, we should do our best send out happy and positive postcards!</p>
+                <br>
+                <button class='next' onClick="finishTutorial()" id='receivedPostcard'><span style='font-size:18px'>next</span> <i class="fa-solid fa-circle-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id='finishTutorial'>
+        <img src='~/images/tutorial/navi_back3.png' class='squid3' id='finished'>
+        <div class='msgBox' id='finishedNotification'>
+            <div class='textBox'>
+                <h1 style="font-family: 'Love Ya Like A Sister', cursive;">Congrats Champion! <i class="fa-solid fa-crown"></i></h1>
+                <h2 style="font-family: 'Love Ya Like A Sister', cursive;">You've finished the tutorial!</h2>
+                <br>
+                <h2>For finishing the tutorial, you are rewarded with <span style='color:orange'>5 tokens!</span></h2>
+                <br>
+                <img src='~/images/tutorial/WechatIMG2978.png' class='token'>
+                <br>
+                <h2>Now you are ready to start off with your Fun+ journey!</h2>
+            </div>
+            <div class='buttonBox' style='display: row; justify-content: center; align-items: center; position:relative'>
+                <br>
+                <a>
+                    <button class='readMsg' onclick="location.href='@Url.Action("Register", "Account")'">Register an account <i class="fa-solid fa-user-astronaut"></i></button>
+                </a>
+                <div>
+                    <button class='readMsg' onclick="location.href='@Url.Action("Index", "Home")'" style='position:relative'>Back to home <i class="fa-solid fa-house"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id='readingMsg'>
+        <div>
+            <h1>My Messages</h1>
+            <br>
+            <div class='msgBox' style='height: 680px; width: 1000px; display: flex; flex-direction: row; justify-content:center; align-items:center; position: relative'>
+                <div style='display: column; justify-content: center; align-items: center; position: relative'>
+                    <div class='postcardD' id='postcardD_reading' style="background-image:url('postcardBG_5.jpg'); position:relative">
+                        <div class='textBox' id='postcardContent_reading'>
+                            I wish you a lovely day <i class="fa-solid fa-face-grin-hearts"></i>
+                        </div>
+                    </div>
+                    <div class='buttonBox' style='display: row; justify-content: center; align-items: center; position:relative'>
+                        <br>
+                        <a href='#received'>
+                            <button class='readMsg' style='margin-top:-25px'>Back to my messages <i class="fa-solid fa-envelope-open-text"></i></button>
+                        </a>
+                        <div>
+                            <button class='readMsg' id='evalFinished' style='position:relative'>Let's send it out! <i class="fa-solid fa-paper-plane"></i></button>
+                            <div class='cursur' style='text-align: center; margin-top:-0.5rem; display:block; opacity:0; position:relative' id='cursur_sendMsg'><i class="fa-solid fa-hand-pointer"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id='emotionButtons' style='margin-left: 20px;display:flex; flex-direction: column; justify-content:center; align-items:center; position:relative;'>
+                    <h2> How do you find the message?</h2>
+                    <br>
+                    <button class='emotion' id='happy'>
+                        <div>
+                            <img src="~/images/tutorial/Face Avatar 1.1.png" />
+                            <p>It makes me happy</p>
+                        </div>
+                    </button>
+                    <button class='emotion' id='neutral'>
+                        <div>
+                            <img src="~/images/tutorial/Face Avatar 4.2.png" />
+                            <p>It's neutral</p>
+                        </div>
+                    </button>
+                    <button class='emotion' id='offended'>
+                        <div>
+                            <img src="~/images/tutorial/Face Avatar 6.4.png" />
+                            <p>It's offensive</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class='guide' id='guide_top'>
+            <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+            <div class='chatBubble'>
+                <p class='intro'>Let's look at the first postcard we received.</p>
+                <br>
+                <button class='next' onClick="nextBubble(this, 3)" id='receivedPostcard'><span style='font-size:18px'>next</span> <i class="fa-solid fa-circle-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id='emotionChecked'>
+        <div style='display: flex; flex-direction: column; justify-content:center; position:relative'>
+            <div style='border-radius: 20px; background-color: rgba(255,255,255,0.9); padding:40px 30px; width: 800px; margin-left: auto; margin-right: auto; margin-top: 5%' id='evalFinishedMsg'>
+                <h1>Thanks for reading!</h1>
+                <br>
+                <br>
+                <h2>Now the ChattyFish can understand how their message could sound like to you and others reading their message.</h2>
+                <br>
+                <h2>The ChattyFish will get some tokens based on how you felt about their message!</h2>
+            </div>
+            <div class='buttonBox' style='display: row; justify-content: center; align-items: center;position:relative'>
+                <a href='#received'>
+                    <button class='readMsg'>Read more postcards <i class="fa-solid fa-envelope-open-text"></i></button>
+                </a>
+                <a href='#sent'>
+                    <button class='readMsg' id='backToSent' style='position:relative' onclick='iconBlink()'>Check my sent postcards <i class="fa-solid fa-paper-plane"></i></button>
+                </a>
+                <a href='#'>
+                    <button class='readMsg'>Write some postcards with ChattyFish <i class="fa-solid fa-fish-fins"></i></button>
+                </a>
+            </div>
+            <div class='cursur' style='text-align: center; margin-top:-1.5rem;' id='cursur_sentMsg'><i class="fa-solid fa-hand-pointer"></i></div>
+        </div>
+        <div class='guide' id='guide_top'>
+            <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+            <div class='chatBubble'>
+                <p class='intro'>We just sent our comment to the writer of the message!</p>
+                <br>
+                <button class='next' onClick="nextBubble(this, 6)" id='receivedPostcard'><span style='font-size:18px'>next</span> <i class="fa-solid fa-circle-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+</body>
+<script src='~/Scripts/tutorial/msgTutorial_js.js'></script>
+

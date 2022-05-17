@@ -1,0 +1,334 @@
+body {
+    background-image: url('../../images/WechatIMG2313.png');
+    background-size: cover;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+button {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+p {
+    margin: 0
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+#cart, #token {
+    border: 5px black solid;
+    margin-left: 10px;
+    background: #FE681C;
+    border-radius: 20px;
+    width: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#cartIcon {
+    color: white;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 30px;
+}
+
+#tokenIcon {
+    color: white;
+    font-size: 30px;
+}
+
+#tokenNum {
+    margin-top: 9px;
+}
+
+#shopProcessItems {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    padding-right: 20px;
+    padding-top: 20px;
+    align-items: flex-start;
+}
+
+#stickerCategoryList {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+}
+
+    #stickerCategoryList > * {
+        margin: 5px 0;
+    }
+
+#allStickers {
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #3E721D;
+}
+
+#stickerCategory {
+    height: 500px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: rgba(223, 252, 43, 0.8);
+    border: 5px solid #780F0F;
+    border-radius: 40px;
+}
+
+#storeBody {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+}
+
+#storeStructure {
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+    width: 800px;
+    align-items: center;
+    justify-content: center;
+}
+
+#stickerSection {
+    width: 800px;
+    margin-left: 20px;
+    padding: 20px;
+    background: rgba(223, 252, 43, 0.8);
+    border: 5px solid #780F0F;
+    border-radius: 40px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#stickerHolder {
+    width: 750px;
+    height: 500px;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.stickerButton {
+    width: 210px;
+    height: 230px;
+    margin: 10px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background: white;
+    font-size: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+    .stickerButton:hover {
+        transform: scale(1.05);
+        animation: stickerJump 0.4s linear infinite alternate;
+    }
+
+@keyframes stickerJump {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+.stickerImg {
+    width: 160px;
+    height: 160px;
+}
+
+.purchaseButton {
+    height: 18px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+    .purchaseButton:hover {
+        transform: scale(1.1);
+        background-color: darkgreen;
+        transition: 0.3s;
+    }
+
+
+#cartItems {
+    z-index: 1;
+    background: rgba(255,255,255,0.8);
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    display: none;
+    padding: 5px;
+}
+
+#cartClose {
+    cursor: pointer;
+    align-items: right;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#finishStickerBuying {
+    background-color: #FE681C;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    box-shadow: 5px 5px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+    #finishStickerBuying:active {
+        box-shadow: 1px 1px black;
+        transform: translateY(4px);
+    }
+
+#getStickers:active {
+    box-shadow: 1px 1px black;
+    transform: translateY(4px);
+}
+
+#returnToShop:active {
+    box-shadow: 1px 1px black;
+    transform: translateY(4px);
+}
+
+
+.cartItem {
+    padding: 10px;
+    width: 80px;
+}
+
+.confirmingItem {
+    padding: 10px;
+    width: 150px;
+    background: white;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+    .confirmingItem > button {
+        background: none;
+        color: red;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+.cartItem > button {
+    background: none;
+    color: red;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+#getStickers, #returnToShop {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    background: #FE681C;
+    border: none;
+    box-shadow: 5px 5px black;
+    margin-left: 10px;
+    color: white;
+}
+
+.cartItemIcon {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* bubble ends */
+
+#shopConfirmPage {
+    position: absolute;
+    background-color: #DFFC2B;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    z-index: 4;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+    border: 4px solid #780F0F
+}
+
+#inCartItems_confirm {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    justify-content: center;
+}
+
+#shopConfirmPage > h1 {
+    color: #312F2D;
+}
+
+#inCartItems_confirm {
+    width: 600px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.inCartItems_icons {
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+}

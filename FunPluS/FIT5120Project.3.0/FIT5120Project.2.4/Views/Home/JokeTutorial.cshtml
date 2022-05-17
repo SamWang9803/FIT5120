@@ -1,0 +1,419 @@
+﻿
+@{
+    ViewBag.Title = "JokeTutorial";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&family=Rum+Raisin&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/tutorial/tutorial_css.css">
+</head>
+<body>
+    <a title="Home Page" href="@Url.Action("Index","Home")"><img style="position: fixed; z-index: 5; left: 10px; height: 110px; width: 110px; " src="@Url.Content("~/images/joke_game_source/home_icon.png")" /></a>
+    <section id='topPage'>
+        <div style='display:flex; flex-direction: column; justify-content: center; align-items: center;'>
+            <img class='gameLogo' src='~/images/tutorial/cflj_logo_bg.png' id='gameLogo'>
+            <button class='purple' id='letsgo' style='width: 300px; position:relative'>Let's go!</button>
+            <div class='cursur' id='cursur_top'><i class="fa-solid fa-hand-pointer"></i></div>
+        </div>
+        <div class='modal' id='modal_top'></div>
+        <div class='guide' id='guide_top'>
+            <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+            <div class='chatBubble'>
+                <p class='intro'>Hi there!<br>I'm ChattyFish and I'm here to walk you through the ChattyFish LovesJokes!</p>
+                <br>
+                <button class='next' onClick="nextBubble(this, 1)"><span style='font-size:18px'>click me</span> <i class="fa-solid fa-arrow-pointer"></i></button>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+        </div>
+    </section>
+
+    <section id='page1'>
+        <div style='display:flex; flex-direction: column; justify-content: center; align-items: center;'>
+            <h1 style='align-text:center;'>
+                Let's get some words first!
+            </h1>
+            <br>
+            <div class='gameBox' id='gb1'>
+                <h2><p id='jokeNum'>1/4</p></h2>
+                <div class='textBox' style='display: flex; align-items:center' ; id='tb1'>
+                    <button class='arrow' id='arrow_left' onclick='flipLeft()'><i class="fa-solid fa-caret-left"></i></button>
+                    <p class='jokes' id='jokeText' style='font-size:23px; padding: 10px'></p>
+                    <button class='arrow' id='arrow_right' onclick='flipRight()'><i class="fa-solid fa-caret-right"></i></button>
+                </div>
+                <button class='purple' id='takeWordsButton' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em;'>I'll take these words!</button>
+            </div><div class='cursur' id='cursur_page1'><i class="fa-solid fa-hand-pointer"></i></div>
+            <div class='gameBox' id='gb2'>
+                <div class='textBox' , id='tb2' , style='display: flex; align-items:center; flex-wrap: wrap; justify-content:center; font-size: 23px; color: #F707C2' ;>
+                </div>
+            </div>
+        </div>
+        <div class='guide' id='guide_top'>
+            <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+            <div class='chatBubble'>
+                <p class='intro'>To write a postcard, we first need to obtain some words!</p>
+                <br>
+                <button class='next' onclick="nextBubble(this, 4)"><span style='font-size:18px'>click me</span> <i class="fa-solid fa-arrow-pointer"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id='page2'>
+        <div class="container reveal">
+            <div style='display:flex; position: relative;'>
+                <div class="words" id="givenWords">
+                    <br>
+                    <h4>Given words</h4>
+                    <br>
+                    <div class="wordsList" id="gwList">
+                        <div id="pppp">
+                            <button class="voc">I</button>
+                            <div class="vocExt">
+                                <button class="extVoc">I</button>
+                                <button class="extVoc">he</button>
+                                <button class="extVoc">she</button>
+                                <button class="extVoc">it</button>
+                                <button class="extVoc">they</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="pppp">
+                            <button class="voc">my</button>
+                            <div class="vocExt">
+                                <button class="extVoc">my</button>
+                                <button class="extVoc">mine</button>
+                                <button class="extVoc">his</button>
+                                <button class="extVoc">hers</button>
+                                <button class="extVoc">its</button>
+                                <button class="extVoc">their</button>
+                                <button class="extVoc">theirs</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="pppp">
+                            <button class="voc">am</button>
+                            <div class="vocExt">
+                                <button class="extVoc">be</button>
+                                <button class="extVoc">am</button>
+                                <button class="extVoc">is</button>
+                                <button class="extVoc">was</button>
+                                <button class="extVoc">are</button>
+                                <button class="extVoc">were</button>
+                                <button class="extVoc">been</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="pppp">
+                            <button class="voc">a</button>
+                            <div class="vocExt">
+                                <button class="extVoc">a</button>
+                                <button class="extVoc">an</button>
+                                <button class="extVoc">the</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="pppp">
+                            <button class="voc">do</button>
+                            <div class="vocExt">
+                                <button class="extVoc">have</button>
+                                <button class="extVoc">has</button>
+                                <button class="extVoc">had</button>
+                                <button class="extVoc">love</button>
+                                <button class="extVoc">loves</button>
+                                <button class="extVoc">loved</button>
+                                <button class="extVoc">like</button>
+                                <button class="extVoc">likes</button>
+                                <button class="extVoc">liked</button>
+                                <button class="extVoc">will</button>
+                                <button class="extVoc">can</button>
+                                <button class="extVoc">do</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="pppp">
+                            <button class="voc">to</button>
+                            <div class="vocExt">
+                                <button class="extVoc">to</button>
+                                <button class="extVoc">after</button>
+                                <button class="extVoc">at</button>
+                                <button class="extVoc">before</button>
+                                <button class="extVoc">by</button>
+                                <button class="extVoc">for</button>
+                                <button class="extVoc">from</button>
+                                <button class="extVoc">of</button>
+                                <button class="extVoc">with</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="pppp">
+                            <button class="voc">*</button>
+                            <div class="vocExt">
+                                <button class="extVoc">.</button>
+                                <button class="extVoc">,</button>
+                                <button class="extVoc">*</button>
+                                <button class="extVoc">&amp;</button>
+                                <button class="extVoc">%</button>
+                                <button class="extVoc">$</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="pppp">
+                            <button class="voc"><i class="fa-solid fa-face-grin-squint"></i></button>
+                            <div class='cursur' id='cursur_givenWords' style='-webkit-text-stroke: 1px black;'><i class="fa-solid fa-hand-pointer"></i></div>
+                            <div class="vocExt" id='demoBox'>
+                                <button class="extVoc"><i class="fa-solid fa-face-grin-squint"></i></button>
+                                <button class="extVoc"><i class="fa-solid fa-face-grin-hearts"></i></button>
+                                <button class="extVoc"><i class="fa-solid fa-face-grin-stars"></i></button>
+                                <button class="extVoc"><i class="fa-solid fa-face-grin-wink"></i></button>
+                                <button class="extVoc"><i class="fa-solid fa-face-kiss-wink-heart"></i></button>
+                                <button class="extVoc"><i class="fa-solid fa-heart"></i></button>
+                                <button class="extVoc"><i class="fa-solid fa-star"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style='position: relative; display:flex; flex-direction: column; align-items:center; flex-wrap: wrap; justify-content:center;'>
+                    <h1 style='align-text:center;'>
+                        Let's put the words together
+                    </h1>
+                    <div class='gameBox' id='gb1_msgBox' style='position: relative; top:0; padding: 10px;height: 497px; display:flex; flex-wrap:wrap;justify-content: flex-start;'>
+                    </div>
+                    <br>
+                    <div>
+                        <div style='margin:10; display:flex; justify-content:center'>
+                            <button class='purple' style='font-size:17px; font-weight:bold; letter-spacing: 0.1em; width: 170px; padding: 5; background-color:#BC2F2F; box-shadow: 7px 7px #741919; margin-right:20px;' id='clearButton' onclick='clearMsg();'>
+                                <div style='display:flex; align-items:center'>
+                                    <i class="fa-solid fa-eraser"></i>
+                                    Clear my message
+                                </div>
+                            </button>
+                        </div>
+                        <div style='margin:10; display:flex; justify-content:center'>
+                            <button class='purple' style='height: 60px;position:relative;font-size:20px; font-weight:bold; letter-spacing: 0.1em; width: 200px; padding: 5; margin-right:20px;'
+                                    id='changeWords'>
+                                <div style='display:flex; align-items:center'>
+                                    <i class="fa-solid fa-circle-arrow-left"></i>
+                                    Change the chosen words
+                                </div>
+                            </button>
+                            <div>
+                                <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em;width: 200px; padding: 5px; position:relative'
+                                        id='choosePostcard'>
+                                    <div style='display:flex; align-items:center'>
+                                        Choose a postcard
+                                        <i class="fa-solid fa-circle-arrow-right"></i>
+                                    </div>
+                                </button>
+                                <div class='cursur' style='text-align: center; margin-top:-0.5rem' id='cursur_page2'><i class="fa-solid fa-hand-pointer"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class='words' id='chosenWords'>
+                    <br>
+                    <h4>Chosen words</h4>
+                    <br>
+                    <div class='wordsList' id='cwList' style='display:flex; flex-direction: column;'>
+                        <button class="voc">gorillas</button>
+                        <div class='cursur' style='-webkit-text-stroke: 1px black;' id='cursur_chosenWords'><i class="fa-solid fa-hand-pointer"></i></div>
+                        <br>
+                        <button class="voc">big</button>
+                        <br>
+                        <button class="voc">nostrills</button>
+                        <br>
+                        <button class="voc">fingers</button>
+                    </div>
+                </div>
+
+                <div class='guide' id='guide_top'>
+                    <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+                    <div class='chatBubble'>
+                        <p class='intro'>To write a postcard, we can use any of the 'given words' and 'chosen words'.</p>
+                        <br>
+                        <button class='next' onclick="nextBubble(this, 8)"><span style='font-size:18px'>click me</span> <i class="fa-solid fa-arrow-pointer"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='page3'>
+        <div style='position:relative; display:flex; flex-direction: row; justify-content: center; align-items: center;'>
+            <div class='gameBox' id='postcardBox' style='position: relative; padding: 5px;height: 500px; width: 200px; margin-right: 10px'>
+                <div style='position: relative; padding: 5px;height: 480px; overflow-y: scroll;overflow-x: hidden;'>
+                    <h3>Let's choose a postcard design!</h3>
+                    <button class='postcard' id='pc1' value='~/images/tutorial/postcardBG_2.png'></button>
+                    <button class='postcard' id='pc2' value='~/images/tutorial/postcardBG_7.png'></button>
+                    <button class='postcard' id='pc3' value='~/images/tutorial/postcardBG_1.png'></button>
+                    <button class='postcard' id='pc4' value='~/images/tutorial/postcardBG_3.png'></button>
+                    <button class='postcard' id='pc5' value='~/images/tutorial/postcardBG_5.jpg'></button>
+                    <button class='postcard' id='pc6' value='~/images/tutorial/postcardBG_6.png'></button>
+                    <button class='postcard' id='pc7' value='~/images/tutorial/postcardBG_4.jpeg'></button>
+                    <button class='postcard' id='pc8' value='~/images/tutorial/postcardBG_7.jpg'></button>
+                </div>
+            </div>
+            <br>
+            <div>
+                <h1 style='text-align:center'>Here's our final postcard!</h1>
+                <br>
+                <div id='postcardD' style='height:400px;width:700px; background-size: contain;'>
+                    <div class='textBox' id='postcardContent' style='height: 340px; width: 600px; font-size: 30px; display:flex; align-items:center; align-text:center; justify-content:center'>
+                        I love gorillas & their big nostrills  <i class="fa-solid fa-face-grin-squint"></i>
+                    </div>
+                </div>
+                <div style='margin:10; display:flex; justify-content:center'>
+                    <button class='purple' style='height: 60px;position:relative;font-size:20px; font-weight:bold; letter-spacing: 0.1em; width: 200px; padding: 5; margin-right:20px;'
+                            id='changeWords'>
+                        <div style='display:flex; align-items:center'>
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            Rewrite my message
+                        </div>
+                    </button>
+                    <div>
+                        <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em;width: 200px; padding: 5px; position:relative' id='sendout'>
+                            <div style='display:flex; align-items:center'>
+                                Let's send it out!
+                                <i class="fa-solid fa-circle-arrow-right"></i>
+                            </div>
+                        </button>
+                        <div class='cursur' style='text-align: center; margin-top:-0.5rem' id='cursur_page3'><i class="fa-solid fa-hand-pointer"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class='guide' id='guide_top'>
+                <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+                <div class='chatBubble'>
+                    <p class='intro'>Now we have our message, let's put it onto a nice postcard!</p>
+                    <br>
+                    <button class='next' onclick="nextBubble(this, 15)"><span style='font-size:18px'>click me</span> <i class="fa-solid fa-arrow-pointer"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id='page4'>
+        <div style='position:relative; display:flex; flex-direction:row;'>
+            <div class='gameBox' style='position: relative; padding: 5px;height: 550px; width: 700px; margin-right: 10px'>
+                <br>
+                <div class='textBox' id='postcardTextFinal' style='height: 80px; width: 600px; font-size: 20px; display:flex; align-items:center; align-text:center; justify-content:center; z-index:3'>
+                    I love gorillas & their big nostrills  <i class="fa-solid fa-face-grin-squint"></i>
+                </div>
+                <br>
+                <h1>How would the reader of this message feel?</h1>
+                <br>
+                <div style='display:flex; flex-direction:row;'>
+                    <button class='emotion' id='happy'>
+                        <div>
+                            <img src="~/images/tutorial/Face Avatar 1.1.png" />
+                            <p>Happy</p>
+                        </div>
+                    </button>
+                    <button class='emotion' id='neutral'>
+                        <div>
+                            <img src="~/images/tutorial/Face Avatar 4.2.png" />
+                            <p>Neutral</p>
+                        </div>
+                    </button>
+                    <button class='emotion' id='offen'>
+                        <div>
+                            <img src="~/images/tutorial/Face Avatar 6.4.png" />
+                            <p>Offended</p>
+                        </div>
+                    </button>
+                </div>
+                <br>
+
+                <div style='margin:10; display:flex; justify-content:center'>
+                    <button class='purple' style='height: 60px;position:relative;font-size:20px; font-weight:bold; letter-spacing: 0.1em; width: 200px; padding: 5; margin-right:20px;'>
+                        <div style='display:flex; align-items:center'>
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            Rewrite my message
+                        </div>
+                    </button>
+                    <div>
+                        <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em;width: 200px; padding: 5px; position:relative' id='empathyFinished'>
+                            <div style='display:flex; align-items:center'>
+                                Let's send it out!
+                                <i class="fa-solid fa-circle-arrow-right"></i>
+                            </div>
+                        </button>
+                        <div class='cursur' style='text-align: center; margin-top:-0.5rem' id='cursur_page4'><i class="fa-solid fa-hand-pointer"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class='guide' id='guide_top'>
+                <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+                <div class='chatBubble'>
+                    <p class='intro'><span style='color:purple'>Last Step!</span><br>Before we send out the postcard, we must reflect on the message we have written.</p>
+                    <br>
+                    <button class='next' onclick="nextBubble(this, 18)"><span style='font-size:18px'>click me</span> <i class="fa-solid fa-arrow-pointer"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id='page5'>
+
+        <div style='display:flex; flex-direction: row; justify-content: center; align-items: center;'>
+            <br>
+            <br>
+            <div style='display:flex; flex-direction: column; justify-content: center; align-items: center; position:relative'>
+                <div class='gameBox' style='padding: 20px'>
+                    <h2 style='align-text:center; font-size: 30px; '>
+                        Our postcard is sent!
+                    </h2>
+                    <br>
+                    <div class='textBox' id='tokenRule' style='display: flex; height: 220px; align-text:center;justify-content:center; font-size: 23px;align-items: center; position:relative;'>
+                        <p style='line-height: 3;'>
+                            If the reader <span style='color:green;'>likes it</span>, you will <span style='color:green' ;>get 5 tokens.</span><br>
+                            If the reader <span style='color:orange' ;>finds it neutral</span>,
+                            you will <span style='color:orange' ;>get 3 tokens.</span><br>
+                            If the reader <span style='color:red' ;>finds it offensive</span>,
+                            you will <span style='color:red' ;>lose 5 tokens.</span>
+                        </p>
+                    </div>
+                </div>
+                <div style='margin:10; display:flex; justify-content:center; margin-top:3%'>
+                    <button class='purple' style='height:60px;font-size:20px; font-weight:bold; letter-spacing: 0.1em; width: 200px; padding: 5; margin-right:20px'>
+                        <div style='display:flex; align-items:center'>
+                            Write another postcard
+                        </div>
+                    </button>
+                    <div>
+                        <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em;width: 200px; padding: 5px; position:relative' id='checkPC'>
+                            <div onclick="location.href='@Url.Action("msgTutorial", "Home")'" style='display:flex; align-items:center'>
+                                Check my postcards
+                                <i class="fa-solid fa-circle-arrow-right"></i>
+                            </div>
+                        </button>
+                        <div class='cursur' style='text-align: center; margin-top:-0.5rem' id='checkMsg'><i class="fa-solid fa-hand-pointer"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='guide' id='guide_top'>
+            <img src='~/images/tutorial/navi_back3.png' class='squid3'>
+            <div class='chatBubble'>
+                <p class='intro'>Our postcard is sent out!</p>
+                <br>
+                <button class='next' onclick="nextBubble(this, 24)"><span style='font-size:18px'>click me</span> <i class="fa-solid fa-arrow-pointer"></i></button>
+
+            </div>
+        </div>
+    </section>
+</body>
+<script src='~/Scripts/tutorial/Untitled.js'></script>
+

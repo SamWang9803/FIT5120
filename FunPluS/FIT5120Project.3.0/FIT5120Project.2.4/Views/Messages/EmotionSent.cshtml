@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "EmotionSent";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+
+<head>
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/message/message_style.css">
+    <script src="~/Scripts/message/reveal.js"></script>
+</head>
+
+<body>
+
+    <section id='emotionChecked'>
+        <div style='display: flex; flex-direction: column; justify-content:center'>
+            <div style='border-radius: 20px; background-color: rgba(255,255,255,0.9); padding:40px 30px; width: 800px; margin-left: auto; margin-right: auto; margin-top: 5%'>
+                <h1>Thanks for reading!</h1>
+                <br>
+                <br>
+                <h2>Now the ChattyFish can understand how their message could sound like to you and others reading their message.</h2>
+                <br>
+                <h2>The ChattyFish will get some tokens based on how you felt about their message!</h2>
+            </div>
+            <div class='buttonBox' style='display: row; justify-content: center; align-items: center;'>
+                <a href='@Url.Action("ReaderMessage","Messages")'>
+                    <button class='readMsg'>Read more postcards <i class="fa-solid fa-envelope-open-text"></i></button>
+                </a>
+                <a href='@Url.Action("Index","Home")'>
+                    <button class='readMsg'>Back to Home <i class="fa-solid fa-house"></i></button>
+                </a>
+                <a href='@Url.Action("Joke_game","Jokes")'>
+                    <button class='readMsg'>Write some postcards with ChattyFish <i class="fa-solid fa-fish-fins"></i></button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>

@@ -1,0 +1,92 @@
+body {
+    background-image: url(../images/home_page_source/home_page_back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Home_content {
+    width: 100%;
+}
+.joke_img {
+    position: relative;
+    float: left;
+    left: 0;
+    width: 500px;
+    height: 300px;
+}
+.jokegame_info {
+    position: relative;
+    float:left;
+    left:auto;
+    top:60%;
+    width: auto;
+    height: auto;
+    margin:50px;
+}
+
+
+.homepageBlocks{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-size: none;
+}
+
+.homepageBlocks > div{
+border: 1px solid #878585;
+box-sizing: border-box;
+border-radius: 45px;
+width: 500px;
+height: 550px;
+margin:20px;
+background:rgba(255, 255, 255, 0.7);
+}
+
+.homepageBlocks>div>img{
+  width : 498px;
+  height : 300px;
+  object-fit:cover;
+  border-radius: 45px 45px 0 0;
+  z-index:-1;
+  transition-timing-function: ease-in-out;
+}
+
+.tm{
+  color:#14E3A0;
+}
+
+.homepageBlocks>div>p:first-of-type{
+  font-family: Muli, sans-serif;
+  color:#7F34AC;
+  font-weight: 600;
+  font-size:30px;
+  letter-spacing: -0.015em;
+  margin-left: 30px;
+  margin-top:30px;
+}
+
+.content{
+  font-family: Muli, sans-serif;
+  font-size:18px;
+  letter-spacing: -0.015em;
+  margin-left: 30px;
+  margin-top:0;
+  color:#403D3D;
+}
+
+.homepageBlocks>div:hover{
+  transform:scale(1.1);
+}
+
+
+.footer{
+  font-family: Muli, sans-serif;
+  font-size:10px;
+  color:#403D3D;
+  text-align:center;
+  margin:auto;
+}
+.link {
+    position: relative;
+    right: 50px;
+    float: right;
+}

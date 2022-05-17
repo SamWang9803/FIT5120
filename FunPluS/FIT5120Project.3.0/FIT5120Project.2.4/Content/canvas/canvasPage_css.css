@@ -1,0 +1,560 @@
+body{
+  background-image:url('../../images/canvas/WechatIMG3184.png');
+  background-size: cover;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+h2{
+  text-align:center;
+}
+
+#projTitle{
+  font-size: 50px;
+  background-color: #5390d9;
+  background-image: linear-gradient(45deg, #05D088, #05FF88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.draggable {
+  width: 100px;
+  border-radius: 4px;
+  padding: 2%;
+  margin: 1rem 0 0 1rem;
+  font-size: 1.2em;
+  touch-action: none;
+  position:relative;
+  z-index:1;
+}
+
+img{
+  z-index:0;
+  width: 100px;
+}
+
+#canvas{
+  z-index: 1;
+  height: 600px;
+  width: 900px; 
+  border: 10px #050588 solid;
+    background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+  position: relative;
+  border-radius: 20px;
+}
+
+#canvas>img{
+  
+  position: absolute;
+}
+
+
+#canvas>img:hover{
+  border: 1px black solid;
+}
+
+.resize-drag {
+  width: 120px;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 1rem;
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+
+  touch-action: none;
+
+  /* This makes things *much* easier */
+  box-sizing: border-box;
+}
+
+#stickerHolderBox{
+  height: 600px;
+  margin-top:50px;  
+  border-radius: 20px;
+  border: 10px #050588 solid;
+  background-color: #05D088;
+  padding: 20px;
+}
+
+#stickerHolder{
+  z-index: 1;
+  height: 500px;
+  position:relative;
+  padding:10px;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 20px;
+  display:flex;
+  flex-direction: column;
+     overflow: scroll;
+   display:flex; 
+   flex-wrap:wrap;
+   justify-content: flex-start;
+   overflow-x:hidden;
+}
+
+#stickerHolder>img:hover{
+  border: 1px black solid;
+}
+
+#stickerHolder>img:focus{
+  border: 1px black solid;
+}
+
+#stickerHolder>img{
+  cursor:pointer;
+  margin-left: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+#colourButtons{
+  position:absolute;
+  width: 800px;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+}
+
+.colourOption{
+  width: 25px;
+  height: 25px;
+  border: solid 0.5px grey;
+  border-radius: 10px;
+  margin-left: 5px;
+  cursor:pointer;
+}
+
+#stickerNcanvas{
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content: center;
+        position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+  margin:auto;
+  z-index: 5;
+}
+
+#paintingPart{
+  margin-left: 30px;
+    align-items:center;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+}
+
+#finishPainting{
+  font-family: 'Love Ya Like A Sister', cursive;
+    color: white;
+  padding:10px;
+  font-size:20px;
+  text-align:center;
+  cursor:pointer;
+  outline:none;
+  border:none;
+  background-color: #05D088;
+  box-shadow: 5px 5px #01482F;
+}
+
+#screenShot{
+  height: 510px;
+  width: 800px; 
+}
+
+#confirmingWindow {
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    z-index: 4;
+    display: none;
+    background: #FEFBD5;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 10px #050588 solid;
+}
+
+
+.modal{
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0); /* Fallback color */
+  transition-timing-function:ease-in;
+  transition-delay: 0.2s;
+  transition-duration: 0.7s;
+}
+
+#buttonHolder{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#buttonHolder>button{
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: white;
+  padding:10px;
+  font-size:20px;
+  text-align:center;
+  cursor:pointer;
+  outline:none;
+  border:none;
+  background-color: #05D088;
+  box-shadow: 5px 5px #01482F;
+  margin-left: 15px;
+  width: 250px;
+}
+
+#buttonHolder>button:active{
+
+  box-shadow: 1px 1px #371168;
+  transform: translateY(4px);
+}
+
+#buttonHolder_confirmed>button{
+      font-family: 'Love Ya Like A Sister', cursive;
+    color: white;
+  padding:10px;
+  font-size:20px;
+  text-align:center;
+  cursor:pointer;
+  outline:none;
+  border:none;
+  background-color: #05D088;
+  box-shadow: 5px 5px #01482F;
+  margin-left: 15px;
+  width: 250px;
+}
+
+#buttonHolder_confirmed>button:active{
+    box-shadow: 1px 1px #371168;
+  transform: translateY(4px);
+}
+
+/* bubble starts */
+
+.wrapper div {
+  z-index:-1;
+    margin: 0;
+  padding: 0;
+  height: 80px;
+  width: 80px;
+  color: #FCEA2B;
+  font-size: 40px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  animation: 1s linear infinite;
+}
+
+.wrapper div:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation: animate 8s linear infinite;
+}
+.wrapper div:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation: animate 10s linear infinite;
+}
+.wrapper div:nth-child(3) {
+  top: 40%;
+  left: 40%;
+  animation: animate 3s linear infinite;
+}
+.wrapper div:nth-child(4) {
+  top: 66%;
+  left: 30%;
+  animation: animate 7s linear infinite;
+}
+.wrapper div:nth-child(5) {
+  top: 90%;
+  left: 10%;
+  animation: animate 9s linear infinite;
+}
+.wrapper div:nth-child(6) {
+  top: 30%;
+  left: 60%;
+  animation: animate 5s linear infinite;
+}
+.wrapper div:nth-child(7) {
+  top: 70%;
+  left: 20%;
+  animation: animate 8s linear infinite;
+}
+.wrapper div:nth-child(8) {
+  top: 75%;
+  left: 60%;
+  animation: animate 10s linear infinite;
+}
+.wrapper div:nth-child(9) {
+  top: 50%;
+  left: 50%;
+  animation: animate 6s linear infinite;
+}
+.wrapper div:nth-child(10) {
+  top: 45%;
+  left: 20%;
+  animation: animate 10s linear infinite;
+}
+.wrapper div:nth-child(11) {
+  top: 10%;
+  left: 90%;
+  animation: animate 9s linear infinite;
+}
+.wrapper div:nth-child(12) {
+  top: 20%;
+  left: 70%;
+  animation: animate 7s linear infinite;
+}
+.wrapper div:nth-child(13) {
+  top: 20%;
+  left: 20%;
+  animation: animate 8s linear infinite;
+}
+.wrapper div:nth-child(14) {
+  top: 60%;
+  left: 5%;
+  animation: animate 6s linear infinite;
+}
+.wrapper div:nth-child(15) {
+  top: 90%;
+  left: 80%;
+  animation: animate 9s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0) rotate(70deg);
+  }
+  100% {
+    transform: scale(1.3) translateY(-100px) rotate(360deg);
+  }
+}
+
+.wrapper>div{
+  z-index:0;
+}
+
+ /* bubble ends */
+ 
+ #approvedPage{
+    position: absolute;
+  background: rgba(223, 252, 43, 0.8);
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+  margin:auto;
+  width: 650px; 
+  height: 450px; 
+  border-radius: 50px;
+  z-index:4; 
+  display: flex; 
+  align-items: center; 
+  justify-content:center; 
+  flex-direction: column;
+  display: flex;
+  border: 4px solid #780F0F;
+}
+
+#buttonHolder_approved>button{
+    background-color: #FE681C;
+  color: white;
+  padding:10px;
+  width: 250px;
+  margin-left: 10px;
+  font-size:20px;
+  text-align:center;
+  cursor:pointer;
+  outline:none;
+  border:none;
+  box-shadow: 5px 5px black;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+#toTutorial:hover{
+  transform: scale(1.05);
+}
+#toTutorial{
+  position: absolute; 
+  top: 10px;
+  right: 10px;
+  cursor:pointer;
+  border: 5px black solid;
+  margin-left: 10px;
+  background: black;
+  border-radius: 20px;
+  width: 100px; 
+  padding-top:10px;
+  padding-bottom:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  transition: 0.3s;
+  position: relative;
+  margin-left: 10px;
+}
+
+#toTutorial>p{
+  margin:0;
+}
+
+.buttonHolder_tute{
+    text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buttonHolder_tute>button{
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  color:purple;
+  cursor:pointer;
+  padding: 10px;
+  font-size: 15px;
+  font-family: 'Rum Raisin', sans-serif;
+  transition: 0.3s;
+}
+
+.buttonHolder_tute>button:hover{
+  transform: scale(1.1)}
+  
+#beforeAfterArrow{
+  font-size: 50px;
+  color: orange;
+}
+
+#helpIcon{
+font-size: 40px;
+  color:white;
+}
+
+#tute>button{
+  font-family: 'Rum Raisin', sans-serif;
+}
+
+#tuteText>span{
+  color: #3FBA44;
+}
+
+h1{
+  text-align: center;
+}
+
+#tutePhoto{
+  border-radius: 20px;
+  border: 8px solid yellow;
+  width: 650px}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.modal{
+  position: fixed; /* Stay in place */
+  z-index: -1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.25); /* Fallback color */
+  transition-timing-function:ease-in;
+  transition-duration: 0.7s;
+}
+
+.nav a{
+  margin:3px;
+  float: left;
+  color: #073853;
+  background-color: #56B2E7;
+  border: 3px solid #073853;
+  border-radius: 10px 10px 0 0;
+  width: 150px;
+  height: 50px;
+  text-align: center; 
+  font-size: 20px;
+  padding: 4px;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+.nav a:hover{
+  background-color: #1C5858;
+  color:white;
+}
+
+.msgBox{
+  background: #B6FFAE;
+border: 3px solid #1C5858;
+border-radius: 20px;
+width: 800px;
+padding: 20px;
+}
+
+#tute{
+  position:absolute;
+  top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+  margin:auto;
+  display: none; 
+  padding: 10px;
+  border-radius: 10px;
+z-index: 20;
+  
+}
+
+#tuteClose{
+  background: none;
+  outline: none;
+  border: none;
+  color: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.explain_photo{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+        display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+}
+
+.explain_photo>p{
+ font-size: 24px;
+ font-family: 'Rum Raisin', sans-serif;
+}

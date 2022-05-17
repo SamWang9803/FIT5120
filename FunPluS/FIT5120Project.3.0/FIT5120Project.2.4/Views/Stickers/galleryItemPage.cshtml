@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "galleryItemPage";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/gallery/galleryItemPage_css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&family=Rum+Raisin&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id='galleryHolder'>
+        <button id='backToGallery' onclick="location.href='@Url.Action("gallery", "Stickers")'"><i class="fa-solid fa-angles-left"></i><br>Back to the gallery</button>
+        <h1>Welcome to the FUN+ Gallery</h1>
+        <h2>Here are the amazing artwork created by everyone at Fun+, <br>with the stickers they earned by writing and reading positive postcards!</h2>
+        <div id='gallery'>
+            <div id='chosenItemHolder'>
+                <div style='position:relative'>
+                    <p id='artworkDetail'></p>
+                    <div>
+                        <img id='chosenArtwork'>
+                        <p id='textAppear'>Click the artwork to see the original painting</p>
+                    </div>
+                    <div id='originalBg'>
+                        <button onclick="closeWindow('originalBg')"><i class="fa-solid fa-xmark"></i></button>
+                        <img>
+                    </div>
+                </div>
+                <button id='vote' onclick='addVote(this)'></button>
+                <p id='voteInstruct'>Click me if you like this group artwork!</p>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+</body>
+<script src='~/Scripts/gallery/galleryItemPage_js.js'></script>
+

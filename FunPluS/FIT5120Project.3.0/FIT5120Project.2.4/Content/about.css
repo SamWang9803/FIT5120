@@ -1,0 +1,54 @@
+body{
+        font-family: Muli, sans-serif;
+        color:#403D3D;
+        
+    }
+    
+.meetOurTeam{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align:center;
+}
+
+.teamProfile{
+  width:400px;
+}
+
+.teamPic{
+    margin:auto;
+    width:400px;
+    object-fit: contain;
+}
+
+.missionStatement{
+  width:800px;
+  margin:auto;
+  padding:10px;
+  font-size:18px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: Muli, sans-serif
+}
+
+.missionStatement::first-letter{
+ font-size:25px;
+ color:#00ffa0;
+}
+
+p{  text-align: justify;
+  text-justify: inter-word;}
+
+[name = 'meetOurTeam']{
+    text-align:center;
+    font-size:40px;
+    font-weight:bold;
+}
+[name = 'meetOurTeam']::first-letter{
+ color:#00ffa0;
+}
+
+.teamProfile{
+    border-bottom:1px solid #FFDE59;
+    margin:20px;
+}
