@@ -1,0 +1,158 @@
+﻿@model IEnumerable<FIT5120Project.Models.Message>
+@{
+    ViewBag.Title = "WriterMessage";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+<head>
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/message/message_style.css">
+    <script src="~/Scripts/message/reveal.js"></script>
+
+    <script>
+        var sent_msgs;
+        var data = [];
+        window.onload = function () {
+            var mytable = document.getElementById("dataTable");
+            for (var i = 0, rows = mytable.rows.length; i < rows; i++) {
+                for (var j = 0, cells = mytable.rows[i].cells.length; j < cells; j++) {
+                    if (!data[i]) {
+                        data[i] = new Array();
+                    }
+
+                    data[i][j] = mytable.rows[i].cells[j].innerHTML.trim();
+                }
+            }
+            sent_msgs = set_message();
+            create_send_message_list(sent_msgs);
+        }
+
+        function set_message() {
+            var messages = [];
+            for (var i = 0; i < data.length; i++) {
+                messages[i] = {
+                    'message_text': data[i][2],
+                    'writer_emotion': data[i][3],
+                    'reader_emotion': data[i][4],
+                }
+            }
+            return messages;
+        }
+
+        function create_send_message_list(msg) {
+
+            for (x = 0; x < msg.length; x++) {
+
+                var item_sent = msg[x]
+                var msgItem_sent = document.createElement('BUTTON');
+                var msgId_sent = document.createElement('p');
+                var readIcon_sent = document.createElement('p');
+                readIcon_sent.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
+
+                msgItem_sent.classList.add('msgItems_sent');
+
+                msgId_sent.innerHTML = 'Message #' + (x + 1);
+                msgItem_sent.setAttribute('value', x);
+
+                document.getElementById('msgHolder_sent').appendChild(msgItem_sent);
+                msgItem_sent.appendChild(msgId_sent);
+                readIcon_sent.setAttribute('id', 'readIcon');
+                msgItem_sent.appendChild(readIcon_sent);
+
+                msgItem_sent.addEventListener('click', function () {
+                    var sentCardId = this.value;
+                    var sentCard = sent_msgs[sentCardId];
+
+                    changeBg(sentCardId, 'postcardD_sent');
+                    changeText(sentCardId, 'postcardContent_sent');
+                    window.location.replace('#msgSent');
+                });
+            }
+        }
+
+
+        function changeBg(msgId, elementId) {
+            document.getElementById(elementId).style.backgroundImage = `url('${sent_msgs[msgId].writer_emotion}')`;
+        }
+
+        function changeText(msgId, elementId) {
+            document.getElementById(elementId).innerHTML = sent_msgs[msgId].message_text;
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="main_button">
+        <a title="Home Page" href="@Url.Action("Index","Home")"><img style="position: fixed; z-index: 5; right: 0; height: 130px; width: 130px; " src="@Url.Content("~/images/joke_game_source/home_icon.png")" /></a>
+    </div>
+    <section id='sent'>
+        <div>
+            <h1>Sent Messages</h1>
+            <br>
+            <div class='nav' style='overflow: hidden; margin-left: 20px'>
+                <a href='@Url.Action("ReaderMessage","Messages")' >Received</a>
+                <a href='@Url.Action("WriterMessage","Messages")'style='background-color: #1C5858; color:white;'>Sent</a>
+            </div>
+            <div class='msgBox' style='position:relative; margin-top:-8px'>
+                <div id='msgHolder_sent' dir="ltr">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='msgSent'>
+        <div>
+            <h1>My Messages</h1>
+            <br>
+            <div class='msgBox' style='position:relative; height: 680px; width: 900px; margin: 10px; padding:5px; display: flex; flex-direction: row; justify-content:center; align-items:center'>
+                <br>
+                <div style='display: column; justify-content: center; align-items: center'>
+                    <br>
+                    <div class='postcardD' id='postcardD_sent'>
+                        <div class='textBox' id='postcardContent_sent'></div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class='buttonBox' style='display: row; justify-content: center; align-items: center;'>
+                        <a href='#sent'>
+                            <button class='readMsg'>Back to sent messages <i class="fa-solid fa-envelope-open-text"></i></button>
+                        </a>
+                        <a href='@Url.Action("Index","Home")'>
+                            <button class='readMsg'>Back to Home <i class="fa-solid fa-house"></i></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <table class="table" id="dataTable" style="display:none">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.writeUserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.readUserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.messageText)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.writerEmotion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.readerEmotion)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+</body>
+

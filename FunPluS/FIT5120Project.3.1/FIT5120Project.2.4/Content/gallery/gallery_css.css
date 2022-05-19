@@ -1,0 +1,239 @@
+body{
+  font-family: 'Love Ya Like A Sister', cursive;
+    background-image: url('../../images/WechatIMG3051.png');
+    background-size: cover;
+}
+
+h1{
+  text-align:center;
+  font-size: 40px;
+  color:white;
+}
+
+h2{
+  text-align:center;
+  font-size: 30px;
+  color:white;
+  font-family: 'Rum Raisin', sans-serif;
+}
+
+#galleryHolder{
+ margin:auto;
+ position: relative;
+ z-index: 3;
+}
+
+#gallery{
+  background-color: rgba(196, 196, 196, 0.46);;
+  margin:0;
+  width: 100%;
+  background-size: contain;
+  padding: 20px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 650px;
+}
+
+.galleryItems{
+  padding: 20px;
+  margin-left: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s;
+}
+
+.galleryItems:hover{
+  transform: scale(1.01);
+  border: 5px solid yellow;
+}
+
+.galleryItems:hover img{
+    -webkit-filter: drop-shadow(3px 3px 0 pink);
+  filter: drop-shadow(3px 3px 0 pink) ;
+}
+
+.galleryItems:hover .galleryButtons{
+  animation: cursorJump 0.4s linear infinite alternate;
+}
+
+@keyframes cursorJump{
+      0% {transform: translateY(0);}
+  100% {transform: translateY(5px);}
+}
+
+.galleryItems>img{
+  height: 400px;
+  width: 500px;
+}
+.galleryItems>p{
+  text-align: center;
+  color: pink;
+  font-size: 30px;
+}
+
+.galleryButtons{
+  color: white;
+  border-radius: 25px;
+  font-size: 20px;
+  border:purple;
+  outline: none;
+  background: purple;
+  font-family: 'Rum Raisin', sans-serif;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.galleryButtons:hover{
+  background-color: pink;
+}
+
+.galleryButtons:active{
+  background: #D8A1B1;
+  color:white;
+  animation:none;
+}
+
+
+.arrow{
+  padding:10px;
+  font-weight: 400;
+  text-align:center;
+  background: rgba(255, 255, 255, 0);
+  cursor:pointer;
+  outline:none;
+  color:#F9FFA0;
+  border:none;
+  -webkit-text-stroke:3px #F9FF41;
+  font-family: 'Delius Swash Caps', cursive;
+  font-size:70px;
+}
+
+.arrow:active {
+  -webkit-text-stroke:3px #F9FF41;
+  transform: translateY(3px);
+}
+
+
+.wrapper div {
+  z-index:-1;
+    margin: 0;
+  padding: 0;
+  height: 80px;
+  width: 80px;
+  font-size: 40px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  animation: 1s linear infinite;
+  border-radius: 50%;
+}
+
+.wrapper div:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation: animate 8s linear infinite;
+  background-color: #FFC0CB;
+}
+.wrapper div:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  background-color: #FBFFAB;
+  animation: animate 10s linear infinite;
+}
+.wrapper div:nth-child(3) {
+  top: 40%;
+  left: 40%;
+  background-color: #FFC0CB;
+  animation: animate 3s linear infinite;
+}
+.wrapper div:nth-child(4) {
+  top: 66%;
+  left: 30%;
+  animation: animate 7s linear infinite;
+}
+.wrapper div:nth-child(5) {
+  top: 90%;
+  left: 10%;
+  background-color: #FBFFAB;
+  animation: animate 9s linear infinite;
+}
+.wrapper div:nth-child(6) {
+  top: 30%;
+  left: 60%;
+  background-color: #FFC0CB;
+  animation: animate 5s linear infinite;
+}
+.wrapper div:nth-child(7) {
+  top: 70%;
+  background-color: #FBFFAB;
+  left: 20%;
+  animation: animate 8s linear infinite;
+}
+.wrapper div:nth-child(8) {
+  top: 75%;
+  left: 60%;
+  background-color: #B6FDFE;
+  animation: animate 10s linear infinite;
+}
+.wrapper div:nth-child(9) {
+  top: 50%;
+  background-color: #B6FDFE;
+  left: 50%;
+  animation: animate 6s linear infinite;
+}
+.wrapper div:nth-child(10) {
+  top: 45%;
+  left: 20%;
+  background-color: #B6FDFE;
+  animation: animate 10s linear infinite;
+}
+.wrapper div:nth-child(11) {
+  top: 10%;
+  background-color: #FFC0CB;
+  left: 90%;
+  animation: animate 9s linear infinite;
+}
+.wrapper div:nth-child(12) {
+  top: 20%;
+  background-color: #FBFFAB;
+  left: 70%;
+  animation: animate 7s linear infinite;
+}
+.wrapper div:nth-child(13) {
+  top: 20%;
+  background-color: #B6FDFE;
+  left: 20%;
+  animation: animate 8s linear infinite;
+}
+.wrapper div:nth-child(14) {
+  top: 60%;
+  background-color: #B6FDFE;
+  left: 5%;
+  animation: animate 6s linear infinite;
+}
+.wrapper div:nth-child(15) {
+  top: 90%;
+  left: 80%;
+  background-color: #FBFFAB;
+  animation: animate 9s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0) rotate(70deg);
+  }
+  100% {
+    transform: scale(1.3) translateY(-100px) rotate(360deg);
+  }
+}
+
+.wrapper>div{
+  z-index:0;
+}

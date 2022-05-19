@@ -1,0 +1,140 @@
+@{ ViewBag.Title = "Home Page"; }
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/landingPage_css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Caveat+Brush&family=Newsreader:opsz,wght@6..72,500&family=Rum+Raisin&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id='bodyHolder'>
+        <div id='banner'>
+            <img id='bannerLogo' src='~/images/HomePage/logoComic.png'>
+            <p>Reduce emotional and social iso-lation amongst Australian youths<br><br>Get connected by writing and rea-ding positive postcards and tak-ing part in collaborative artwork</p>
+        </div>
+        <div class='holders' id='mapItemHolder'>
+            <div class='arrowHolder' id='arrowHolder_1'>
+                <img src='~/images/HomePage/arrow1_2.png' id='arrow1_2'>
+                <img src='~/images/HomePage/arrow2_3.png' id='arrow2_3'>
+            </div>
+            <div class='comicHolder' id='comicHolder_1_3'>
+                <div class='comicFrame' id='cflj'>
+                    <div class='pageTitle'>
+                        <div class='speechBubble'>
+                            <p class='functiontitle'>1.<br>ChattyFish Loves Jokes</p>
+                            <p>Send out post-cards and earn tokens!</p>
+                        </div>
+                    </div>
+                    <div class='explaination'>
+                        <p>Play a fun game sending out postcards with fun & positive messages!</p>
+                        <button onclick="location.href='@Url.Action("Joke_game", "Jokes")'">Let's go <i class="fa-solid fa-fish"></i></button>
+                        <!--chattyFish-->
+                        <div class="wrapper">
+                            <div><span class="dot"><i class="fa-solid fa-pen"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-paper-plane"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-paper-plane"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-envelope"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-envelope"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class='comicFrame' id='msg'>
+                    <div class='pageTitle'>
+                        <div class='speechBubble'>
+                            <p class='functiontitle'>2.<br>Receive & read postcards</p>
+                            <p>Get postcards wri-tten and sent to you by others</p>
+                        </div>
+                    </div>
+                    <div class='explaination'>
+                        <p>Read the postcards received, give tokens to others and earn it too!</p>
+                        <button onclick="location.href='@Url.Action("ReaderMessage", "Messages")'">Let's go <i class="fa-solid fa-envelopes-bulk"></i></button>
+                        <!--message-->
+                        <div class="wrapper">
+                            <div><span class="dot"><i class="fa-solid fa-face-grin-hearts"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-face-kiss-beam"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-face-laugh-squint"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-envelope"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-envelope"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-face-sad-cry"></i></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class='comicFrame' id='token'>
+                    <div class='pageTitle'>
+                        <div class='speechBubble'>
+                            <p class='functiontitle'>3.<br>Visit the <br>Sticker Shop</p>
+                            <p>Buy stickers with the tokens earned!</p>
+                        </div>
+                    </div>
+                    <div class='explaination'>
+                        <p>With the tokens earned from ChattyFish Loves Jokes, buy stickers for the art project!</p>
+                        <button onclick="location.href='@Url.Action("Index", "Stickers")'">Let's go <i class="fa-solid fa-basket-shopping"></i></button>
+                        <!--token shop-->
+                        <div class="wrapper">
+                            <div><span class="dot"><i class="fa-solid fa-dog"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-sack-dollar"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-palette"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-dog"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-fish"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-fish"></i></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='arrowHolder' id='arrowHolder_2'>
+                <img src='~/images/HomePage/arrow4_5.png' id='arrow4_5'>
+                <img src='~/images/HomePage/arrow3_4.png' id='arrow3_4'>
+            </div>
+            <div class='comicHolder' id='comicHolder_4_5'>
+                <div class='comicFrame' id='gall'>
+                    <div class='pageTitle'>
+                        <div class='speechBubble'>
+                            <p class='functiontitle'>5. Fun+ Open Gallery</p>
+                            <p>Check out the amazing art-works created by everyone at Fun+!</p>
+                        </div>
+                    </div>
+                    <div class='explaination explaination4_5'>
+                        <p>After the closing date, the artworks are exhibited for votes! Take a look at the artwork created by everyone!</p>
+                        <button onclick="location.href='@Url.Action("gallery", "Stickers")'">Let's go <i class="fa-solid fa-palette"></i></button>
+                        <!--gallery-->
+                        <div class="wrapper">
+                            <div><span class="dot"><i class="fa-solid fa-heart"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-paint-roller"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-palette"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-brush"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-paintbrush"></i></span></div>
+                            <div><span class="dot"><i class="fa-regular fa-heart"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-heart"></i></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class='comicFrame' id='paint'>
+                    <div class='pageTitle'>
+                        <div class='speechBubble'>
+                            <p class='functiontitle'>4. The PainterMan</p>
+                            <p>Create artwork with every-one after getting the stickers</p>
+                        </div>
+                    </div>
+                    <div class='explaination explaination4_5'>
+                        <p>With the stickers you bought from the sticker store, participate in the group artwork before the closing date!</p>
+                        <button onclick="location.href='@Url.Action("canvasPage_0", "Stickers")'">Let's go <i class="fa-solid fa-face-grin-hearts"></i></button>
+                        <!--canvas-->
+                        <div class="wrapper">
+                            <div><span class="dot"><i class="fa-solid fa-brush"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-paint-roller"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-palette"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-brush"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-paintbrush"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-palette"></i></span></div>
+                            <div><span class="dot"><i class="fa-solid fa-paintbrush"></i></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,536 @@
+body {
+    background-color: #FFFCCD;
+    font-family: 'Rum Raisin', sans-serif;
+}
+
+p {
+    line-height: 1;
+}
+
+.holders{
+  padding-left: 40px;
+  padding-bottom: 40px;
+}
+
+#bodyHolder{
+  width: 1270px;
+}
+
+#mapItemHolder{
+  width: 1250px;
+}
+
+.comicFrame{
+   background-color:#fff;
+  border:solid 2px #000;
+  box-shadow:0 6px 6px -6px #000;
+  height:300px;
+  position:relative;
+  padding: 10px;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+#banner{
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+ align-items: center;
+ justify-content: center;
+}
+
+
+#bannerLogo{
+    width: 700px
+}
+
+    #bannerLogo > span {
+        color: #98ff98;
+    }
+
+
+#banner>p{
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-right: 20px;
+  text-align:justify;
+  font-family: 'Bangers', cursive;
+  border-radius: 20px;
+  background-size: cover;
+  font-size: 35px;
+}
+
+.comicHolder{
+  display:flex;
+  flex-direction: row;
+  margin-top: 1vmin;
+  align-items: center;
+  justify-content: :center;
+  width: 95%;
+  position:relative;
+}
+
+.speechBubble{
+  background-color: white;
+  position: absolute;
+  padding: 10px;
+  border: 2px solid black;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+}
+
+    .speechBubble > p:nth-child(2) {
+        font-size: 17px;
+        text-align: justify;
+        padding: 8px;
+    }
+
+.funtionTitle{
+  font-size: 30px;
+}
+
+.comicHolder>div{
+  width: 100%;
+  margin: 1vmin;
+}
+
+
+.arrowHolder>img{
+  width: 200px;
+  position:absolute;
+  z-index:4;
+}
+
+#arrow1_2{
+  margin-left: 300px;
+}
+
+#arrow2_3{
+  margin-left: 700px;
+  margin-top: 170px;
+}
+
+#arrow3_4{
+  height: 200px;
+  width: auto;
+  margin-left: 1050px;
+  margin-top: -6rem;
+}
+
+#arrow4_5{
+  margin-top:200px;
+  width:250px;  
+  margin-left: 450px;
+}
+
+.explaination{
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width: 100%;
+  display:none;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+
+.explaination>p{
+  font-family: 'Rum Raisin', sans-serif;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 18px;
+  font-size: 25px;
+  width: 200px;
+  padding: 20px;
+  z-index:1;
+}
+
+.explaination>button{
+  outline: none;
+  border-radius: 20px;
+  font-family: 'Rum Raisin', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border:none;
+  cursor:pointer;
+    transition: 0.3s;
+  z-index: 1;
+}
+
+#cflj {
+    background-image: url('../images/HomePage/WechatIMG1596.png');
+    background-size: cover;
+    transition: 0.3s;
+}
+
+    #cflj > .explaination {
+        background-image: url('../images/HomePage/oceanBackground.png');
+        background-size: cover;
+    }
+
+#cflj>.explaination>button{
+  color:white;
+  background-color: #8425FF;
+  font-size: 25px;
+}
+
+#cflj>.explaination>button:hover{
+  background-color: purple;
+}
+
+#cflj>.explaination>.wrapper div {
+  color: rgba(34, 215, 254);
+}
+
+#cflj>.pageTitle>.speechBubble>p{
+  margin:5px;
+}
+
+#cflj>.pageTitle>.speechBubble{
+    margin-top: 100px;
+  margin-left: -20px;
+  width: 150px;
+  height: 200px;
+}
+
+#cflj>.pageTitle>.speechBubble>.functiontitle{
+font-size: 22px;
+}
+
+#cflj:hover .speechBubble{
+  display:none;
+}
+
+#cflj:hover > .explaination{
+  display:flex;
+}
+
+#cflj:hover{
+  transform: scale(1.05);
+}
+
+#msg>.pageTitle>.speechBubble>p:nth-child(2){
+  padding: 15px;
+}
+
+#msg>.explaination>button{
+  color:073853;
+  background-color: #56b2e7;
+  font-size: 25px;
+}
+
+#msg>.explaination>button:hover{
+  background-color: #1c5858;
+  color:white;
+}
+
+#msg>.explaination>.wrapper div {
+  color: #b6ffae;
+}
+
+#msg {
+    background-image: url('../images/HomePage/WechatIMG1098.jpeg');
+    background-size: cover;
+    transition: 0.3s;
+}
+
+    #msg > .explaination {
+        background-image: url('../images/HomePage/msgBg.png');
+        background-size: cover;
+    }
+
+#msg:hover > .explaination{
+  display:flex;
+}
+
+#msg:hover{
+  transform: scale(1.05);
+}
+
+#msg>.pageTitle>.speechBubble>p{
+  margin:5px;
+}
+
+#msg>.pageTitle>.speechBubble{
+    margin-top: 125px;
+  margin-left: 0px;
+  width: 200px;
+  height: 180px;
+  padding:10px;
+}
+
+    #msg > .pageTitle > .speechBubble > .functiontitle {
+        font-size: 22px;
+    }
+
+#msg:hover .speechBubble{
+  display:none;
+}
+
+#token {
+    background-image: url('../images/HomePage/WechatIMG2314.png');
+    background-size: cover;
+    transition: 0.3s;
+}
+
+    #token > .explaination {
+        background-image: url('../images/HomePage/WechatIMG2313.png');
+        background-size: cover;
+    }
+
+#token>.explaination>button{
+  color:white;
+  background-color: #FE681C;
+  font-size: 25px;
+}
+
+#token>.explaination>button:hover{
+  background-color: orange;
+}
+
+#token>.explaination>.wrapper div {
+  color: #FCEA2B;
+}
+
+#token>.pageTitle>.speechBubble>p{
+  margin:3px;
+}
+
+#token>.pageTitle>.speechBubble{
+    margin-top: -20px;
+  margin-left:15px;
+  width: 160px;
+  height: 170px;
+  padding:10px;
+}
+
+    #token > .pageTitle > .speechBubble > .functiontitle {
+        font-size: 22px;
+    }
+
+#token:hover .speechBubble{
+  display:none;
+}
+
+#token:hover > .explaination{
+  display:flex;
+}
+
+#token:hover{
+  transform: scale(1.05);
+}
+
+#paint {
+    background-image: url('../images/HomePage/WechatIMG3185.png');
+    background-size: cover;
+    transition: 0.3s;
+}
+
+    #paint > .explaination {
+        background-image: url('../images/HomePage/WechatIMG3185.png');
+        background-size: cover;
+    }
+
+#paint>.explaination>button{
+  color:white;
+  background-color: #FE681C;
+  font-size: 25px;
+}
+
+
+#paint>.explaination>button:hover{
+  background-color: orange;
+}
+
+#paint>.explaination>.wrapper div {
+  color: #FCEA2B;
+}
+
+#paint>.pageTitle>.speechBubble>p{
+  margin:5px;
+  padding: 13px;
+}
+
+#paint>.pageTitle>.speechBubble{
+    margin-top: 150px;
+  margin-left: 80px;
+  height: 150px;
+  width: 250px;
+  text-align: left;
+}
+
+    #paint > .pageTitle > .speechBubble > .functiontitle {
+        font-size: 22px;
+    }
+
+#paint:hover .speechBubble{
+  display:none;
+}
+
+#paint:hover > .explaination{
+  display:flex;
+}
+
+#paint:hover{
+  transform: scale(1.05);
+}
+
+.explaination4_5>p{
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#gall {
+    background-image: url('../images/HomePage/WechatIMG3051.png');
+    background-size: cover;
+    transition: 0.3s;
+}
+
+    #gall > .explaination {
+        background-image: url('../images/HomePage/WechatIMG3051.png');
+        background-size: cover;
+    }
+
+#gall>.explaination>button{
+  color:pink;
+  background-color: white;
+  font-size: 25px;
+  border: 3px solid pink;
+}
+
+#gall>.explaination>button:hover{
+  background-color: #E9ECEC;
+}
+
+#gall>.explaination>.wrapper div {
+  color: pink;
+}
+
+#gall>.pageTitle>.speechBubble>p{
+  margin:5px;
+}
+
+#gall>.pageTitle>.speechBubble{
+    margin-top: 33px;
+  margin-left: 260px;
+  padding: 15px;
+  width: 250px;
+  text-align: left;
+}
+
+    #gall > .pageTitle > .speechBubble > .functiontitle {
+        font-size: 22px;
+    }
+
+#gall:hover .speechBubble{
+  display:none;
+}
+
+#gall:hover > .explaination{
+  display:flex;
+}
+
+#gall:hover{
+  transform: scale(1.05)}
+
+.wrapper div {
+  z-index:-1;
+    margin: 0;
+  padding: 0;
+  height: 80px;
+  width: 80px;
+  font-size: 40px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  animation: 0.1s linear infinite;
+}
+
+.wrapper div:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation: animate 8s linear infinite;
+}
+.wrapper div:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation: animate 10s linear infinite;
+}
+.wrapper div:nth-child(3) {
+  top: 40%;
+  left: 40%;
+  animation: animate 3s linear infinite;
+}
+.wrapper div:nth-child(4) {
+  top: 66%;
+  left: 30%;
+  animation: animate 7s linear infinite;
+}
+.wrapper div:nth-child(5) {
+  top: 90%;
+  left: 10%;
+  animation: animate 9s linear infinite;
+}
+.wrapper div:nth-child(6) {
+  top: 30%;
+  left: 60%;
+  animation: animate 5s linear infinite;
+}
+.wrapper div:nth-child(7) {
+  top: 70%;
+  left: 20%;
+  animation: animate 8s linear infinite;
+}
+.wrapper div:nth-child(8) {
+  top: 75%;
+  left: 60%;
+  animation: animate 10s linear infinite;
+}
+.wrapper div:nth-child(9) {
+  top: 50%;
+  left: 50%;
+  animation: animate 6s linear infinite;
+}
+.wrapper div:nth-child(10) {
+  top: 45%;
+  left: 20%;
+  animation: animate 10s linear infinite;
+}
+.wrapper div:nth-child(11) {
+  top: 10%;
+  left: 90%;
+  animation: animate 9s linear infinite;
+}
+.wrapper div:nth-child(12) {
+  top: 20%;
+  left: 70%;
+  animation: animate 7s linear infinite;
+}
+.wrapper div:nth-child(13) {
+  top: 20%;
+  left: 20%;
+  animation: animate 8s linear infinite;
+}
+.wrapper div:nth-child(14) {
+  top: 60%;
+  left: 5%;
+  animation: animate 6s linear infinite;
+}
+.wrapper div:nth-child(15) {
+  top: 90%;
+  left: 80%;
+  animation: animate 9s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0) rotate(70deg);
+  }
+  100% {
+    transform: scale(1.3) translateY(-100px) rotate(360deg);
+  }
+}
+
+.wrapper>div{
+  z-index:0;
+}
+

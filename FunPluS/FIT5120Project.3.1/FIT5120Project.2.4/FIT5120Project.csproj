@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92E1D529-0D53-47BD-8A64-B55FDA3F039A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FIT5120Project</RootNamespace>
+    <AssemblyName>FIT5120Project</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44311</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.Extensions.4.3.1\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JokesController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\StickersController.cs" />
+    <Compile Include="Controllers\VocabulariesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FilteringWord.cs" />
+    <Compile Include="Models\FIT5120MyModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Joke.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\ProjectMembership.cs" />
+    <Compile Include="Models\Sticker.cs" />
+    <Compile Include="Models\StickerOwnership.cs" />
+    <Compile Include="Models\Vocabulary.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\aspnet-FIT5120Project-20220402094209.mdf" />
+    <Content Include="App_Data\aspnet-FIT5120Project-20220402094209_log.ldf">
+      <DependentUpon>aspnet-FIT5120Project-20220402094209.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\FIT5120MyModel.mdf" />
+    <Content Include="App_Data\FIT5120MyModel_log.ldf">
+      <DependentUpon>FIT5120MyModel.mdf</DependentUpon>
+    </Content>
+    <Content Include="Audio\joke_game\mixkit-classic-click-1117.wav" />
+    <Content Include="Audio\joke_game\mixkit-click-error-1110.wav" />
+    <Content Include="Audio\joke_game\mixkit-melodic-bonus-collect-1938.wav" />
+    <Content Include="Audio\joke_game\mixkit-select-click-1109.wav" />
+    <Content Include="Audio\joke_game\mixkit-wind-chimes-2014.wav" />
+    <Content Include="Audio\joke_game\mixkit-winning-chimes-2015.wav" />
+    <Content Include="Content\about.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\canvas\canvasPage_0_css.css" />
+    <Content Include="Content\canvas\canvasPage_css.css" />
+    <Content Include="Content\footer.css" />
+    <Content Include="Content\gallery\galleryItemPage_css.css" />
+    <Content Include="Content\gallery\gallery_css.css" />
+    <Content Include="Content\home_page.css" />
+    <Content Include="Content\joke_game\joke_game.css" />
+    <Content Include="Content\landingPage_css.css" />
+    <Content Include="Content\log_reg.css" />
+    <Content Include="Content\message\message_style.css" />
+    <Content Include="Content\navi_bar.css" />
+    <Content Include="Content\token_shop\tokenPage_approved_css.css" />
+    <Content Include="Content\token_shop\tokenPage_css.css" />
+    <Content Include="Content\tutorial\msgTutorial_css.css" />
+    <Content Include="Content\tutorial\tutorial_css.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="icons\animal\animal_bats.png" />
+    <Content Include="icons\animal\animal_bear.png" />
+    <Content Include="icons\animal\animal_bird_eagle.png" />
+    <Content Include="icons\animal\animal_bird_flamingo.png" />
+    <Content Include="icons\animal\animal_bird_hummingbird.png" />
+    <Content Include="icons\animal\animal_bird_kiwi.svg" />
+    <Content Include="icons\animal\animal_bird_owl.png" />
+    <Content Include="icons\animal\animal_bird_peacock.png" />
+    <Content Include="icons\animal\animal_bird_penguin.png" />
+    <Content Include="icons\animal\animal_bird_sparrow.png" />
+    <Content Include="icons\animal\animal_bird_turkey.png" />
+    <Content Include="icons\animal\animal_camel.png" />
+    <Content Include="icons\animal\animal_cameleon.png" />
+    <Content Include="icons\animal\animal_cat.png" />
+    <Content Include="icons\animal\animal_crocodile.png" />
+    <Content Include="icons\animal\animal_dog.png" />
+    <Content Include="icons\animal\animal_dog2.png" />
+    <Content Include="icons\animal\animal_duckling.png" />
+    <Content Include="icons\animal\animal_elephant.png" />
+    <Content Include="icons\animal\animal_elk.png" />
+    <Content Include="icons\animal\animal_farm_chick.png" />
+    <Content Include="icons\animal\animal_farm_cow.png" />
+    <Content Include="icons\animal\animal_farm_duck.png" />
+    <Content Include="icons\animal\animal_farm_goat.png" />
+    <Content Include="icons\animal\animal_farm_hen.png" />
+    <Content Include="icons\animal\animal_farm_horse.png" />
+    <Content Include="icons\animal\animal_farm_pig.png" />
+    <Content Include="icons\animal\animal_farm_rooster.png" />
+    <Content Include="icons\animal\animal_fox.png" />
+    <Content Include="icons\animal\animal_frog.png" />
+    <Content Include="icons\animal\animal_giraffe.png" />
+    <Content Include="icons\animal\animal_goat2.png" />
+    <Content Include="icons\animal\animal_goat3.png" />
+    <Content Include="icons\animal\animal_hippo.png" />
+    <Content Include="icons\animal\animal_kangaroo.png" />
+    <Content Include="icons\animal\animal_kingkong.png" />
+    <Content Include="icons\animal\animal_kitty.png" />
+    <Content Include="icons\animal\animal_lion.png" />
+    <Content Include="icons\animal\animal_mammot.png" />
+    <Content Include="icons\animal\animal_monkey.png" />
+    <Content Include="icons\animal\animal_mouse.png" />
+    <Content Include="icons\animal\animal_otter.svg" />
+    <Content Include="icons\animal\animal_panda.png" />
+    <Content Include="icons\animal\animal_puppy.png" />
+    <Content Include="icons\animal\animal_rabbit.png" />
+    <Content Include="icons\animal\animal_scorpion.png" />
+    <Content Include="icons\animal\animal_sheep.png" />
+    <Content Include="icons\animal\animal_skunk.png" />
+    <Content Include="icons\animal\animal_sloth.png" />
+    <Content Include="icons\animal\animal_snake.png" />
+    <Content Include="icons\animal\animal_squirrel.png" />
+    <Content Include="icons\animal\animal_swan.png" />
+    <Content Include="icons\animal\animal_tiger.png" />
+    <Content Include="icons\animal\animal_wolf.png" />
+    <Content Include="icons\animal\animal_zebra.png" />
+    <Content Include="icons\art\art_base.png" />
+    <Content Include="icons\art\art_clown.png" />
+    <Content Include="icons\art\art_drum1.png" />
+    <Content Include="icons\art\art_drum2.png" />
+    <Content Include="icons\art\art_easle.png" />
+    <Content Include="icons\art\art_flute1.png" />
+    <Content Include="icons\art\art_flute2.png" />
+    <Content Include="icons\art\art_guitar.png" />
+    <Content Include="icons\art\art_harp.png" />
+    <Content Include="icons\art\art_jing.png" />
+    <Content Include="icons\art\art_model.png" />
+    <Content Include="icons\art\art_molla.png" />
+    <Content Include="icons\art\art_note1.png" />
+    <Content Include="icons\art\art_note2.png" />
+    <Content Include="icons\art\art_note3.png" />
+    <Content Include="icons\art\art_note4.png" />
+    <Content Include="icons\art\art_origami.png" />
+    <Content Include="icons\art\art_palette.png" />
+    <Content Include="icons\art\art_piano.png" />
+    <Content Include="icons\art\art_saxophone.png" />
+    <Content Include="icons\art\art_speaker.png" />
+    <Content Include="icons\art\art_trumpet.png" />
+    <Content Include="icons\art\art_violin.png" />
+    <Content Include="icons\art\art_xylophone.png" />
+    <Content Include="icons\art\image12.png" />
+    <Content Include="icons\body\body_bone.png" />
+    <Content Include="icons\body\body_ear.png" />
+    <Content Include="icons\body\body_eye.png" />
+    <Content Include="icons\body\body_eyes.png" />
+    <Content Include="icons\body\body_foot.png" />
+    <Content Include="icons\body\body_heart.png" />
+    <Content Include="icons\body\body_lip.png" />
+    <Content Include="icons\body\body_mustache.png" />
+    <Content Include="icons\body\body_nose.png" />
+    <Content Include="icons\body\body_tougne.png" />
+    <Content Include="icons\bugs\bug_insect_beatle.png" />
+    <Content Include="icons\bugs\bug_insect_beatle2.png" />
+    <Content Include="icons\bugs\bug_insect_bee.png" />
+    <Content Include="icons\bugs\bug_insect_beehive.png" />
+    <Content Include="icons\bugs\bug_insect_butterfly.png" />
+    <Content Include="icons\bugs\bug_insect_catepillar.png" />
+    <Content Include="icons\bugs\bug_insect_grasshopper.png" />
+    <Content Include="icons\bugs\bug_insect_ladybug.png" />
+    <Content Include="icons\bugs\bug_insect_mosquito.png" />
+    <Content Include="icons\bugs\bug_insect_snail.png" />
+    <Content Include="icons\bugs\bug_insect_spider.png" />
+    <Content Include="icons\bugs\bug_insect_spiderweb.png" />
+    <Content Include="icons\bugs\bug_insect_worm.png" />
+    <Content Include="icons\clothes\clothes_beanie.png" />
+    <Content Include="icons\clothes\clothes_dress.png" />
+    <Content Include="icons\clothes\clothes_pants.png" />
+    <Content Include="icons\clothes\clothes_pullover.png" />
+    <Content Include="icons\clothes\clothes_shoe.png" />
+    <Content Include="icons\clothes\clothes_shortShirt.png" />
+    <Content Include="icons\clothes\clothes_skirt.png" />
+    <Content Include="icons\clothes\clothes_sock.png" />
+    <Content Include="icons\clothes\clothes_suit.png" />
+    <Content Include="icons\clothes\clothes_tshirt1.png" />
+    <Content Include="icons\clothes\clothes_tshirt2.png" />
+    <Content Include="icons\clothes\clothes_tshirt3.png" />
+    <Content Include="icons\emoji\face-grin-beam.svg" />
+    <Content Include="icons\emoji\face-grin-hearts.svg" />
+    <Content Include="icons\emoji\face-grin-squint-tears.svg" />
+    <Content Include="icons\emoji\face-grin-squint.svg" />
+    <Content Include="icons\emoji\face-grin-stars.svg" />
+    <Content Include="icons\emoji\face-grin-tears.svg" />
+    <Content Include="icons\emoji\face-grin-tongue-squint.svg" />
+    <Content Include="icons\emoji\face-grin-tongue-wink.svg" />
+    <Content Include="icons\emoji\face-grin-tongue.svg" />
+    <Content Include="icons\emoji\face-grin-wide.svg" />
+    <Content Include="icons\emoji\face-grin-wink.svg" />
+    <Content Include="icons\emoji\face-grin.svg" />
+    <Content Include="icons\emoji\face-kiss-beam.svg" />
+    <Content Include="icons\emoji\face-kiss-wink-heart.svg" />
+    <Content Include="icons\emoji\face-kiss.svg" />
+    <Content Include="icons\emoji\face-laugh-beam.svg" />
+    <Content Include="icons\emoji\face-laugh-squint.svg" />
+    <Content Include="icons\emoji\face-laugh-wink.svg" />
+    <Content Include="icons\emoji\face-laugh.svg" />
+    <Content Include="icons\emoji\face-smile-beam.svg" />
+    <Content Include="icons\emoji\face-smile-wink.svg" />
+    <Content Include="icons\emoji\face-smile.svg" />
+    <Content Include="icons\emoji\face-surprise.svg" />
+    <Content Include="icons\emoji\heart.svg" />
+    <Content Include="icons\food\carrot.svg" />
+    <Content Include="icons\food\egg.svg" />
+    <Content Include="icons\food\food_baguette.png" />
+    <Content Include="icons\food\food_bdayCake.png" />
+    <Content Include="icons\food\food_chefHat.png" />
+    <Content Include="icons\food\food_chickenLeg.png" />
+    <Content Include="icons\food\food_chili.png" />
+    <Content Include="icons\food\food_corn.png" />
+    <Content Include="icons\food\food_croissant.png" />
+    <Content Include="icons\food\food_doughnut.png" />
+    <Content Include="icons\food\food_fruit_apple.png" />
+    <Content Include="icons\food\food_fruit_banana.png" />
+    <Content Include="icons\food\food_fruit_cherry.png" />
+    <Content Include="icons\food\food_fruit_grape.png" />
+    <Content Include="icons\food\food_fruit_peach.png" />
+    <Content Include="icons\food\food_fruit_pineapple.png" />
+    <Content Include="icons\food\food_fruit_strawberry.png" />
+    <Content Include="icons\food\food_manju.png" />
+    <Content Include="icons\food\food_pea.png" />
+    <Content Include="icons\food\food_pizza.svg" />
+    <Content Include="icons\food\food_popsicle.png" />
+    <Content Include="icons\food\food_tea.png" />
+    <Content Include="icons\food\hotdog.svg" />
+    <Content Include="icons\food\lemon.svg" />
+    <Content Include="icons\house\house_alarm.png" />
+    <Content Include="icons\house\house_bed.png" />
+    <Content Include="icons\house\house_dining.png" />
+    <Content Include="icons\house\house_farm_barn.png" />
+    <Content Include="icons\house\house_farm_scarecrow.png" />
+    <Content Include="icons\house\house_food_pumpkin.png" />
+    <Content Include="icons\house\house_houseBrick.png" />
+    <Content Include="icons\house\house_houseGarden.png" />
+    <Content Include="icons\house\house_houseHeart.png" />
+    <Content Include="icons\house\house_playground.png" />
+    <Content Include="icons\house\house_pony.png" />
+    <Content Include="icons\house\house_pram.png" />
+    <Content Include="icons\house\house_school.png" />
+    <Content Include="icons\house\house_sofa.png" />
+    <Content Include="icons\house\house_stuffToy.png" />
+    <Content Include="icons\house\house_washingMachine.png" />
+    <Content Include="icons\house\house_window.png" />
+    <Content Include="icons\magic\ghost.svg" />
+    <Content Include="icons\magic\magic_alien1.png" />
+    <Content Include="icons\magic\magic_alien2.png" />
+    <Content Include="icons\magic\magic_dragon1.png" />
+    <Content Include="icons\magic\magic_dragon2.png" />
+    <Content Include="icons\magic\magic_fairyFemale.png" />
+    <Content Include="icons\magic\magic_fairyMale.png" />
+    <Content Include="icons\magic\magic_genome.png" />
+    <Content Include="icons\magic\magic_magidLamp.png" />
+    <Content Include="icons\magic\magic_monster1.png" />
+    <Content Include="icons\magic\magic_monster2.png" />
+    <Content Include="icons\magic\magic_monster3.png" />
+    <Content Include="icons\magic\magic_ocean_mermaidFemale.png" />
+    <Content Include="icons\magic\magic_ocean_mermaidMale.png" />
+    <Content Include="icons\magic\magic_pegasus.png" />
+    <Content Include="icons\magic\magic_robot.png" />
+    <Content Include="icons\magic\magic_unicorn.png" />
+    <Content Include="icons\magic\magic_witch.png" />
+    <Content Include="icons\nature\nature_bark.png" />
+    <Content Include="icons\nature\nature_cactus.png" />
+    <Content Include="icons\nature\nature_donguri.png" />
+    <Content Include="icons\nature\nature_earth.svg" />
+    <Content Include="icons\nature\nature_flower1.png" />
+    <Content Include="icons\nature\nature_flower2.png" />
+    <Content Include="icons\nature\nature_flower3.png" />
+    <Content Include="icons\nature\nature_flower4.png" />
+    <Content Include="icons\nature\nature_island.png" />
+    <Content Include="icons\nature\nature_leaf.svg" />
+    <Content Include="icons\nature\nature_mushroom.png" />
+    <Content Include="icons\nature\nature_seedling.svg" />
+    <Content Include="icons\nature\nature_sky_airballoon.png" />
+    <Content Include="icons\nature\nature_sky_cloud.png" />
+    <Content Include="icons\nature\nature_sky_moon.png" />
+    <Content Include="icons\nature\nature_sky_planet.png" />
+    <Content Include="icons\nature\nature_sky_rocket.png" />
+    <Content Include="icons\nature\nature_sky_snow.png" />
+    <Content Include="icons\nature\nature_sky_star.png" />
+    <Content Include="icons\nature\nature_sky_sun.png" />
+    <Content Include="icons\nature\nature_snowman.png" />
+    <Content Include="icons\nature\nature_tree.svg" />
+    <Content Include="icons\nature\nature_tree1.png" />
+    <Content Include="icons\nature\nature_tree2.png" />
+    <Content Include="icons\nature\nature_tree3.png" />
+    <Content Include="icons\nature\nature_tree4.png" />
+    <Content Include="icons\nature\nature_tree5.png" />
+    <Content Include="icons\nature\nature_tree6.png" />
+    <Content Include="icons\nature\nature_volcano.svg" />
+    <Content Include="icons\nature\nature_water.png" />
+    <Content Include="icons\ocean\ocean_boat.png" />
+    <Content Include="icons\ocean\ocean_coral1.png" />
+    <Content Include="icons\ocean\ocean_coral2.png" />
+    <Content Include="icons\ocean\ocean_crab.png" />
+    <Content Include="icons\ocean\ocean_dolphine.png" />
+    <Content Include="icons\ocean\ocean_duckfeet.png" />
+    <Content Include="icons\ocean\ocean_fish1.png" />
+    <Content Include="icons\ocean\ocean_fish2.png" />
+    <Content Include="icons\ocean\ocean_fish3.png" />
+    <Content Include="icons\ocean\ocean_fish4.png" />
+    <Content Include="icons\ocean\ocean_manetee.png" />
+    <Content Include="icons\ocean\ocean_nemo.png" />
+    <Content Include="icons\ocean\ocean_octopus.png" />
+    <Content Include="icons\ocean\ocean_sailboat.png" />
+    <Content Include="icons\ocean\ocean_seahorse.png" />
+    <Content Include="icons\ocean\ocean_seal.png" />
+    <Content Include="icons\ocean\ocean_seeweed.png" />
+    <Content Include="icons\ocean\ocean_shark.png" />
+    <Content Include="icons\ocean\ocean_shell.png" />
+    <Content Include="icons\ocean\ocean_shellPearl.png" />
+    <Content Include="icons\ocean\ocean_ship1.png" />
+    <Content Include="icons\ocean\ocean_ship2.png" />
+    <Content Include="icons\ocean\ocean_shrimp.svg" />
+    <Content Include="icons\ocean\ocean_whale1.png" />
+    <Content Include="icons\ocean\ocean_whale2.png" />
+    <Content Include="icons\sports\sports_badminton.png" />
+    <Content Include="icons\sports\sports_basketball.png" />
+    <Content Include="icons\sports\sports_board.png" />
+    <Content Include="icons\sports\sports_boomerang.png" />
+    <Content Include="icons\sports\sports_nfl.png" />
+    <Content Include="icons\sports\sports_pingpong.png" />
+    <Content Include="icons\sports\sports_rugby.png" />
+    <Content Include="icons\sports\sports_skate.png" />
+    <Content Include="icons\sports\sports_soccer.png" />
+    <Content Include="icons\sports\sports_volleyball.png" />
+    <Content Include="icons\transport\transport_bike.png" />
+    <Content Include="icons\transport\transport_car1.png" />
+    <Content Include="icons\transport\transport_car2.png" />
+    <Content Include="icons\transport\transport_f1.png" />
+    <Content Include="icons\transport\transport_helicopter.png" />
+    <Content Include="icons\transport\transport_plane.png" />
+    <Content Include="icons\transport\transport_taxii.png" />
+    <Content Include="icons\transport\transport_tracktor.png" />
+    <Content Include="icons\transport\transport_train.png" />
+    <Content Include="icons\transport\transport_trolley.png" />
+    <Content Include="icons\transport\transport_truck1.png" />
+    <Content Include="icons\transport\transport_truck2.png" />
+    <Content Include="icons\transport\transport_truck3.png" />
+    <Content Include="icons\transport\transport_truck4.png" />
+    <Content Include="images\aboutUs_source\bit_dh.png" />
+    <Content Include="images\aboutUs_source\bit_lm.png" />
+    <Content Include="images\aboutUs_source\bit_xw.png" />
+    <Content Include="images\aboutUs_source\bit_zx.png" />
+    <Content Include="images\aboutUs_source\Body_shaming.png" />
+    <Content Include="images\aboutUs_source\check box.png" />
+    <Content Include="images\aboutUs_source\Communication01.jpg" />
+    <Content Include="images\aboutUs_source\Cyberbullying.png" />
+    <Content Include="images\aboutUs_source\Depression.png" />
+    <Content Include="images\aboutUs_source\Desk05212104.jpg" />
+    <Content Include="images\aboutUs_source\Heartbreak.png" />
+    <Content Include="images\border.png" />
+    <Content Include="images\about_source\about_img_2.jpg" />
+    <Content Include="images\canvasProjBg\7974976_xl.jpg" />
+    <Content Include="images\canvasProjBg\Background_Games.jpeg" />
+    <Content Include="images\canvasProjBg\BackyardGarden.jpg" />
+    <Content Include="images\canvasProjBg\Bus.jpg" />
+    <Content Include="images\canvasProjBg\ChristmasWinterBackground_jpg-01.jpg" />
+    <Content Include="images\canvasProjBg\ClassRoom1.jpg" />
+    <Content Include="images\canvasProjBg\CozyLivingRoom.jpg" />
+    <Content Include="images\canvasProjBg\Forest1.jpg" />
+    <Content Include="images\canvasProjBg\Graveyard1.jpg" />
+    <Content Include="images\canvasProjBg\PublicGarden.jpg" />
+    <Content Include="images\canvasProjBg\SpaceandSolarSystemBackground.jpg" />
+    <Content Include="images\canvasProjBg\summer_beach.jpg" />
+    <Content Include="images\canvas\IntoTheJungle.png" />
+    <Content Include="images\canvas\navi_icon_2.png" />
+    <Content Include="images\canvas\SpookySpook.png" />
+    <Content Include="images\canvas\summerHighlights.png" />
+    <Content Include="images\canvas\WechatIMG2313.png" />
+    <Content Include="images\canvas\WechatIMG2314.png" />
+    <Content Include="images\canvas\WechatIMG2978.png" />
+    <Content Include="images\canvas\WechatIMG3184.png" />
+    <Content Include="images\canvas\WechatIMG3187.png" />
+    <Content Include="images\canvas\WechatIMG3189.jpeg" />
+    <Content Include="images\demoCompletedProj\manWithTheFlute.png" />
+    <Content Include="images\demoCompletedProj\manWithTheFlute_frame.png" />
+    <Content Include="images\demoCompletedProj\stringCinderella.png" />
+    <Content Include="images\demoCompletedProj\strongCinderella_frame.png" />
+    <Content Include="images\demoCompletedProj\winterWonderland.png" />
+    <Content Include="images\demoCompletedProj\winterWonderland_frame.png" />
+    <Content Include="images\demoCompletedProj\zombieAttack.png" />
+    <Content Include="images\demoCompletedProj\zombieAttack_frame.png" />
+    <Content Include="images\FunPlusIcon.ico" />
+    <Content Include="images\HomePage\arrow1_2.png" />
+    <Content Include="images\HomePage\arrow2_3.png" />
+    <Content Include="images\HomePage\arrow3_4.png" />
+    <Content Include="images\HomePage\arrow4_5.png" />
+    <Content Include="images\HomePage\arrrow3_4.png" />
+    <Content Include="images\HomePage\logoComic.png" />
+    <Content Include="images\HomePage\msgBg.png" />
+    <Content Include="images\HomePage\oceanBackground.png" />
+    <Content Include="images\HomePage\WechatIMG1098.jpeg" />
+    <Content Include="images\HomePage\WechatIMG1596.png" />
+    <Content Include="images\HomePage\WechatIMG2313.png" />
+    <Content Include="images\HomePage\WechatIMG2314.png" />
+    <Content Include="images\HomePage\WechatIMG2978.png" />
+    <Content Include="images\HomePage\WechatIMG3051.png" />
+    <Content Include="images\HomePage\WechatIMG3185.png" />
+    <Content Include="images\home_page_source\a08b7284-b714-4936-82db-d3dbc543b18c.png" />
+    <Content Include="images\home_page_source\codingForKids.svg" />
+    <Content Include="images\home_page_source\Communication01.jpg" />
+    <Content Include="images\home_page_source\home_joke.jpg" />
+    <Content Include="images\home_page_source\home_message.png" />
+    <Content Include="images\home_page_source\home_page_back.png" />
+    <Content Include="images\home_page_source\msgBg.png" />
+    <Content Include="images\home_page_source\WechatIMG1595.png" />
+    <Content Include="images\ImageIcon.png" />
+    <Content Include="images\joke_game_source\4EB2CCE6-D45D-47A8-B38B-1EF67EA350C0 %281%29.png" />
+    <Content Include="images\joke_game_source\a08b7284-b714-4936-82db-d3dbc543b18c.png" />
+    <Content Include="images\joke_game_source\back_icon.png" />
+    <Content Include="images\joke_game_source\cflj_gameLogo.png" />
+    <Content Include="images\joke_game_source\cflj_logo_bg.png" />
+    <Content Include="images\joke_game_source\cflj_startPage.png" />
+    <Content Include="images\joke_game_source\Face Avatar 1.1.png" />
+    <Content Include="images\joke_game_source\Face Avatar 1.2.png" />
+    <Content Include="images\joke_game_source\Face Avatar 1.3.png" />
+    <Content Include="images\joke_game_source\Face Avatar 4.2.png" />
+    <Content Include="images\joke_game_source\Face Avatar 4.3.png" />
+    <Content Include="images\joke_game_source\Face Avatar 6.4.png" />
+    <Content Include="images\joke_game_source\Face Avatar 6.5.png" />
+    <Content Include="images\joke_game_source\home_icon.png" />
+    <Content Include="images\joke_game_source\message_sent_back.jpg" />
+    <Content Include="images\joke_game_source\navi_back.png" />
+    <Content Include="images\joke_game_source\navi_back2.png" />
+    <Content Include="images\joke_game_source\navi_back3.png" />
+    <Content Include="images\joke_game_source\navi_icon_2.png" />
+    <Content Include="images\joke_game_source\oceanBackground.png" />
+    <Content Include="images\joke_game_source\speechBubble.png" />
+    <Content Include="images\joke_game_source\WechatIMG621.png" />
+    <Content Include="images\login_register_source\login_back.jpg" />
+    <Content Include="images\message_source\Face Avatar 1.1.png" />
+    <Content Include="images\message_source\Face Avatar 1.2.png" />
+    <Content Include="images\message_source\Face Avatar 1.3.png" />
+    <Content Include="images\message_source\Face Avatar 4.2.png" />
+    <Content Include="images\message_source\Face Avatar 4.3.png" />
+    <Content Include="images\message_source\Face Avatar 6.4.png" />
+    <Content Include="images\message_source\Face Avatar 6.5.png" />
+    <Content Include="images\message_source\msgBg.png" />
+    <Content Include="images\message_source\postcardBG_1.png" />
+    <Content Include="images\message_source\postcardBG_2.png" />
+    <Content Include="images\message_source\postcardBG_3.png" />
+    <Content Include="images\message_source\postcardBG_4.jpeg" />
+    <Content Include="images\message_source\postcardBG_5.jpg" />
+    <Content Include="images\message_source\postcardBG_6.png" />
+    <Content Include="images\message_source\postcardBG_7.jpg" />
+    <Content Include="images\message_source\postcardBG_7.png" />
+    <Content Include="images\message_source\WechatIMG1595.png" />
+    <Content Include="images\navi_bar_source\navi_about_icon.png" />
+    <Content Include="images\navi_bar_source\navi_about_icon_hover.png" />
+    <Content Include="images\navi_bar_source\navi_back.png" />
+    <Content Include="images\navi_bar_source\navi_back_icon.png" />
+    <Content Include="images\navi_bar_source\navi_home_icon.png" />
+    <Content Include="images\navi_bar_source\navi_home_icon_hover.png" />
+    <Content Include="images\navi_bar_source\navi_joke_icon.png" />
+    <Content Include="images\navi_bar_source\navi_joke_icon_hover.png" />
+    <Content Include="images\navi_bar_source\navi_logo.png" />
+    <Content Include="images\navi_bar_source\navi_message_icon.png" />
+    <Content Include="images\navi_bar_source\navi_message_icon_hover.png" />
+    <Content Include="images\navi_bar_source\navi_paint_icon.png" />
+    <Content Include="images\navi_bar_source\navi_paint_icon_hover.png" />
+    <Content Include="images\navi_bar_source\navi_shop_icon.png" />
+    <Content Include="images\navi_bar_source\navi_shop_icon_hover.png" />
+    <Content Include="images\navi_bar_source\user_icon.png" />
+    <Content Include="images\Pencil.png" />
+    <Content Include="images\post_card_source\postcardBG_1.png" />
+    <Content Include="images\post_card_source\postcardBG_2.png" />
+    <Content Include="images\post_card_source\postcardBG_3.png" />
+    <Content Include="images\post_card_source\postcardBG_4.jpeg" />
+    <Content Include="images\post_card_source\postcardBG_5.jpg" />
+    <Content Include="images\post_card_source\postcardBG_6.png" />
+    <Content Include="images\post_card_source\postcardBG_7.jpg" />
+    <Content Include="images\post_card_source\postcardBG_8.png" />
+    <Content Include="images\Save.png" />
+    <Content Include="images\about_source\about_img_1.png" />
+    <Content Include="images\ShanuHTML5DRAWimg.png" />
+    <Content Include="images\team_logo.png" />
+    <Content Include="images\tutePhotos\tute1_tokenShop0.png" />
+    <Content Include="images\tutePhotos\tute1_tokenShop1.png" />
+    <Content Include="images\tutePhotos\tute1_tokenShop2.png" />
+    <Content Include="images\tutePhotos\tute1_tokenShop3.png" />
+    <Content Include="images\tutePhotos\tute1_tokenShop4.png" />
+    <Content Include="images\tutePhotos\tute1_tokenShop5.png" />
+    <Content Include="images\tutePhotos\tute1_tokenShop6.png" />
+    <Content Include="images\tutePhotos\tute2_chooseProj_1.png" />
+    <Content Include="images\tutePhotos\tute2_chooseProj_2.png" />
+    <Content Include="images\tutePhotos\tute2_chooseProj_3.png" />
+    <Content Include="images\tutePhotos\tute2_doProj_0.png" />
+    <Content Include="images\tutePhotos\tute2_doProj_0_1.png" />
+    <Content Include="images\tutePhotos\tute2_doProj_1.png" />
+    <Content Include="images\tutePhotos\tute2_doProj_2.png" />
+    <Content Include="images\tutePhotos\tute2_doProj_3.png" />
+    <Content Include="images\tutePhotos\tute2_doProj_4.png" />
+    <Content Include="images\tutePhotos\tute2_doProj_5.png" />
+    <Content Include="images\tutePhotos\tute2_doProj_6.png" />
+    <Content Include="images\tutorial\a08b7284-b714-4936-82db-d3dbc543b18c.png" />
+    <Content Include="images\tutorial\cflj_logo_bg.png" />
+    <Content Include="images\tutorial\Face Avatar 1.1.png" />
+    <Content Include="images\tutorial\Face Avatar 1.2.png" />
+    <Content Include="images\tutorial\Face Avatar 1.3.png" />
+    <Content Include="images\tutorial\Face Avatar 4.2.png" />
+    <Content Include="images\tutorial\Face Avatar 4.3.png" />
+    <Content Include="images\tutorial\Face Avatar 6.4.png" />
+    <Content Include="images\tutorial\Face Avatar 6.5.png" />
+    <Content Include="images\tutorial\msgBg.png" />
+    <Content Include="images\tutorial\navi_back3.png" />
+    <Content Include="images\tutorial\oceanBackground.png" />
+    <Content Include="images\tutorial\postcardBG_1.png" />
+    <Content Include="images\tutorial\postcardBG_2.png" />
+    <Content Include="images\tutorial\postcardBG_3.png" />
+    <Content Include="images\tutorial\postcardBG_4.jpeg" />
+    <Content Include="images\tutorial\postcardBG_5.jpg" />
+    <Content Include="images\tutorial\postcardBG_6.png" />
+    <Content Include="images\tutorial\postcardBG_7.jpg" />
+    <Content Include="images\tutorial\postcardBG_7.png" />
+    <Content Include="images\tutorial\WechatIMG2978.png" />
+    <Content Include="images\User_BackPaint.png" />
+    <Content Include="images\WechatIMG2313.png" />
+    <Content Include="images\WechatIMG2978.png" />
+    <Content Include="images\WechatIMG3051.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="icons\.DS_Store" />
+    <Content Include="icons\animal\.DS_Store" />
+    <Content Include="icons\art\.DS_Store" />
+    <Content Include="icons\body\.DS_Store" />
+    <Content Include="icons\bugs\.DS_Store" />
+    <Content Include="icons\clothes\.DS_Store" />
+    <Content Include="icons\emoji\.DS_Store" />
+    <Content Include="icons\food\.DS_Store" />
+    <Content Include="icons\house\.DS_Store" />
+    <Content Include="icons\magic\.DS_Store" />
+    <Content Include="icons\nature\.DS_Store" />
+    <Content Include="icons\ocean\.DS_Store" />
+    <Content Include="icons\sports\.DS_Store" />
+    <Content Include="icons\transport\.DS_Store" />
+    <None Include="Properties\PublishProfiles\FIT5120ProjectFunPlusFinal - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FunPlus - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FunPlusProject - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\canvas\canvasPage1_js.js" />
+    <Content Include="Scripts\canvas\canvasPage_0_js.js" />
+    <Content Include="Scripts\gallery\galleryItemPage_js.js" />
+    <Content Include="Scripts\gallery\gallery_js.js" />
+    <Content Include="Scripts\jokegame_beta.js" />
+    <Content Include="Scripts\joke_game\aduio.js" />
+    <Content Include="Scripts\joke_game\login_require.js" />
+    <Content Include="Scripts\joke_game\post_card.js" />
+    <Content Include="Scripts\joke_game\scroll_page.js" />
+    <Content Include="Scripts\joke_game\stop_word.js" />
+    <Content Include="Scripts\joke_game\word_chose.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\message\msgPage.js" />
+    <Content Include="Scripts\message\reveal.js" />
+    <Content Include="Scripts\message\write_message_id.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\tokenPage_js.js" />
+    <Content Include="Scripts\tutorial\cflj_completeTutorial.js" />
+    <Content Include="Scripts\tutorial\msgTutorial_js.js" />
+    <Content Include="Scripts\tutorial\Untitled.js" />
+    <Content Include="Scripts\user_menu.js" />
+    <Content Include="Styles\arrow.gif" />
+    <Content Include="Styles\cross.gif" />
+    <Content Include="Styles\hs.png" />
+    <Content Include="Styles\hv.png" />
+    <Content Include="Styles\jscolor.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Jokes\Create.cshtml" />
+    <Content Include="Views\Jokes\Delete.cshtml" />
+    <Content Include="Views\Jokes\Details.cshtml" />
+    <Content Include="Views\Jokes\Edit.cshtml" />
+    <Content Include="Views\Jokes\Index.cshtml" />
+    <Content Include="Views\Vocabularies\Create.cshtml" />
+    <Content Include="Views\Vocabularies\Delete.cshtml" />
+    <Content Include="Views\Vocabularies\Details.cshtml" />
+    <Content Include="Views\Vocabularies\Edit.cshtml" />
+    <Content Include="Views\Vocabularies\Index.cshtml" />
+    <Content Include="Views\Messages\Create.cshtml" />
+    <Content Include="Views\Messages\Delete.cshtml" />
+    <Content Include="Views\Messages\Details.cshtml" />
+    <Content Include="Views\Messages\Edit.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\Shared\_HeaderPartial.cshtml" />
+    <Content Include="Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Views\Jokes\Joke_game.cshtml" />
+    <Content Include="Views\Jokes\Joke_game_beta.cshtml" />
+    <Content Include="Views\Jokes\Test.cshtml" />
+    <Content Include="Views\Jokes\Message_send.cshtml" />
+    <Content Include="Views\Messages\Test.cshtml" />
+    <Content Include="Views\Messages\ReaderMessage.cshtml" />
+    <Content Include="Views\Messages\WriterMessage.cshtml" />
+    <Content Include="Views\Messages\EmotionSent.cshtml" />
+    <Content Include="Views\Stickers\Create.cshtml" />
+    <Content Include="Views\Stickers\Delete.cshtml" />
+    <Content Include="Views\Stickers\Details.cshtml" />
+    <Content Include="Views\Stickers\Edit.cshtml" />
+    <Content Include="Views\Stickers\Index.cshtml" />
+    <Content Include="Views\Stickers\tokenPage_approved.cshtml" />
+    <Content Include="Views\Shared\SecondLayout.cshtml" />
+    <Content Include="Views\Stickers\canvasPage_0.cshtml" />
+    <Content Include="Views\Stickers\canvasPage_1.cshtml" />
+    <Content Include="Views\Stickers\canvasPage_confirmation.cshtml" />
+    <Content Include="Views\Home\JokeTutorial.cshtml" />
+    <Content Include="Views\Home\msgTutorial.cshtml" />
+    <Content Include="Views\Stickers\gallery.cshtml" />
+    <Content Include="Views\Stickers\galleryItemPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10221</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44311/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

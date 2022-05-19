@@ -1,0 +1,51 @@
+﻿@model FIT5120Project.Models.Sticker
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sticker</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.stickerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stickerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stickerPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stickerPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.stickerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

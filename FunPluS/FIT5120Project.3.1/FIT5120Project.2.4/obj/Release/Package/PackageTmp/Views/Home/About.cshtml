@@ -1,0 +1,241 @@
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+<html style='scroll-behavior: smooth'>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Concert One', cursive;
+            color: #403D3D;
+        }
+
+        #missionStatement {
+            width: 800px;
+            margin: auto;
+            padding: 10px;
+            font-size: 18px;
+            text-align: justify;
+            text-justify: inter-word;
+            font-family: Muli, sans-serif display: flex;
+            justify-content: center;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #020922;
+        }
+
+        .reveal {
+            position: relative;
+            transform: translateY(150px);
+            opacity: 0;
+            transition: 1s all ease;
+        }
+
+            .reveal.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+        .contain {
+            font-family: 'Concert One', cursive;
+            background-color: white;
+            width: 250px;
+            border-radius: 15px;
+            margin: 10px;
+        }
+
+        .allProfiles {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .jobTitle {
+            top: 0;
+            background-color: #020922;
+            color: white;
+            height: 195px;
+            width: 230px;
+            text-align: center;
+            margin: 0;
+            padding: 0 10px 0 10px;
+        }
+
+        .desc {
+            height: 0;
+            text-align: justify;
+            padding: 10px 10px;
+            transition: 0.3s;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .down {
+            border: none;
+            background: none;
+            outline: none;
+            display: block;
+            margin-left: 100px;
+            transition: 0.3s;
+            font-size: 20px;
+            color: white;
+            top: 100%;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #00c2cb;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Concert One', cursive;
+            width: 150px;
+        }
+
+            #myBtn: hover {
+                background-color: #5ce1e6;
+            }
+    </style>
+</head>
+<body>
+    <div class="main_button">
+        <a title="Home Page" href="@Url.Action("Index","Home")"><img style="position: fixed; z-index: 5; right: 0; height: 130px; width: 130px; " src="@Url.Content("~/images/joke_game_source/home_icon.png")" /></a>
+    </div>
+    <a href='#topPage'>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    </a>
+    <section id='topPage'>
+        <div class='container' style='background-color:#020922; color: white; padding:10%; display: flex; flex-direction:column; align-items: center; justify-content:center'>
+            <h1 style='font-size: 100px'>Why FUN+?</h1>
+
+        </div>
+        <p style='color: white; font-size: 40px; position:absolute; bottom:0;'>Scroll down <i class="fa-solid fa-angles-down"></i></p>
+
+    </section>
+    <section>
+        <div class='container reveal' style='background-color:#020922; color: white; padding:10%; display: flex; flex-direction:row; align-items: center; justify-content:center'>
+            <img src="@Url.Content("~/images/aboutUs_source/Cyberbullying.png")" style='width: 450px;'>
+            <div style='margin-left: 5%; width: 500px; display: flex; flex-direction: column'>
+                <h1 style='font-size: 40px'>44% of Australian youths had negative online experiences</h1>
+                <br>
+                <p style='font-size: 25px'>According to a report by eSafety Commissioner, 15% of Australian youths have received threats or abuse online at the year of 2021. </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class='container reveal' style='background-color:#020922; color: white; padding:10%; display: flex; flex-direction:row; align-items: center; justify-content:center'>
+            <div style='width: 500px;display: flex; flex-direction: column'>
+                <h1 style='font-size: 40px'>Negative internet experiences or cyberbullying is closely related to social and emotional isolation</h1><br>
+                <p style='font-size: 25px'>Multiple studies have found a link between negative internet experience and cyberbullying and isolation amongst youths, while positive online experience is associated alleviation in emotional isolation. </p>
+            </div>
+            <img src="@Url.Content("~/images/aboutUs_source/Body_shaming.png")" style='margin-left: 5%; width: 450px;'>
+        </div>
+    </section>
+
+    <section>
+        <div class='container reveal' style='background-color:#020922; color: white; padding:10%; display: flex; flex-direction:row; align-items: center; justify-content:center'>
+            <img src="@Url.Content("~/images/aboutUs_source/Heartbreak.png")" style='width: 450px;'>
+            <div style='margin-left: 5%; width: 500px; display: flex; flex-direction: column'>
+                <h1 style='font-size: 40px'>Social and emotional isolation could result in negative health and mental issues</h1><br>
+                <p style='font-size: 25px'>Social isolation amongst youths is associated with depression, anxiety, or even health issues, such as the risk of developing heart disease, or even pre-mature death. </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class='container reveal' style="color: #020922;">
+            <img src="@Url.Content("~/images/aboutUs_source/Desk05212104.jpg")" style='max-height: 10%; max-width: 100%;margin: auto;'>
+            <h1 style='font-size: 30px; width: 250px; position: absolute; bottom: 100px; left: 40px'>With Fun+, our goal is to encourage Australian youths to create a positive internet environment</h1>
+            <p style='font-size: 20px; width: 250px; position: absolute; bottom: 100px; right: 20px'>Via messaging each other with a limited amount of words and empathy training, the youths on Fun+ learn how to empathise with the reader of their message online, and help create a positive internet environment in the future. </p>
+        </div>
+    </section>
+
+    <section style='background-color:white'>
+        <div class='container reveal' style="color: #020922;padding:10%; display: flex; flex-direction:row; align-items: center; justify-content:center">
+            <img src="@Url.Content("~/images/aboutUs_source/Communication01.jpg")" style='margin: auto; height: 750px'>
+            <div style='width: 400px; display: flex; flex-direction: column'>
+                <h1 style='font-size: 40px'>By exchanging positive messages and work collaborately on artwork, Fun+ aims to connect the Australian youths and reduce their isolation</h1><br>
+                <p style='font-size: 25px'>With empathy training and collaborative work, our goal is to create a platform where the youths can get connected, empathise with each other, and have fun altogether.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+
+        function furtherDesc(idx) {
+            var desc = document.getElementsByClassName('desc')[idx];
+            var descText = document.getElementsByClassName('descText')[idx];
+            var down = document.getElementsByClassName('down')[idx];
+
+            if (desc.style.height === '0px') {
+                desc.style.height = '290px'
+                descText.style.opacity = 1;
+                down.style.transform = 'rotate(180deg)';
+            } else {
+                desc.style.height = '0px'
+                descText.style.opacity = 0;
+                down.style.transform = 'rotate(0deg)';
+            }
+
+        };
+
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }</script>
+</body>
+</html>

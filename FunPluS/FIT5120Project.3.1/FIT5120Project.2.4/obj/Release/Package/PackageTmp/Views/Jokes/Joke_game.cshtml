@@ -1,0 +1,475 @@
+﻿@model FIT5120Project.Models.Message
+
+@{
+    ViewBag.Title = "joke_game";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/joke_game/joke_game.css">
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <script src='~/Scripts/joke_game/stop_word.js'></script>
+    <script src='~/Scripts/joke_game/scroll_page.js'></script>
+    <script src='~/Scripts/joke_game/word_chose.js'></script>
+    <script src='~/Scripts/joke_game/post_card.js'></script>
+    <script src='~/Scripts/joke_game/aduio.js'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&family=Rum+Raisin&display=swap" rel="stylesheet">
+
+    <script>
+        var chosen_word = [];
+        var joke_final = [];
+        var jkID = 1;
+
+        //Pick Joke from the database
+        function get_joke_list() {
+            var joke_1 = '@ViewBag.joke_1';
+            var joke_2 = '@ViewBag.joke_2';
+            var joke_3 = '@ViewBag.joke_3';
+            var joke_4 = '@ViewBag.joke_4';
+            var joke_5 = '@ViewBag.joke_5';
+            var joke_list = [joke_1, joke_2, joke_3, joke_4, joke_5];
+            return joke_list;
+        }
+
+        //pick useful word
+        function get_useful_Words(text) {
+
+            var bag = text.match(/[a-z\']+/ig);
+            //only select useful words
+
+            var usefulTokens = bag.filter(word => stopwords.indexOf(word.toLowerCase()) == -1);
+            var usefulTokens = usefulTokens.filter(word => word.length > 2);
+            var uniqueChars = [...new Set(usefulTokens)];
+            if (uniqueChars.length >= 5) {
+                uniqueChars.splice(5);
+            }
+
+            return uniqueChars;
+        }
+
+        //change joke words color
+        function change_joke_word_color(joke)
+        {
+
+            var uT = get_useful_Words(joke);
+
+            var reg = RegExp('(?:(' + uT.join('|') + '))', 'ig')
+
+            return joke.replace(reg, "<span style = 'color:#F707C2'>$1</span>");
+        }
+
+        // when clicking on the left arrow
+        function flip_left() {
+            // change jkID by subtracting 1
+            if (jkID > 1) {
+                jkID = jkID - 1;
+            } else {
+                // return to the last joke if jkID >1
+                jkID = 5
+            }
+
+            // change the content of jokeNum, tb2 and jokeText when arrow is clicked
+            var joke_index = jkID - 1;
+
+            chosen_word = joke_final[joke_index][1].map(x => x.toLowerCase());
+            document.getElementById('jokeNum').innerHTML = jkID + '/' + 5;
+            document.getElementById('tb2').innerHTML = chosen_word.join('&emsp;');
+            document.getElementById('jokeText').innerHTML = joke_final[joke_index][0];
+        }
+
+        // when clicking on the right arrow
+        function flip_right() {
+            if (jkID < 5) {
+                // change jkID by adding 1
+                jkID = jkID + 1;
+            } else {
+                // return to the first joke if jkID >4
+                jkID = 1
+            }
+            var joke_index = jkID - 1;
+            //change the content of jokeNum, tb2 and jokeText when arrow is clicked
+            chosen_word = joke_final[joke_index][1].map(x => x.toLowerCase());
+            document.getElementById('jokeNum').innerHTML = jkID + '/' + 5;
+            document.getElementById('tb2').innerHTML = chosen_word.join('&emsp;');
+            document.getElementById('jokeText').innerHTML = joke_final[joke_index][0];
+        }
+
+        function start_game() {
+            var joke_list = get_joke_list();
+            var given_word = joke_list.map(get_useful_Words);
+
+            joke_list = joke_list.map(change_joke_word_color);
+
+            joke_final = joke_list.map(function (e, i) {
+                return [e, given_word[i]];
+            });
+
+            //set joke number
+            document.getElementById('jokeNum').innerHTML = jkID + '/' + 5;
+
+            // lowercase all the retrieved non-stopwords
+            chosen_word = joke_final[jkID][1].map(x => x.toLowerCase());
+
+            document.getElementById('tb2').innerHTML = chosen_word.join('&emsp;');
+            document.getElementById('jokeText').innerHTML = joke_final[jkID][0];
+
+
+            // whenever the user presses the left & right arrow
+            // direct the user to the next/previous joke & the respective words
+            document.getElementById('arrow_right').addEventListener("click", flip_right);
+            document.getElementById('arrow_left').addEventListener("click", flip_left);
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <div>
+        <a title="Back To Welcome Page" href='#topPage'><img class="main_button" style="position: fixed; z-index: 5; right: 100px; height: 80px; width: 80px; " src="@Url.Content("~/images/joke_game_source/back_icon.png")" /></a>
+        <a title="Home Page" href="@Url.Action("Index","Home")"><img class="main_button" style="position: fixed; z-index: 5; right: 10px; height: 80px; width: 80px; " src="@Url.Content("~/images/joke_game_source/home_icon.png")" /></a>
+    </div>
+
+
+    <section id='topPage'>
+        <div style='display:flex; flex-direction: column; justify-content: center; align-items: center;'>
+            <img class='gameLogo' src='~/images/joke_game_source/cflj_logo_bg.png'>
+            <a href='#page1'>
+                <button class='purple' style='width: 300px; position:relative' onclick='start_game(); startGameSond();'>Let's go!</button>
+            </a>
+        </div>
+        <div class="wrapper">
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+        </div>
+    </section>
+
+
+    <section id='page1'>
+        <div class="container reveal">
+
+            <h1 style='align-text:center; margin-left:30%;'>
+                Let's get some words first!
+            </h1>
+            <br>
+            <div class='gameBox' id='gb1'>
+                <h2><p id='jokeNum'></p></h2>
+                <div class='textBox' style='display: flex; align-items:center' ; id='tb1'>
+                    <button class='arrow' id='arrow_left' onclick='playArrowSound();'><i class="fa-solid fa-caret-left"></i></button>
+                    <p class='jokes' id='jokeText' style='font-size:23px; padding: 10px'></p>
+                    <button class='arrow' id='arrow_right' onclick='playArrowSound();'><i class="fa-solid fa-caret-right"></i></button>
+                </div>
+                <a href='#page2'>
+                    <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em;' onclick='add_chosen_word(); purpleClick()'>I'll take these words!</button>
+                </a>
+            </div>
+            <div class='gameBox' id='gb2'>
+                <div class='textBox' , id='tb2' , style='display: flex; align-items:center; flex-wrap: wrap; justify-content:center; font-size: 23px; color: #F707C2' ;>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id='page2'>
+        <div class="container reveal">
+            <h1 style='align-text:center; margin-left:35%'>
+                Let's put the words together
+            </h1>
+            <div style='display:flex;'>
+                <div class='words' id='givenWords'>
+                    <br>
+                    <h4>Given words</h4>
+                    <br>
+                    <div class='wordsList' id='gwList'>
+
+                        <div id='pppp'>
+                            <button class='voc'>I</button>
+                            <div class='vocExt'>
+                                <button class='extVoc'>I</button>
+                                <button class='extVoc'>my</button>
+                                <button class='extVoc'>mine</button>
+                                <button class='extVoc'>they</button>
+                                <button class='extVoc'>their</button>
+                                <button class='extVoc'>theirs</button>
+                                <button class='extVoc'>he</button>
+                                <button class='extVoc'>she</button>
+                                <button class='extVoc'>his</button>
+                                <button class='extVoc'>hers</button>
+                                <button class='extVoc'>it</button>
+                                <button class='extVoc'>its</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id='pppp'>
+                            <button class='voc'>am</button>
+                            <div class='vocExt'>
+                                <button class='extVoc'>be</button>
+                                <button class='extVoc'>am</button>
+                                <button class='extVoc'>is</button>
+                                <button class='extVoc'>was</button>
+                                <button class='extVoc'>are</button>
+                                <button class='extVoc'>were</button>
+                                <button class='extVoc'>been</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id='pppp'>
+                            <button class='voc'>a</button>
+                            <div class='vocExt'>
+                                <button class='extVoc'>a</button>
+                                <button class='extVoc'>an</button>
+                                <button class='extVoc'>the</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id='pppp'>
+                            <button class='voc'>do</button>
+                            <div class='vocExt'>
+                                <button class='extVoc'>have</button>
+                                <button class='extVoc'>has</button>
+                                <button class='extVoc'>had</button>
+                                <button class='extVoc'>love</button>
+                                <button class='extVoc'>loves</button>
+                                <button class='extVoc'>loved</button>
+                                <button class='extVoc'>like</button>
+                                <button class='extVoc'>likes</button>
+                                <button class='extVoc'>liked</button>
+                                <button class='extVoc'>will</button>
+                                <button class='extVoc'>can</button>
+                                <button class='extVoc'>do</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id='pppp'>
+                            <button class='voc'>to</button>
+                            <div class='vocExt'>
+                                <button class='extVoc'>to</button>
+                                <button class='extVoc'>after</button>
+                                <button class='extVoc'>at</button>
+                                <button class='extVoc'>before</button>
+                                <button class='extVoc'>by</button>
+                                <button class='extVoc'>for</button>
+                                <button class='extVoc'>from</button>
+                                <button class='extVoc'>of</button>
+                                <button class='extVoc'>with</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div id='pppp'>
+                            <button class='voc'>*</button>
+                            <div class='vocExt'>
+                                <button class='extVoc'>.</button>
+                                <button class='extVoc'>,</button>
+                                <button class='extVoc'>*</button>
+                                <button class='extVoc'>&</button>
+                                <button class='extVoc'>%</button>
+                                <button class='extVoc'>$</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='gameBox' id='gb1_msgBox'
+                     style='top:0; padding: 10px;height: 497px; display:flex; flex-wrap:wrap;justify-content: flex-start;'>
+                </div>
+                <img src='~/images/joke_game_source/navi_back3.png' id='squid3'>
+                <div id='warn'>
+                    <button id='closingButton' onclick='closeWindow()'
+                            style='margin-top:0; margin-left:90%; text-shadow:none;font-size:18px'>
+                        x
+                    </button>
+                    <p id='warningMsg'>You can use only up to 18 boxes!</p>
+                </div>
+                <div class='words' id='chosenWords'>
+                    <br>
+                    <h4>Chosen words</h4>
+                    <br>
+                    <div class='wordsList' id='cwList' style='display:flex; flex-direction: column;'>
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class='purple' style='font-size:17px; font-weight:bold; letter-spacing: 0.1em; width: 170px; padding: 5; margin-left:42%; background-color:#BC2F2F; box-shadow: 7px 7px #741919;'>
+                    <div style='display:flex; align-items:center' onclick='clearMsg(); purpleClick(), reset_chosen_words()'>
+                        <i class="fa-solid fa-eraser"></i>
+                        Clear my message
+                    </div>
+                </button>
+                <div style='margin:10; display:flex; justify-content:center'>
+                    <a href='#page1'>
+                        <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em; width: 200px; padding: 5; margin-right:20px;' onclick='purpleClick(); reset_basic_word();'>
+                            <div style='display:flex; align-items:center'>
+                                <i class="fa-solid fa-circle-arrow-left"></i>
+                                Change the chosen words
+                            </div>
+                        </button>
+                    </a>
+                    <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em;width: 200px; padding: 5px' onclick='chose_postcard();checkCW(); purpleClick()'>
+                        <div style='display:flex; align-items:center'>
+                            Choose a postcard
+                            <i class="fa-solid fa-circle-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id='page3'>
+        <div class="container reveal">
+            <h1 style='align-text:center; margin-left:30%'>
+                Let's choose a postcard design!
+            </h1>
+            <br>
+            <div class='gameBox' style='height:500px;width:850px'>
+                <div class='postcardHolder'>
+                    <button class='postcard' id='pc1' value='../../images/post_card_source/postcardBG_2.png'></button>
+                    <button class='postcard' id='pc3' value='../../images/post_card_source/postcardBG_1.png'></button>
+                    <button class='postcard' id='pc4' value='../../images/post_card_source/postcardBG_3.png'></button>
+                    <button class='postcard' id='pc5' value='../../images/post_card_source/postcardBG_5.jpg'></button>
+                    <button class='postcard' id='pc6' value='../../images/post_card_source/postcardBG_6.png'></button>
+                    <button class='postcard' id='pc7' value='../../images/post_card_source/postcardBG_4.jpeg'></button>
+                </div>
+            </div>
+            <div style='margin:10; display:flex; justify-content:center; margin-top:3%'>
+                <a href='#page2'>
+                    <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em; width: 200px; padding: 5; margin-right:20px' onclick='purpleClick()'>
+                        <div style='display:flex; align-items:center'>
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            Rewrite my message
+                    </button>
+                </a>
+                <a href='#page4'>
+                    <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em;width: 200px; padding: 5px' onclick='compose_message(); purpleClick()'>
+                        <div style='display:flex; align-items:center; '>
+                            Write onto the postcard
+                            <i class="fa-solid fa-circle-arrow-right"></i>
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id='page4'>
+        <div class="container reveal">
+            <br>
+            <h1 style='align-text:center; margin-left:33%'>
+                Here's my final postcard!
+            </h1>
+            <br>
+            <div id='postcardD' style='height:500px;width:900px; background-size: cover;'>
+                <div class='textBox' id='postcardContent'>
+                </div>
+            </div>
+            <div style='margin:10; display:flex; justify-content:center; margin-top:3%'>
+                <a href='#page3'>
+                    <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em; width: 230px; padding: 5; margin-right:20px' onclick='purpleClick()'>
+                        <div style='display:flex; align-items:center'>
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            Choose another postcard
+                    </button>
+                </a>
+                <a href='#page5'>
+                    <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em;width: 200px; padding: 5px' onclick='purpleClick()'>
+                        <div style='display:flex; align-items:center'>
+                            Let’s reflect on our postcard!
+                            <i class="fa-solid fa-circle-arrow-right"></i>
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id='page5'>
+        <div class="container reveal">
+            <div class='gameBox' id='reflection'>
+                <h1>How would the readers feel when they read your message?</h1>
+                <br>
+                <div class='textBox' id='finalMsg' style='height: 200px; width: 700px'></div>
+                <br>
+                <div>
+                    <button class='emotion'>
+                        <div>
+                            <img src="~/images/joke_game_source/Face Avatar 1.1.png" />
+                            <p>Happy</p>
+                        </div>
+                    </button>
+                    <button class='emotion'>
+                        <div>
+                            <img src="~/images/joke_game_source/Face Avatar 4.2.png" />
+                            <p>Neutral</p>
+                        </div>
+                    </button>
+                    <button class='emotion'>
+                        <div>
+                            <img src="~/images/joke_game_source/Face Avatar 6.4.png" />
+                            <p>Offended</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div style='margin:10; display:flex; justify-content:center; margin-top:3%'>
+                <a href='#page2'>
+                    <button class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em; width: 200px; padding: 5; margin-right:20px' onclick='purpleClick()'>
+                        <div style='display:flex; align-items:center'>
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            Edit my message
+                    </button>
+                </a>
+                @using (Html.BeginForm("Set_message", "Jokes", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <input id="set_text" type="text" name="messageText" value="messageText" style="display:none" />
+                    <input id="set_post_url" type="text" name="post_context" value="post_context" style="display:none" />
+                    <input id="set_rd_emotion" type="text" name="rd_emotion" value="post_context" style="display:none" />
+                    <a href='#page6'>
+                        <button type="submit" class='purple' style='font-size:20px; font-weight:bold; letter-spacing: 0.1em;width: 200px; padding: 5px'>
+                            <div style='display:flex; align-items:center' onclick='set_message(); purpleClick();'>
+                                Let's send it out !
+                                <i class="fa-solid fa-circle-arrow-right"></i>
+                            </div>
+                        </button>
+                    </a>
+                }
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <style>
+        body {
+            overflow: scroll;
+            overflow-y: hidden;
+        }
+    </style>
+
+    <script>
+        function set_message() {
+
+            var message_context = document.getElementById("finalMsg").innerText;
+            var post_card_back = imgSrc;
+
+            document.getElementById("set_text").value = message_context;
+            document.getElementById("set_post_url").value = post_card_back;
+            document.getElementById("set_rd_emotion").value = "null";
+        }
+
+    </script>
+
+</body>

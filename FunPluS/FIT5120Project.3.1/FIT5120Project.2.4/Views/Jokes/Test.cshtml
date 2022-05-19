@@ -1,0 +1,17 @@
+﻿@model FIT5120Project.Models.Message
+@{
+    ViewBag.Title = "Test";
+    Layout = null;
+}
+
+@using (Html.BeginForm("Test_1", "Jokes", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+
+
+        <input type="text" name="messageText" value="messageText" style="display:none" />
+        <input type="text" name="send_id" value="send_id" style="display:none" />
+        <input type="text" name="post_context" value="post_context" style="display:none" />
+        <button type="submit">Confrim</button>
+        <input type="submit" value="确认添加" />
+}

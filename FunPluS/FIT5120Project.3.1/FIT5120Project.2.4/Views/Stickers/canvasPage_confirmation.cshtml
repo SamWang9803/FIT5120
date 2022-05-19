@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "canvasPage_confirmation";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/canvas/canvasPage_css.css">
+</head>
+<body>
+    <a title="Home Page" href="@Url.Action("Index","Home")"><img style="position: fixed; z-index: 5; left: 10px; height: 110px; width: 110px; " src="@Url.Content("~/images/joke_game_source/home_icon.png")" /></a>
+    <div class="wrapper">
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+    </div>
+    <div id='approvedPage'>
+        <h1>Your stickers are added to the artwork!</h1>
+        <h1 style='color: green'><i class="fa-solid fa-circle-check"></i></h1>
+        <br>
+        <div id='buttonHolder_approved'>
+            <button onclick="location.href='@Url.Action("canvasPage_0", "Stickers")'">Work on another project<br><i class="fa-solid fa-palette"></i></button>
+            <button onclick="location.href='@Url.Action("Index", "Stickers")'">Go buy more stickers<br><i class="fa-solid fa-fish"></i></button>
+            <button onclick="location.href='@Url.Action("gallery", "Stickers")'">Look at completed artworks<br><i class="fa-solid fa-fish"></i></button>
+        </div>
+    </div>
+</body>
+
