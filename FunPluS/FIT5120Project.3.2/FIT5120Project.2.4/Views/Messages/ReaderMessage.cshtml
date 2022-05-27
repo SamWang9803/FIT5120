@@ -1,0 +1,339 @@
+﻿@model IEnumerable<FIT5120Project.Models.Message>
+
+@{
+    ViewBag.Title = "ReaderMessage";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href='~/Content/joke_game/cflj_tute_css.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&family=Rum+Raisin&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps" rel="stylesheet">
+    <script src='~/Scripts/joke_game/cflj_tute_js.js'></script>
+
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/message/message_style.css">
+    <script src="~/Scripts/message/reveal.js"></script>
+    <script src="~/Scripts/message/write_message_id.js"></script>
+
+    <script>
+        var read_msgs;
+        var data = [];
+        var def_emition;
+        var select_message;
+        var select_emotion;
+
+        window.onload = function () {
+            var mytable = document.getElementById("dataTable");
+            for (var i = 0, rows = mytable.rows.length; i < rows; i++) {
+                for (var j = 0, cells = mytable.rows[i].cells.length; j < cells; j++) {
+                    if (!data[i]) {
+                        data[i] = new Array();
+                    }
+
+                    data[i][j] = mytable.rows[i].cells[j].innerHTML.trim();
+                }
+            }
+            read_msgs = set_message();
+            create_read_message_list(read_msgs);
+        }
+
+        function set_message() {
+            var messages = [];
+            for (var i = 0; i < data.length; i++) {
+                messages[i] = {
+                    'message_id': data[i][5],
+                    'message_text': data[i][2],
+                    'writer_emotion': data[i][3],
+                    'reader_emotion': data[i][4],
+                }
+            }
+
+            return messages;
+        }
+
+        function create_read_message_list(msgs) {
+
+            for (i = 0; i < msgs.length; i++) {
+
+                var item = msgs[i]
+                var msgItem = document.createElement('BUTTON');
+                var msgId = document.createElement('p');
+                var readIcon = document.createElement('p');
+
+                msgItem.classList.add('msgItems');
+
+                msgId.innerHTML = 'Message #' + (i + 1);
+                msgItem.setAttribute('value', i);
+
+                if (item['reader_emotion'] == undefined || item['reader_emotion'] == null || item['reader_emotion'].trim() == "null") {
+                    msgItem.setAttribute('name', 'unread');
+                    readIcon.innerHTML = '<i class="fa-solid fa-envelope"></i>';
+
+                } else {
+                    msgItem.setAttribute('name', 'read');
+                    readIcon.innerHTML = '<i class="fa-solid fa-envelope-open"></i>';
+                }
+
+                readIcon.setAttribute('id', 'readIcon');
+                document.getElementById('msgHolder').appendChild(msgItem);
+                msgItem.appendChild(msgId);
+                msgItem.appendChild(readIcon);
+
+                msgItem.addEventListener("click", function () {
+
+                    var postcardId = Number(this.value);
+                    var postcard = msgs[postcardId];
+                    select_message = read_msgs[this.value].message_id;
+
+                    if (postcard['reader_emotion'] == undefined || postcard['reader_emotion'] == null || postcard['reader_emotion'].trim() == "null") {
+
+                        changeBg(postcardId, 'postcardD_reading');
+                        changeText(postcardId, 'postcardContent_reading');
+                        window.location.replace('#readingMsg');
+                    } else {
+
+                        changeBg(postcardId, 'postcardD_read');
+                        changeText(postcardId, 'postcardContent_read');
+                        chosenEmotion(postcardId, 'chosen_' + postcard.reader_emotion.trim());
+                        window.location.replace('#msgRead');
+
+                    }
+
+                });
+            }
+        }
+
+        function changeBg(msgId, elementId) {
+            document.getElementById(elementId).style.backgroundImage = `url('${read_msgs[msgId].writer_emotion}')`;
+        }
+
+        function changeText(msgId, elementId) {
+            document.getElementById(elementId).innerHTML = read_msgs[msgId].message_text;
+        }
+
+        function chosenEmotion(msgId, elementId) {
+            var emotionChosen = document.getElementById(elementId);
+
+            document.getElementById('chosen_happy').style.cssText = "";
+            document.getElementById('chosen_neutral').style.cssText = "";
+            document.getElementById('chosen_offensive').style.cssText = "";
+
+            emotionChosen.style.cssText += 'background:rgba(255, 255, 255, 0.67); border:7px solid #E3FF3F; border-radius: 25px;width: 200px';
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="main_button">
+        <a title="Home Page" href="@Url.Action("Index","Home")"><img style="position: fixed; z-index: 5; right: 0; height: 130px; width: 130px; " src="@Url.Content("~/images/joke_game_source/home_icon.png")" /></a>
+    </div>
+
+    <button id='openTute' onclick='displayTute()'>How To<br><i class="fa-solid fa-circle-question"></i></button>
+    <div id='tute_cf_0'>
+        <div class='nav' style='overflow: hidden; margin-left: 20px'>
+            <a style = 'font-size: 15px' class='aa1' id='tute1'>1. Write a postcard</a>
+            <a style = 'font-size: 15px' class='aa1' id='tute2'>2. Read a postcard</a>
+        </div>
+        <div class='msgBoxtut' style='position:relative; margin-top:-5px'>
+            <button id='tuteClose' onclick="closeWindow('tute_cf_0'); noModal();"><i class="fa-solid fa-xmark"></i></button>
+            <div id='explain_photo'>
+                <h2 id='jokeTute'></h2>
+                <img id='tutePhoto'>
+                <p id='tuteText'></p>
+            </div>
+            <br>
+            <div class='buttonHolder_tute_cf_0'>
+                <button class='tuteButtons' onclick="prevPage()"><i class="fa-solid fa-circle-chevron-left"></i> back</button>
+                <button class='tuteButtons' onclick="nextPage()" style='margin-left:10px;'>next <i class="fa-solid fa-circle-chevron-right"></i></button>
+            </div>
+            <br>
+            <button class='tuteButtons' id='playCompleteTutorial' onclick="directToCompleteTute(); location.href='@Url.Action("msgTutorial", "Home")'">Play the complete tutorial</button>
+        </div>
+    </div>
+    <div class='modal' id='modal_top'></div>
+
+    <section id='received'>
+        <div>
+            <h1>Read Messages</h1>
+            <br>
+            <div class='nav' style='overflow: hidden; margin-left: 20px'>
+                <a href='@Url.Action("ReaderMessage","Messages")' style='background-color: #1C5858; color:white;'>Received</a>
+                <a href='@Url.Action("WriterMessage","Messages")'>Sent</a>
+            </div>
+            <div class='msgBox' style='position:relative; margin-top:-8px'>
+                <div id='msgHolder' dir="ltr">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='readingMsg'>
+        <div>
+            <h1>My Messages</h1>
+            <br>
+            <div class='msgBox' style='position:relative; height: 680px; width: 1200px; margin: 10px; padding:5px; display: flex; flex-direction: row; justify-content:center; align-items:center'>
+                <div style='display: column; justify-content: center; align-items: center'>
+                    <div class='postcardD' id='postcardD_reading'>
+                        <div class='textBox' id='postcardContent_reading'>
+                        </div>
+                        <br>
+                        <br>
+                        <div class='buttonBox' style= style='display: row; justify-content: center; align-items: center;'>
+                            <br>
+                            <a href='#received'>
+                                <button class='readMsg'>Back to my messages <i class="fa-solid fa-envelope-open-text"></i></button>
+                            </a>
+
+                            @using (Html.BeginForm("set_emotion", "Messages", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <input id="set_id" type="text" name="message_id" value="" style="display:none" />
+                                <input id="set_emotion" type="text" name="message_emotion" value="" style="display:none" />
+                                <a onclick="set_emotion()">
+
+                                    <button type="submit" class='readMsg'>Let's send it out! <i class="fa-solid fa-paper-plane" onclick="set_emotion()"></i></button>
+                                </a>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div style='display:flex; flex-direction: column; justify-content:center; align-items:center;'>
+                    <h2> How do you find the message?</h2>
+                    <br>
+                    <button class='emotion' id='happy' value="happy" onclick="get_emotion('happy')">
+                        <div>
+                            <img src="@Url.Content("~/images/message_source/Face Avatar 1.1.png")" />
+                            <p>It makes me happy</p>
+                        </div>
+                    </button>
+                    <button class='emotion' id='neutral' value="neutral" onclick="get_emotion('neutral')">
+                        <div>
+                            <img src="@Url.Content("~/images/message_source/Face Avatar 4.2.png")" />
+                            <p>It's neutral</p>
+                        </div>
+                    </button>
+                    <button class='emotion' id='offended' value="offensive" onclick="get_emotion('offended')">
+                        <div>
+                            <img src="@Url.Content("~/images/message_source/Face Avatar 6.4.png")" />
+                            <p>It's offensive</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='msgRead'>
+        <div>
+            <h1>My Messages</h1>
+            <br>
+            <div class='msgBox' style='position:relative; height: 680px; width: 1200px; margin: 10px; padding:5px; display: flex; flex-direction: row; justify-content:center; align-items:center'>
+                <br>
+                <div style='display: column; justify-content: center; align-items: center'>
+                    <br>
+                    <div class='postcardD' id='postcardD_read'>
+                        <div class='textBox' id='postcardContent_read'></div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class='buttonBox' style='display: row; justify-content: center; align-items: center;'>
+                        <a href='#received'>
+                            <button class='readMsg'>Back to my messages <i class="fa-solid fa-envelope-open-text"></i></button>
+                        </a>
+                        <a href='@Url.Action("Index","Home")'>
+                            <button class='readMsg'>Back to Home <i class="fa-solid fa-house"></i></button>
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div style='display:flex; flex-direction: column; justify-content:center; align-items:center;'>
+                    <h2> This is how you found the message</h2>
+                    <br>
+                    <div class='emotion_chosen' id='chosen_happy'>
+                        <div>
+                            <img src="@Url.Content("~/images/message_source/Face Avatar 1.1.png")" />
+                            <p>It makes me happy</p>
+                        </div>
+                    </div>
+                    <div class='emotion_chosen' id='chosen_neutral'>
+                        <div>
+                            <img src="@Url.Content("~/images/message_source/Face Avatar 4.2.png")" />
+                            <p>It's neutral</p>
+                        </div>
+                    </div>
+                    <div class='emotion_chosen' id='chosen_offensive'>
+                        <div>
+                            <img src="@Url.Content("~/images/message_source/Face Avatar 6.4.png")" />
+                            <p>It's offensive</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </section>
+
+
+
+    <table class="table" id="dataTable" style="display:none">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.writeUserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.readUserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.messageText)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.writerEmotion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.readerEmotion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <script>
+
+        function set_emotion() {
+
+            var message_id = select_message.trim();
+
+            document.getElementById("set_id").value = message_id;
+
+            if (select_emotion != undefined || select_emotion != null) {
+                document.getElementById("set_emotion").value = select_emotion;
+            }
+            else {
+                document.getElementById("set_emotion").value = "null";
+            }
+        }
+
+        function get_emotion(btn_id) {
+
+            select_emotion = document.getElementById(btn_id).value;
+
+        }
+
+    </script>
+
+
+</body>

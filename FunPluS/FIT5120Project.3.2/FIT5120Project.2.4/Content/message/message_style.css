@@ -1,0 +1,295 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Love Ya Like A Sister', cursive;
+    overflow: hidden;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../images/message_source/msgBg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+button {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.nav a {
+    margin: 3px;
+    float: left;
+    color: #073853;
+    background-color: #56B2E7;
+    border: 3px solid #073853;
+    border-radius: 10px 10px 0 0;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-size: 25px;
+    padding: 4px;
+    text-decoration: none;
+}
+
+    .nav a:hover {
+        background-color: #1C5858;
+        color: white;
+    }
+
+.msgBox {
+    background: #B6FFAE;
+    border: 3px solid #1C5858;
+    border-radius: 20px;
+    height: 480px;
+    width: 800px;
+}
+
+.msgItems {
+    color: white;
+    border: 3px solid #1C5858;
+    width: 750px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3px;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.msgItems_sent {
+    color: white;
+    border: 3px solid #1C5858;
+    width: 750px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3px;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    background: #5653FB;
+    cursor: pointer;
+}
+
+    .msgItems_sent > p {
+        margin-left: 35%;
+    }
+
+.msgItems > p {
+    margin-left: 35%;
+}
+
+button[name = read] {
+    background: #5653FB;
+}
+
+button[name = unread] {
+    background: #7875FF;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+#msgHolder {
+    padding-top: 20px;
+    padding-bottom:;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    height: 403px;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+#msgHolder_sent {
+    padding-top: 20px;
+    padding-bottom:;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    height: 403px;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #FFE13B;
+    border-radius: 10px;
+}
+
+.readMsg {
+    background: #096191;
+    color: white;
+    border: none;
+    text-align: center;
+    padding: 4px;
+    width: 250px;
+    height: 50px;
+    border: none;
+    box-shadow: 6px 6px #073853;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+    .readMsg:active {
+        box-shadow: 1px 1px #073853;
+        transform: translateY(4px);
+    }
+
+#pcReceived0 {
+    box-shadow: 5px 5px 5px grey;
+    width: 600px;
+    border-radius: 20px;
+}
+
+#pcReceived1 {
+    box-shadow: 5px 5px 5px grey;
+    width: 600px;
+    border-radius: 20px;
+}
+
+.emotion {
+    outline: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-family: 'Delius Swash Caps', cursive;
+    text-align: center;
+}
+
+    .emotion > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .emotion:hover {
+        transform: scale(1.1);
+    }
+
+    .emotion:focus {
+        background: rgba(255, 255, 255, 0.67);
+        border: 7px solid #E3FF3F;
+        border-radius: 25px
+    }
+
+    .emotion > div > img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .emotion > div > p {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.67);
+        width: 170px;
+        padding: 5px;
+        border-radius: 20px;
+        font-family: 'Love Ya Like A Sister', cursive;
+        font-size: 18px;
+    }
+
+
+.emotion_chosen {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-family: 'Delius Swash Caps', cursive;
+    text-align: center;
+}
+
+    .emotion_chosen > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .emotion_chosen > div > img {
+            height: 150px;
+            width: 150px;
+        }
+
+        .emotion_chosen > div > p {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.67);
+            width: 150px;
+            padding: 5px;
+            border-radius: 20px;
+            font-family: 'Love Ya Like A Sister', cursive;
+            font-size: 18px;
+        }
+
+.buttonBox {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+.postcardD {
+    height: 450px;
+    border-radius: 30px;
+    padding: 50px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    box-shadow: 5px 3px 3px grey;
+}
+
+.textBox {
+    background: rgba(255, 255, 255, 0.67);
+    height: 350px;
+    width: 650px;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#emotionChecked > .readMsg {
+    height: 100px;
+}
