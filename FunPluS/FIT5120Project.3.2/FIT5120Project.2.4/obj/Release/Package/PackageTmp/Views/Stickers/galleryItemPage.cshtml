@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "galleryItemPage";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/gallery/galleryItemPage_css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&family=Rum+Raisin&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id='galleryHolder'>
+        @using (Html.BeginForm("set_vote", "Stickers", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input id="set_image" type="text" name="selected_image_path" value="" style="display:none" />
+            <input id="set_vote" type="text" name="image_vote" value="" style="display:none" />
+            <button onclick="updateVote()" type="submit" id='backToGallery'><i class="fa-solid fa-angles-left"></i><br>Back to the gallery</button>
+        }
+
+        <h1>Welcome to the FUN+ Gallery</h1>
+        <h2>Here are the amazing artwork created by everyone at Fun+, <br>with the stickers they earned by writing and reading positive postcards!</h2>
+        <div id='gallery'>
+            <div id='chosenItemHolder'>
+                <div style='position:relative'>
+                    <p id='artworkDetail'></p>
+                    <div>
+                        <img id='chosenArtwork'>
+                        <p id='textAppear'>Click the artwork to see the original painting</p>
+                    </div>
+                    <div id='originalBg'>
+                        <button onclick="closeWindow('originalBg')"><i class="fa-solid fa-xmark"></i></button>
+                        <img>
+                    </div>
+                </div>
+                <button id='vote' onclick='addVote(this)'></button>
+                <p id='voteInstruct'>Click me if you like this group artwork!</p>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+</body>
+<script>
+    const artDetail = {
+        '0': ['../../images/demoCompletedProj/manWithTheFlute_frame.png', '../../images/canvasProjBg/PublicGarden.jpg', 32, 11],
+        '1': ['../../images/demoCompletedProj/strongCinderella_frame.png', '../../images/canvasProjBg/BackyardGarden.jpg', 23, 8],
+        '2': ['../../images/demoCompletedProj/winterWonderland_frame.png', '../../images/canvasProjBg/ChristmasWinterBackground_jpg-01.jpg', 33, 11],
+        '3': ['../../images/demoCompletedProj/zombieAttack_frame.png', '../../images/canvasProjBg/Bus.jpg', 24, 8],
+    }
+    var chosenArt = String(sessionStorage.getItem('chosenGalleryItem')).split(',');
+    var chosenArtSrc = artDetail[chosenArt[0]][0];
+    var chosenArtLikes = chosenArt[1];
+
+
+    //---------
+    var originalBg = artDetail[chosenArt[0]][1];
+    var stickerUsed = artDetail[chosenArt[0]][2];
+    var usersParticipated = artDetail[chosenArt[0]][3];
+    //-----
+
+    var voteCount = 0;
+    var voteCountBackend = 0;
+    var original = document.getElementById('originalBg').getElementsByTagName('img')[0];
+
+    window.addEventListener('load', function () {
+
+        var chosenArtwork = document.getElementById('chosenArtwork');
+        chosenArtwork.addEventListener('click', function () {
+            document.getElementById('originalBg').style.display = 'block';
+        });
+
+        chosenArtwork.src = chosenArtSrc;
+        original.src = originalBg;
+
+        document.getElementById('vote').innerHTML = '<i class="fa-solid fa-heart fa-flip" style="--fa-animation-duration: 2s;"></i> ' + chosenArtLikes;
+        document.getElementById('artworkDetail').innerHTML = 'This awesome artwork is created by <span>' + usersParticipated + ' Fun+ members</span> with <span>' + stickerUsed + ' stickers</span>!'
+    })
+
+    function closeWindow(elem) {
+        document.getElementById(elem).style.display = 'none'
+    }
+
+    var valid = true;
+
+    function addVote(elem) {
+        voteCount += 1;
+
+        if (valid) {
+            voteCountBackend += 1;
+        }
+
+        if (voteCount == 2) {
+            valid = false;
+        }
+
+        console.log(voteCount);
+        if (voteCount > 2) {
+            alert('You can give only two votes per artwork!');
+        } else {
+            elem.innerHTML = '<i class="fa-solid fa-heart fa-flip" style="--fa-animation-duration: 2s;"></i> ' + (Number(chosenArtLikes) + voteCount);
+        }
+    }
+
+    function updateVote() {
+        document.getElementById("set_image").value = chosenArt[0]+"";
+        document.getElementById("set_vote").value = (Number(chosenArtLikes) + voteCountBackend) + "";
+    }
+</script>
+

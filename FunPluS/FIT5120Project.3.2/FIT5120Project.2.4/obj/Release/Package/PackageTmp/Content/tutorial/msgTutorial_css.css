@@ -1,0 +1,467 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    font-family: 'Love Ya Like A Sister', cursive;
+    background: url('../../images/tutorial/msgBg.png');
+    overflow: hidden;
+}
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../images/tutorial/msgBg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+button{
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+h1{
+  text-align: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+h2{
+    text-align: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.nav a{
+  position:relative;
+  margin:3px;
+  float: left;
+  color: #073853;
+  background-color: #56B2E7;
+  border: 3px solid #073853;
+  border-radius: 10px 10px 0 0;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  font-size: 25px;
+  padding: 4px;
+  text-decoration: none;
+}
+
+.nav a:hover{
+  background-color: #1C5858;
+  color:white;
+}
+
+.msgBox{
+  background: #B6FFAE;
+border: 3px solid #1C5858;
+border-radius: 20px;
+height: 480px;
+width: 800px;
+margin-top:-5px;
+position: relative;
+padding: 35px 20px;
+}
+
+.msgItems{
+  color:white;
+  border: 3px solid #1C5858;
+  width: 750px;
+  border-radius: 10px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:-3px;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  outline:none;
+}
+
+.msgItems_sent{
+  color:white;
+  border: 3px solid #1C5858;
+  width: 750px;
+  border-radius: 10px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:-3px;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  outline:none;
+  background: #5653FB;
+  position:relative;
+}
+.msgItems_sent>p{
+  margin-left:35%;
+}
+.msgItems>p{
+  margin-left:35%;
+}
+
+.readMsg:active{
+    box-shadow: 1px 1px #073853;
+  transform: translateY(4px);
+  }
+
+#pcReceived0{
+  box-shadow: 5px 5px 5px grey;
+  width: 600px;
+  border-radius: 20px;
+}
+
+#pcReceived1{
+  box-shadow: 5px 5px 5px grey;
+  width: 600px;
+  border-radius: 20px;
+}
+
+.emotion{
+    outline:none;
+  background:none;
+  border:none;
+  font-size: 20px;
+  font-family: 'Delius Swash Caps', cursive;
+  text-align: center;
+}
+
+.emotion>div{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+}
+
+.emotion:hover{
+  transform: scale(1.1);
+}
+
+.emotion:focus{
+  background:rgba(255, 255, 255, 0.67);
+  border:7px solid #E3FF3F;
+  border-radius: 25px
+}
+
+.emotion>div>img{
+  height: 150px;
+  width: 150px;
+}
+
+.emotion>div>p{
+  text-align: center;
+  background: rgba(255, 255, 255, 0.67);
+  width: 170px;
+  padding: 5px;
+  border-radius: 20px;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 18px;
+}
+
+
+.emotion_chosen{
+  background:none;
+  border:none;
+  font-size: 20px;
+  font-family: 'Delius Swash Caps', cursive;
+  text-align: center;
+}
+
+.emotion_chosen>div{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+}
+
+.emotion_chosen>div>img{
+  height: 150px;
+  width: 150px;
+}
+
+.emotion_chosen>div>p{
+  text-align: center;
+  background: rgba(255, 255, 255, 0.67);
+  width: 150px;
+  padding: 5px;
+  border-radius: 20px;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 18px;
+}
+
+#emotionButtons{
+  margin-left: 20px;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  padding:10px;
+  border-radius: 20px;
+}
+
+.buttonBox{
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.postcardD{
+  height:450px;
+  border-radius: 30px;
+  padding:50px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  box-shadow: 5px 3px 3px grey;
+}
+
+.textBox{
+  background: rgba(255, 255, 255, 0.67);
+  height: 350px;
+  width: 650px;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+align-items: center;
+justify-content:center;
+font-family: 'Rum Raisin', sans-serif;
+}
+
+
+#emotionChecked>.readMsg{
+  height: 100px;
+}
+
+.readMsg{
+  background: #096191;
+  color:white;
+  border: none;
+  text-align: center;
+  padding: 4px;
+  width: 250px;
+  height: 50px;
+    border:none;
+  box-shadow: 6px 6px #073853;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 20px;
+    cursor:pointer;
+  outline:none;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.readMsg:active{
+    box-shadow: 1px 1px #073853;
+  transform: translateY(4px);
+  }
+
+.modal{
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0); /* Fallback color */
+  transition-timing-function:ease-in;
+  transition-delay: 0.2s;
+  transition-duration: 0.7s;
+}
+
+@keyframes squidFloat{
+  0% {transform: translateY(0);}
+  100% {transform: translateY(25px);}
+}
+
+.guide{
+  z-index:5;
+  position:relative;
+}
+
+#guide_top{
+  z-index: 5;
+  float:left;
+  position:relative;
+}
+
+.chatBubble{
+  display: flex;
+  flex-direction:column;
+  z-index: 1;
+  width: 180px;
+  position: relative;
+  background: #FFFFFF;
+border-radius: 20px;
+border: 3px solid #371168;
+font-family: 'Rum Raisin', sans-serif;
+font-size: 27px;
+float:left;
+padding:10px;
+}
+
+.next{
+  margin-left: 50%;
+  outline: none;
+  border: none;
+  font-family: 'Rum Raisin', sans-serif;
+  text-align: center;
+  color: #371168;
+  cursor: pointer;
+}
+
+.squid3{
+  width: 220px;
+  z-index:2;
+  position: relative;
+  float:left;
+  animation: squidFloat 2s linear infinite alternate;
+}
+
+.cursur{
+color:white;
+font-size: 40px;
+position: relative;
+display:none;
+z-index:4;
+animation: cursorJump 1s infinite;
+}
+
+@keyframes cursorJump{
+  0% { transform: translateY(0);}
+  30% { transform: translateY(10px);}
+  60% { transform: translateY(6px);}
+  90% { transform: translateY(3px);}
+  100% { transform: translateY(2px);}
+}
+
+#demoEmotion{
+  border: 8px solid yellow;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+
+@keyframes blinks{
+    0% { opacity:1;}
+    25% { opacity:0;}
+ 50% { opacity:1;}
+    70% { opacity:0;}
+  100% { opacity:1;}
+}
+
+@keyframes tokenEnlarge{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100%{transform: scale(1);}
+}
+
+.token{
+  width: 150px;
+  height: 150px;
+  animation: borderShines 1s infinite;
+  border: 5px solid yellow;
+  border-radius: 100px;
+}
+
+@keyframes borderShines{
+  50%{border-color: #E3FF3F;}
+}
+
+#tokenAccept{
+  color: green;
+  background-color: white;
+  outline:none;
+  border: 3px solid black;
+  border-radius: 10px;
+  font-size:25px;
+  height:  50px;
+  width: 50px;
+  text-align: center;
+}
+
+#tokenNotice{
+  background-color: #E7DCB1;
+  width: 100%;
+  height: 100%;
+  margin-top: -8rem;
+  z-index:4;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+  display: none;
+  border: 4px solid #780F0F}
+
+#tokenNoticeText{
+   background:rgba(255, 255, 255, 0.67);
+   padding: 10px 10px;
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+   text-align: center;
+   border-radius: 20px;
+}
+
+#demoReaderEmotion{
+    background:rgba(255, 255, 255, 0.67);
+  border:7px solid #E3FF3F;
+  border-radius: 25px
+}
+
+#finishedNotification{
+  opacity: 0;
+  height: 700px;
+  width: 800px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align: center;
+  justify-content:center;
+  z-index: 4;
+  transition-timing-function:ease-in-out;
+  transition-delay: 2.2s;
+  transition-duration: 1s;
+}
+
+#finishedNotification>.textBox{
+  display:flex;
+  flex-direction:column;
+  height: 600px;
+  align-items:center;
+  text-align: center;
+  justify-content:center;
+  padding: 30px 30px;
+  border-radius: 20px
+}
+
+#finished{
+  margin-left: 90%;
+    transition-timing-function:ease-in-out;
+  transition-duration: 2s;
+}

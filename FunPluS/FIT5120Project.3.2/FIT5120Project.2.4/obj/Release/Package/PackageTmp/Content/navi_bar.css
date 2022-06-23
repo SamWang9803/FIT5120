@@ -1,0 +1,119 @@
+﻿.navi_header {
+    position: page;
+    display: block;
+    top: 0;
+    height: 130px;
+    margin-top: 0;
+    z-index: 10;
+}
+
+/*navigation content*/
+#logo {
+    position: relative;
+    top: 0;
+    float: left;
+    left: 0;
+    width: 130px;
+    height: 130px;
+    margin-left: 0;
+    z-index: 999;
+}
+
+.navi_bar_content {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+
+.navi_botton {
+    position: relative;
+    margin-left: 40px;
+    top: 30px;
+    padding-bottom: 0;
+    z-index: 999;
+}
+.navi_cap {
+    text-align: center;
+    font-family: 'Rum Raisin', sans-serif;
+}
+
+.icon_pic {
+    width: 90px;
+    height: 90px;
+}
+
+#home_icon:hover {
+    content: url(../images/navi_bar_source/navi_home_icon_hover.png);
+    transform: scale(1.1);
+}
+
+
+#joke_icon:hover {
+    content: url(../images/navi_bar_source/navi_joke_icon_hover.png);
+    transform: scale(1.1);
+}
+
+
+#mess_icon:hover {
+    content: url(../images/navi_bar_source/navi_message_icon_hover.png);
+    transform: scale(1.1);
+}
+
+
+#shop_icon:hover {
+    content: url(../images/navi_bar_source/navi_shop_icon_hover.png);
+    transform: scale(1.1);
+}
+
+#painter_icon:hover {
+    content: url(../images/navi_bar_source/navi_paint_icon_hover.png);
+    transform: scale(1.1);
+}
+
+#about_icon:hover {
+    content: url(../images/navi_bar_source/navi_about_icon_hover.png);
+    transform: scale(1.1);
+}
+
+
+/*The user button part*/
+.user_part{
+    width: 100%;
+
+}
+
+.user_unLogin {
+    display: flex;
+    right: -10px;
+    top: 0;
+}
+
+.user_login {
+    display: flex;
+    right: -10px;
+    top: 0;
+}
+
+.user_button {
+    z-index: 999;
+}
+
+.user_menu_lab{
+    position: relative;
+}
+
+.user_icon {
+    position: relative;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    z-index: 999;
+}
+
+.user_unLogin_button {
+    position: relative;
+    top: -10px;
+    margin: 5px;
+    z-index: 999;
+}

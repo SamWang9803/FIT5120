@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Purchase Success";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/token_shop/tokenPage_approved_css.css">
+</head>
+<body>
+    <a title="Home Page" href="@Url.Action("Index","Home")"><img style="position: fixed; z-index: 5; left: 10px; height: 110px; width: 110px; " src="@Url.Content("~/images/joke_game_source/home_icon.png")" /></a>
+    <div id='approvedPage'>
+        <h1>The stickers are now available in My Stickers!</h1>
+        <h1 style='color: green'><i class="fa-solid fa-circle-check"></i></h1>
+
+        <div id='buttonHolder_approved'>
+            <button id='goToGallery' onclick="location.href='@Url.Action("canvasPage_0", "Stickers")'">I want to use the stickers</button>
+            <button onclick="location.href='@Url.Action("Index", "Stickers")'">Go buy more stickers</button>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+        <div><span class="dot"><i class="fa-solid fa-star"></i></span></div>
+    </div>
+</body>
+</html>

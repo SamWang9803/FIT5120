@@ -1,0 +1,129 @@
+﻿@model IEnumerable<FIT5120Project.Models.Vocabulary>
+@{
+    ViewBag.Title = "gallery";
+    Layout = "~/Views/Shared/SecondLayout.cshtml";
+}
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/fad7ced9d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/gallery/gallery_css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Love+Ya+Like+A+Sister&family=Rum+Raisin&display=swap" rel="stylesheet">
+    <script>
+        var galleryVar = {
+            0: ['../../images/demoCompletedProj/manWithTheFlute_frame.png', 21],
+            1: ['../../images/demoCompletedProj/strongCinderella_frame.png', 10],
+            2: ['../../images/demoCompletedProj/winterWonderland_frame.png', 30],
+            3: ['../../images/demoCompletedProj/zombieAttack_frame.png', 6],
+        }
+
+        for (let i = 0; i < 4; i++) {
+            @foreach(var vote in Model)
+            {
+
+                <text>
+                    // get image vote data
+                if (@vote.UserId == i) {
+                    galleryVar[i][1] = @vote.jokeVocab;
+                }
+
+                </text>
+            }
+        }
+
+
+        var gallery = document.getElementById('gallery');
+        var galleryItems = document.getElementsByClassName('galleryItems');
+        var galleryVarKeys = Object.keys(galleryVar);
+
+        var gallVarIdx = 0;
+
+
+        function flipRight(elem) {
+
+            if (gallVarIdx + 1 >= galleryVarKeys.length - 1) {
+                alert("You have reached the last artwork in the gallery!")
+            } else {
+                gallVarIdx += 1;
+
+                loadGalleryItems(0, gallVarIdx);
+                loadGalleryItems(1, gallVarIdx + 1);
+
+            }
+
+        }
+
+        function flipLeft(elem) {
+            if (gallVarIdx - 1 < 0) {
+                alert("This is the first piece of artwork in the gallery!")
+            } else {
+                gallVarIdx = gallVarIdx - 1
+                loadGalleryItems(0, gallVarIdx);
+                loadGalleryItems(1, gallVarIdx + 1);
+            }
+        }
+
+        function loadGalleryItems(elemIdx, gallIdx) {
+            var itemImg = galleryItems[elemIdx].getElementsByTagName('img')[0];
+            var itemLikes = galleryItems[elemIdx].getElementsByTagName('p')[0];
+            var itemEnter = galleryItems[elemIdx].getElementsByTagName('BUTTON')[0];
+
+            itemImg.src = galleryVar[gallIdx][0];
+            itemLikes.innerHTML = '<i class="fa-solid fa-heart"></i> ' + galleryVar[gallIdx][1];
+            itemEnter.setAttribute('name', gallIdx);
+        }
+
+        window.addEventListener('load', function() {
+
+        loadGalleryItems(0, gallVarIdx);
+        loadGalleryItems(1, gallVarIdx+1);
+
+        Array.from(document.getElementsByClassName('galleryButtons')).forEach((item) => {
+        item.addEventListener('click', function(){
+            //var galleryImg = item.parentElement.getElementsByTagName('img')[0];
+            var likeNum = String(item.parentElement.getElementsByTagName('p')[0].innerHTML).split('</i> ')[1];
+
+            sessionStorage.setItem('chosenGalleryItem', [item.getAttribute('name'), likeNum]);
+
+            window.location.replace('@Url.Action("galleryItemPage", "Stickers")');
+        })
+      })
+        })
+    </script>
+</head>
+<body>
+    <a title="Home Page" href="@Url.Action("Index","Home")"><img style="position: fixed; z-index: 5; left: 10px; height: 110px; width: 110px; " src="@Url.Content("~/images/joke_game_source/home_icon.png")" /></a>
+    <div id='galleryHolder'>
+        <h1>Welcome to the FUN+ Gallery</h1>
+        <h2>Here are the amazing artwork created by everyone at Fun+, <br>with the stickers they earned by writing and reading positive postcards!</h2>
+        <div id='gallery'>
+            <button class='arrow' style='margin-right: 10px' onclick='flipLeft(this);'><i class="fa-solid fa-caret-left"></i></button>
+            <div class='galleryItems' id='galleryItems1'>
+                <img>
+                <p></p>
+                <button class='galleryButtons'>Admire this artwork <i class="fa-solid fa-hand-holding-heart"></i></button>
+            </div>
+            <div class='galleryItems' id='galleryItems2'>
+                <img>
+                <p></p>
+                <button class='galleryButtons'>Admire their artwork <i class="fa-solid fa-hand-holding-heart"></i></button>
+            </div>
+            <button class='arrow' style='margin-left: 20px' onclick='flipRight(this);'><i class="fa-solid fa-caret-right"></i></button>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+    </div>
+
+</body>

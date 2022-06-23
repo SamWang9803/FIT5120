@@ -1,0 +1,41 @@
+﻿@model FIT5120Project.Models.Joke
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div class="form-horizontal">
+    <h4>Joke</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.jokeText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jokeText)
+        </dd>
+
+    </dl>
+    
+</div>
+
+    @using (Html.BeginForm(Model))
+    {
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Get Vocabulary" class="btn btn-default"/>
+                </div>
+            </div>
+        </div>
+    }
+
+    <p>@ViewBag.resultString</p>
+
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>

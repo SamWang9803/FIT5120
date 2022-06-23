@@ -1,0 +1,154 @@
+#tute_cf_0{
+  position:fixed;
+  top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+  margin:auto;
+  padding: 10px;
+  border-radius: 10px;
+z-index: 15;
+display:none;
+}
+
+*{
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+#tute_cf_0>button{
+  font-family: 'Rum Raisin', sans-serif;
+}
+
+#tuteText>span{
+  color: #3FBA44;
+  font-family: 'Rum Raisin', sans-serif;
+}
+
+h2{
+  text-align: center;
+}
+
+#tutePhoto{
+  border-radius: 20px;
+  border: 8px solid yellow;
+  width: 550px}
+
+.modal{
+  position: fixed; /* Stay in place */
+  z-index: -1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.25); /* Fallback color */
+  transition-timing-function:ease-in;
+  transition-duration: 0.7s;
+}
+
+.nav a{
+  margin:3px;
+  float: left;
+  color: #073853;
+  background-color: #56B2E7;
+  border: 3px solid #073853;
+  border-radius: 10px 10px 0 0;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  font-size: 15px;
+  padding: 4px;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+.nav a:hover{
+  background-color: #1C5858;
+  color:white;
+}
+
+.msgBoxtut{
+    background: #B6FFAE;
+    border: 3px solid #1C5858;
+    border-radius: 20px;
+    width: 800px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+#tuteClose{
+  background: none;
+  outline: none;
+  border: none;
+  color: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#explain_photo{
+  width: 700px;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+        display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+}
+
+#explain_photo>p{
+ font-size: 24px;
+ font-family: 'Rum Raisin', sans-serif;
+}
+
+.buttonHolder_tute_cf_0{
+    text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.tuteButtons{
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  color:purple;
+  cursor:pointer;
+  padding: 10px;
+  font-size: 18px;
+  transition: 0.3s;
+  font-family: 'Rum Raisin', sans-serif;
+}
+
+.tuteButtons:hover{
+  transform: scale(1.1)}
+
+#openTute{
+    position:fixed;
+  width: 100px;
+  height: 100px;
+  color:white;
+  background-color: lightgreen;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  outline:none;
+  border:none;
+}
+
+#openTute:hover{
+  transform: scale(1.1);
+  background-color: green;
+}
